@@ -1,0 +1,13 @@
+doc/_*
+*.swp
+*.swo
+*.pyc
+*.log
+*.h5
+test/Mesh_test_raw.py
+build/
+dist/
+emstimtools.egg-info/
+portlog.txt
+results/
+*.hdf

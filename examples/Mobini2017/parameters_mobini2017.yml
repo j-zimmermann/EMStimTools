@@ -1,0 +1,54 @@
+study:
+        study_mobini2017
+
+physics: 
+        ES
+
+SALOMEfile:
+        Mesh_twoWires.py  
+
+dimension:
+        3 
+
+element:
+        CG
+
+degree:
+        2
+
+geometry:
+        [r_el, r_well, h_well, h_el, dist_el]
+
+geometryvalues:
+        r_well : 0.0346
+        h_well : .01705
+        h_el : .001
+        r_el : 0.0005
+        dist_el : 0.022
+
+materials:
+        [Air, Medium]
+
+conductivity:
+        Air : 1e-14
+        Medium : 1.0 
+
+boundaries:
+        Dirichlet:
+                Contact1: 1.0         
+                Contact2: 0.0        
+
+solver:
+        linear_solver : mumps 
+
+output:
+        XDMF: yes
+
+properties:
+        E-Field : yes
+
+plot:
+        mesh : yes
+
+postprocess:
+       submesh: [Medium]
