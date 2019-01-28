@@ -72,3 +72,4 @@ Examples
 --------
 
 In the examples directory, a few published as well as unpublished examples are given. Please feel free to add some on your own!
+If paraview postprocessing scripts are present, they are to be found in the 'paraview' directory.
