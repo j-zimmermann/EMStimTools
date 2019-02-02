@@ -29,4 +29,4 @@ If you don't have much time, remove the following lines from the parameter YAML-
 
 This is one the hand a projection that yields a correct field and norm value.
 However, it takes very long.
-Go for instead with a faster solution in paraview (.pvsm file in paraview directory).
+Go instead with a faster solution in paraview (.pvsm file in paraview directory).
