@@ -3,7 +3,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
-version = '0.1.1.dev0'
+version = '0.1.2.dev0'
 setup(
     name='emstimtools',
     version=version,
