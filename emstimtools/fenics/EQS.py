@@ -33,8 +33,17 @@ def dict_product(d):
 
 
 class EQS(Fenics):
-    """
+    r"""
     Define a class, where an entire EQS run will be done.
+    The following PDE is solved:
+
+    .. math::
+
+         \nabla\cdot\left[\sigma^*(\vec{r},\omega)\nabla\Phi(\vec{r})\right]=0 \enspace,
+
+    where :math:`\sigma^\ast = \sigma(\vec{r}, \omega) + \mathrm{i} \omega \epsilon(\vec{r}, \omega)`
+    consists of the conductivity :math:`\sigma` and the permittivity :math:`\epsilon` that are defined for each subdomain.
+
     We need the following attributes:
 
     - :attr:`frequencies` : frequencies, either array or single frequency
@@ -44,6 +53,7 @@ class EQS(Fenics):
 
 
     General Information can be obtained by using:
+
     - :meth:`get_info`
 
     We use the following steps:
@@ -59,8 +69,9 @@ class EQS(Fenics):
     #. prepare the output and print it
 
     .. todo:: integrate complex number support that is partly available in dolfin-x
-    .. todo:: add source term in case of charge sources
+    .. todo:: add source term in case of charge sources, i.e. Poisson-like equations
     .. todo:: add support for storing the field, see e.g. :meth:`get_fieldnorm`
+    .. todo:: enable frequency-dependent parameters
 
     """
     def __init__(self, data, logger):

@@ -25,14 +25,22 @@ from .fenics import Fenics
 
 
 class ES(Fenics):
-    """
+    r"""
     Define a class, where an entire ES run will be done.
+    The following PDE is solved:
+
+    .. math::
+
+         \nabla\cdot\left[\sigma(\vec{r},\omega)\nabla\Phi(\vec{r})\right]=0 \enspace,
+
+    where :math:`\sigma` is the conductivity that is defined for each subdomain.
+
     We need the following attributes:
 
         - :attr:`conductivity`  : conductivities
-        - :attr:`V` : FunctionSpace as a mixed function space for real and imaginary part
+        - :attr:`V` : FunctionSpace, e.g. CG 2
 
-    .. todo:: add source term in case of charge sources
+    .. todo:: add source term in case of charge sources, i.e. Poisson equation
     .. todo:: implement array jobs
     """
     def __init__(self, data, logger):
