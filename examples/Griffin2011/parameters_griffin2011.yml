@@ -1,0 +1,71 @@
+study:
+        study_griffin2011
+
+physics: 
+        EQS
+
+SALOMEfile:
+        griffin2011_salome.py 
+
+dimension:
+        3 
+
+element:
+        CG
+
+degree:
+        2
+
+geometry:
+        [w_air, h_air, r_el, h_el, gap, r_dish, h_dish, t_dish]
+
+geometryvalues:
+        w_air : .1
+        h_air : .05
+        r_el : .04
+        h_el : 0.01
+        gap : 0.002
+        r_dish : 0.0175
+        h_dish : .01
+        t_dish : 0.001
+
+materials:
+        [dish, medium, air, airgap]
+
+frequencies:
+        15. 
+        
+conductivity:
+        dish : 1e-14
+        medium : 1.5
+        air : 1e-14
+        airgap : 1e-14
+
+permittivity:
+        medium : 80.
+        dish : 2.5
+        air : 1.0
+        airgap : 1.0
+
+boundaries:
+        Dirichlet:
+                UpperElectrode: 0.16         
+                LowerElectrode: 0.0        
+
+solver:
+        linear_solver : mumps 
+
+output:
+        XDMF: yes
+
+properties:
+        E-Field : yes
+        E-Field-norm : yes
+        project_element : DG
+        project_degree : 1
+
+plot:
+        mesh : yes
+
+postprocess:
+       submesh: [medium, airgap]

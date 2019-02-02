@@ -1,0 +1,2637 @@
+<ParaView>
+  <ServerManagerState version="5.5.2">
+    <Proxy group="animation" type="AnimationScene" id="265" servers="16">
+      <Property name="AnimationTime" id="265.AnimationTime" number_of_elements="1">
+        <Element index="0" value="0"/>
+      </Property>
+      <Property name="Cues" id="265.Cues" number_of_elements="1">
+        <Proxy value="267"/>
+        <Domain name="groups" id="265.Cues.groups"/>
+      </Property>
+      <Property name="Duration" id="265.Duration" number_of_elements="1">
+        <Element index="0" value="10"/>
+      </Property>
+      <Property name="EndTime" id="265.EndTime" number_of_elements="1">
+        <Element index="0" value="1"/>
+      </Property>
+      <Property name="FramesPerTimestep" id="265.FramesPerTimestep" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="range" id="265.FramesPerTimestep.range"/>
+      </Property>
+      <Property name="GoToFirst" id="265.GoToFirst"/>
+      <Property name="GoToLast" id="265.GoToLast"/>
+      <Property name="GoToNext" id="265.GoToNext"/>
+      <Property name="GoToPrevious" id="265.GoToPrevious"/>
+      <Property name="LockEndTime" id="265.LockEndTime" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="265.LockEndTime.bool"/>
+      </Property>
+      <Property name="LockStartTime" id="265.LockStartTime" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="265.LockStartTime.bool"/>
+      </Property>
+      <Property name="Loop" id="265.Loop" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="265.Loop.bool"/>
+      </Property>
+      <Property name="NumberOfFrames" id="265.NumberOfFrames" number_of_elements="1">
+        <Element index="0" value="10"/>
+        <Domain name="range" id="265.NumberOfFrames.range"/>
+      </Property>
+      <Property name="Play" id="265.Play"/>
+      <Property name="PlayMode" id="265.PlayMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="265.PlayMode.enum">
+          <Entry value="0" text="Sequence"/>
+          <Entry value="1" text="Real Time"/>
+          <Entry value="2" text="Snap To TimeSteps"/>
+        </Domain>
+      </Property>
+      <Property name="StartTime" id="265.StartTime" number_of_elements="1">
+        <Element index="0" value="0"/>
+      </Property>
+      <Property name="Stop" id="265.Stop"/>
+      <Property name="TimeKeeper" id="265.TimeKeeper" number_of_elements="1">
+        <Proxy value="259"/>
+      </Property>
+      <Property name="ViewModules" id="265.ViewModules" number_of_elements="1">
+        <Proxy value="14878"/>
+        <Domain name="groups" id="265.ViewModules.groups"/>
+      </Property>
+    </Proxy>
+    <Proxy group="animation" type="TimeAnimationCue" id="267" servers="16">
+      <Property name="AnimatedDomainName" id="267.AnimatedDomainName" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="AnimatedElement" id="267.AnimatedElement" number_of_elements="1">
+        <Element index="0" value="0"/>
+      </Property>
+      <Property name="AnimatedPropertyName" id="267.AnimatedPropertyName" number_of_elements="1">
+        <Element index="0" value="Time"/>
+      </Property>
+      <Property name="AnimatedProxy" id="267.AnimatedProxy" number_of_elements="1">
+        <Proxy value="259"/>
+        <Domain name="groups" id="267.AnimatedProxy.groups"/>
+      </Property>
+      <Property name="Enabled" id="267.Enabled" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="267.Enabled.bool"/>
+      </Property>
+      <Property name="EndTime" id="267.EndTime" number_of_elements="1">
+        <Element index="0" value="1"/>
+      </Property>
+      <Property name="KeyFrames" id="267.KeyFrames">
+        <Domain name="groups" id="267.KeyFrames.groups"/>
+      </Property>
+      <Property name="LastAddedKeyFrameIndex" id="267.LastAddedKeyFrameIndex"/>
+      <Property name="StartTime" id="267.StartTime" number_of_elements="1">
+        <Element index="0" value="0"/>
+      </Property>
+      <Property name="TimeMode" id="267.TimeMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="267.TimeMode.enum">
+          <Entry value="0" text="Normalized"/>
+          <Entry value="1" text="Relative"/>
+        </Domain>
+      </Property>
+      <Property name="UseAnimationTime" id="267.UseAnimationTime" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="267.UseAnimationTime.bool"/>
+      </Property>
+    </Proxy>
+    <Proxy group="misc" type="ViewLayout" id="14395" servers="16">
+      <Property name="PreviewMode" id="14395.PreviewMode" number_of_elements="2">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+      </Property>
+      <Property name="SeparatorColor" id="14395.SeparatorColor" number_of_elements="3">
+        <Element index="0" value="0.937"/>
+        <Element index="1" value="0.922"/>
+        <Element index="2" value="0.906"/>
+        <Domain name="range" id="14395.SeparatorColor.range"/>
+      </Property>
+      <Property name="SeparatorWidth" id="14395.SeparatorWidth" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="range" id="14395.SeparatorWidth.range"/>
+      </Property>
+      <Layout number_of_elements="1">
+        <Item direction="0" fraction="0.5" view="14878"/>
+      </Layout>
+    </Proxy>
+    <Proxy group="lookup_tables" type="PVLookupTable" id="12976" servers="21">
+      <Property name="AboveRangeColor" id="12976.AboveRangeColor" number_of_elements="3">
+        <Element index="0" value="0.5"/>
+        <Element index="1" value="0.5"/>
+        <Element index="2" value="0.5"/>
+      </Property>
+      <Property name="ActiveAnnotatedValues" id="12976.ActiveAnnotatedValues"/>
+      <Property name="AllowDuplicateScalars" id="12976.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="12976.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Annotations" id="12976.Annotations"/>
+      <Property name="AutomaticRescaleRangeMode" id="12976.AutomaticRescaleRangeMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="12976.AutomaticRescaleRangeMode.enum">
+          <Entry value="-1" text="Never"/>
+          <Entry value="0" text="Grow and update on &#x27;Apply&#x27;"/>
+          <Entry value="1" text="Grow and update every timestep"/>
+          <Entry value="3" text="Clamp and update every timestep"/>
+        </Domain>
+      </Property>
+      <Property name="BelowRangeColor" id="12976.BelowRangeColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="Build" id="12976.Build"/>
+      <Property name="ColorSpace" id="12976.ColorSpace" number_of_elements="1">
+        <Element index="0" value="3"/>
+        <Domain name="enum" id="12976.ColorSpace.enum">
+          <Entry value="0" text="RGB"/>
+          <Entry value="1" text="HSV"/>
+          <Entry value="2" text="Lab"/>
+          <Entry value="3" text="Diverging"/>
+          <Entry value="4" text="Lab/CIEDE2000"/>
+        </Domain>
+      </Property>
+      <Property name="Discretize" id="12976.Discretize" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="12976.Discretize.bool"/>
+      </Property>
+      <Property name="EnableOpacityMapping" id="12976.EnableOpacityMapping" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12976.EnableOpacityMapping.bool"/>
+      </Property>
+      <Property name="HSVWrap" id="12976.HSVWrap" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12976.HSVWrap.bool"/>
+      </Property>
+      <Property name="IndexedColors" id="12976.IndexedColors"/>
+      <Property name="IndexedLookup" id="12976.IndexedLookup" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12976.IndexedLookup.bool"/>
+      </Property>
+      <Property name="IndexedOpacities" id="12976.IndexedOpacities"/>
+      <Property name="NanColor" id="12976.NanColor" number_of_elements="3">
+        <Element index="0" value="1"/>
+        <Element index="1" value="1"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="NumberOfTableValues" id="12976.NumberOfTableValues" number_of_elements="1">
+        <Element index="0" value="256"/>
+        <Domain name="range" id="12976.NumberOfTableValues.range"/>
+      </Property>
+      <Property name="RGBPoints" id="12976.RGBPoints" number_of_elements="12">
+        <Element index="0" value="1.54130839291611e-06"/>
+        <Element index="1" value="0.231373"/>
+        <Element index="2" value="0.298039"/>
+        <Element index="3" value="0.752941"/>
+        <Element index="4" value="53.788716133203"/>
+        <Element index="5" value="0.865003"/>
+        <Element index="6" value="0.865003"/>
+        <Element index="7" value="0.865003"/>
+        <Element index="8" value="107.577430725098"/>
+        <Element index="9" value="0.705882"/>
+        <Element index="10" value="0.0156863"/>
+        <Element index="11" value="0.14902"/>
+      </Property>
+      <Property name="RescaleOnVisibilityChange" id="12976.RescaleOnVisibilityChange" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12976.RescaleOnVisibilityChange.bool"/>
+      </Property>
+      <Property name="ScalarOpacityFunction" id="12976.ScalarOpacityFunction" number_of_elements="1">
+        <Proxy value="12975"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="12976.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="12976.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="ShowIndexedColorActiveValues" id="12976.ShowIndexedColorActiveValues" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12976.ShowIndexedColorActiveValues.bool"/>
+      </Property>
+      <Property name="UseAboveRangeColor" id="12976.UseAboveRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12976.UseAboveRangeColor.bool"/>
+      </Property>
+      <Property name="UseBelowRangeColor" id="12976.UseBelowRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12976.UseBelowRangeColor.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="12976.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12976.UseLogScale.bool"/>
+      </Property>
+      <Property name="VectorComponent" id="12976.VectorComponent" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="range" id="12976.VectorComponent.range"/>
+      </Property>
+      <Property name="VectorMode" id="12976.VectorMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="12976.VectorMode.enum">
+          <Entry value="0" text="Magnitude"/>
+          <Entry value="1" text="Component"/>
+        </Domain>
+      </Property>
+    </Proxy>
+    <Proxy group="lookup_tables" type="PVLookupTable" id="13392" servers="21">
+      <Property name="AboveRangeColor" id="13392.AboveRangeColor" number_of_elements="3">
+        <Element index="0" value="0.5"/>
+        <Element index="1" value="0.5"/>
+        <Element index="2" value="0.5"/>
+      </Property>
+      <Property name="ActiveAnnotatedValues" id="13392.ActiveAnnotatedValues"/>
+      <Property name="AllowDuplicateScalars" id="13392.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13392.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Annotations" id="13392.Annotations"/>
+      <Property name="AutomaticRescaleRangeMode" id="13392.AutomaticRescaleRangeMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="13392.AutomaticRescaleRangeMode.enum">
+          <Entry value="-1" text="Never"/>
+          <Entry value="0" text="Grow and update on &#x27;Apply&#x27;"/>
+          <Entry value="1" text="Grow and update every timestep"/>
+          <Entry value="3" text="Clamp and update every timestep"/>
+        </Domain>
+      </Property>
+      <Property name="BelowRangeColor" id="13392.BelowRangeColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="Build" id="13392.Build"/>
+      <Property name="ColorSpace" id="13392.ColorSpace" number_of_elements="1">
+        <Element index="0" value="3"/>
+        <Domain name="enum" id="13392.ColorSpace.enum">
+          <Entry value="0" text="RGB"/>
+          <Entry value="1" text="HSV"/>
+          <Entry value="2" text="Lab"/>
+          <Entry value="3" text="Diverging"/>
+          <Entry value="4" text="Lab/CIEDE2000"/>
+        </Domain>
+      </Property>
+      <Property name="Discretize" id="13392.Discretize" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13392.Discretize.bool"/>
+      </Property>
+      <Property name="EnableOpacityMapping" id="13392.EnableOpacityMapping" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13392.EnableOpacityMapping.bool"/>
+      </Property>
+      <Property name="HSVWrap" id="13392.HSVWrap" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13392.HSVWrap.bool"/>
+      </Property>
+      <Property name="IndexedColors" id="13392.IndexedColors"/>
+      <Property name="IndexedLookup" id="13392.IndexedLookup" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13392.IndexedLookup.bool"/>
+      </Property>
+      <Property name="IndexedOpacities" id="13392.IndexedOpacities"/>
+      <Property name="NanColor" id="13392.NanColor" number_of_elements="3">
+        <Element index="0" value="1"/>
+        <Element index="1" value="1"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="NumberOfTableValues" id="13392.NumberOfTableValues" number_of_elements="1">
+        <Element index="0" value="256"/>
+        <Domain name="range" id="13392.NumberOfTableValues.range"/>
+      </Property>
+      <Property name="RGBPoints" id="13392.RGBPoints" number_of_elements="12">
+        <Element index="0" value="3.54254441133516e-08"/>
+        <Element index="1" value="0.231373"/>
+        <Element index="2" value="0.298039"/>
+        <Element index="3" value="0.752941"/>
+        <Element index="4" value="1.79283053711924e-07"/>
+        <Element index="5" value="0.865003"/>
+        <Element index="6" value="0.865003"/>
+        <Element index="7" value="0.865003"/>
+        <Element index="8" value="3.23140663310497e-07"/>
+        <Element index="9" value="0.705882"/>
+        <Element index="10" value="0.0156863"/>
+        <Element index="11" value="0.14902"/>
+      </Property>
+      <Property name="RescaleOnVisibilityChange" id="13392.RescaleOnVisibilityChange" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13392.RescaleOnVisibilityChange.bool"/>
+      </Property>
+      <Property name="ScalarOpacityFunction" id="13392.ScalarOpacityFunction" number_of_elements="1">
+        <Proxy value="13391"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="13392.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13392.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="ShowIndexedColorActiveValues" id="13392.ShowIndexedColorActiveValues" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13392.ShowIndexedColorActiveValues.bool"/>
+      </Property>
+      <Property name="UseAboveRangeColor" id="13392.UseAboveRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13392.UseAboveRangeColor.bool"/>
+      </Property>
+      <Property name="UseBelowRangeColor" id="13392.UseBelowRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13392.UseBelowRangeColor.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="13392.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13392.UseLogScale.bool"/>
+      </Property>
+      <Property name="VectorComponent" id="13392.VectorComponent" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="range" id="13392.VectorComponent.range"/>
+      </Property>
+      <Property name="VectorMode" id="13392.VectorMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="13392.VectorMode.enum">
+          <Entry value="0" text="Magnitude"/>
+          <Entry value="1" text="Component"/>
+        </Domain>
+      </Property>
+    </Proxy>
+    <Proxy group="lookup_tables" type="PVLookupTable" id="13147" servers="21">
+      <Property name="AboveRangeColor" id="13147.AboveRangeColor" number_of_elements="3">
+        <Element index="0" value="0.5"/>
+        <Element index="1" value="0.5"/>
+        <Element index="2" value="0.5"/>
+      </Property>
+      <Property name="ActiveAnnotatedValues" id="13147.ActiveAnnotatedValues"/>
+      <Property name="AllowDuplicateScalars" id="13147.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13147.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Annotations" id="13147.Annotations"/>
+      <Property name="AutomaticRescaleRangeMode" id="13147.AutomaticRescaleRangeMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="13147.AutomaticRescaleRangeMode.enum">
+          <Entry value="-1" text="Never"/>
+          <Entry value="0" text="Grow and update on &#x27;Apply&#x27;"/>
+          <Entry value="1" text="Grow and update every timestep"/>
+          <Entry value="3" text="Clamp and update every timestep"/>
+        </Domain>
+      </Property>
+      <Property name="BelowRangeColor" id="13147.BelowRangeColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="Build" id="13147.Build"/>
+      <Property name="ColorSpace" id="13147.ColorSpace" number_of_elements="1">
+        <Element index="0" value="3"/>
+        <Domain name="enum" id="13147.ColorSpace.enum">
+          <Entry value="0" text="RGB"/>
+          <Entry value="1" text="HSV"/>
+          <Entry value="2" text="Lab"/>
+          <Entry value="3" text="Diverging"/>
+          <Entry value="4" text="Lab/CIEDE2000"/>
+        </Domain>
+      </Property>
+      <Property name="Discretize" id="13147.Discretize" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13147.Discretize.bool"/>
+      </Property>
+      <Property name="EnableOpacityMapping" id="13147.EnableOpacityMapping" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13147.EnableOpacityMapping.bool"/>
+      </Property>
+      <Property name="HSVWrap" id="13147.HSVWrap" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13147.HSVWrap.bool"/>
+      </Property>
+      <Property name="IndexedColors" id="13147.IndexedColors"/>
+      <Property name="IndexedLookup" id="13147.IndexedLookup" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13147.IndexedLookup.bool"/>
+      </Property>
+      <Property name="IndexedOpacities" id="13147.IndexedOpacities"/>
+      <Property name="NanColor" id="13147.NanColor" number_of_elements="3">
+        <Element index="0" value="1"/>
+        <Element index="1" value="1"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="NumberOfTableValues" id="13147.NumberOfTableValues" number_of_elements="1">
+        <Element index="0" value="256"/>
+        <Domain name="range" id="13147.NumberOfTableValues.range"/>
+      </Property>
+      <Property name="RGBPoints" id="13147.RGBPoints" number_of_elements="12">
+        <Element index="0" value="0.033345952630043"/>
+        <Element index="1" value="0.231373"/>
+        <Element index="2" value="0.298039"/>
+        <Element index="3" value="0.752941"/>
+        <Element index="4" value="0.0333497673273087"/>
+        <Element index="5" value="0.865003"/>
+        <Element index="6" value="0.865003"/>
+        <Element index="7" value="0.865003"/>
+        <Element index="8" value="0.0333535820245743"/>
+        <Element index="9" value="0.705882"/>
+        <Element index="10" value="0.0156863"/>
+        <Element index="11" value="0.14902"/>
+      </Property>
+      <Property name="RescaleOnVisibilityChange" id="13147.RescaleOnVisibilityChange" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13147.RescaleOnVisibilityChange.bool"/>
+      </Property>
+      <Property name="ScalarOpacityFunction" id="13147.ScalarOpacityFunction" number_of_elements="1">
+        <Proxy value="13146"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="13147.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13147.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="ShowIndexedColorActiveValues" id="13147.ShowIndexedColorActiveValues" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13147.ShowIndexedColorActiveValues.bool"/>
+      </Property>
+      <Property name="UseAboveRangeColor" id="13147.UseAboveRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13147.UseAboveRangeColor.bool"/>
+      </Property>
+      <Property name="UseBelowRangeColor" id="13147.UseBelowRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13147.UseBelowRangeColor.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="13147.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13147.UseLogScale.bool"/>
+      </Property>
+      <Property name="VectorComponent" id="13147.VectorComponent" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="range" id="13147.VectorComponent.range"/>
+      </Property>
+      <Property name="VectorMode" id="13147.VectorMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="13147.VectorMode.enum">
+          <Entry value="0" text="Magnitude"/>
+          <Entry value="1" text="Component"/>
+        </Domain>
+      </Property>
+    </Proxy>
+    <Proxy group="lookup_tables" type="PVLookupTable" id="14544" servers="21">
+      <Property name="AboveRangeColor" id="14544.AboveRangeColor" number_of_elements="3">
+        <Element index="0" value="0.5"/>
+        <Element index="1" value="0.5"/>
+        <Element index="2" value="0.5"/>
+      </Property>
+      <Property name="ActiveAnnotatedValues" id="14544.ActiveAnnotatedValues"/>
+      <Property name="AllowDuplicateScalars" id="14544.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14544.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Annotations" id="14544.Annotations"/>
+      <Property name="AutomaticRescaleRangeMode" id="14544.AutomaticRescaleRangeMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="14544.AutomaticRescaleRangeMode.enum">
+          <Entry value="-1" text="Never"/>
+          <Entry value="0" text="Grow and update on &#x27;Apply&#x27;"/>
+          <Entry value="1" text="Grow and update every timestep"/>
+          <Entry value="3" text="Clamp and update every timestep"/>
+        </Domain>
+      </Property>
+      <Property name="BelowRangeColor" id="14544.BelowRangeColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="Build" id="14544.Build"/>
+      <Property name="ColorSpace" id="14544.ColorSpace" number_of_elements="1">
+        <Element index="0" value="3"/>
+        <Domain name="enum" id="14544.ColorSpace.enum">
+          <Entry value="0" text="RGB"/>
+          <Entry value="1" text="HSV"/>
+          <Entry value="2" text="Lab"/>
+          <Entry value="3" text="Diverging"/>
+          <Entry value="4" text="Lab/CIEDE2000"/>
+        </Domain>
+      </Property>
+      <Property name="Discretize" id="14544.Discretize" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14544.Discretize.bool"/>
+      </Property>
+      <Property name="EnableOpacityMapping" id="14544.EnableOpacityMapping" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14544.EnableOpacityMapping.bool"/>
+      </Property>
+      <Property name="HSVWrap" id="14544.HSVWrap" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14544.HSVWrap.bool"/>
+      </Property>
+      <Property name="IndexedColors" id="14544.IndexedColors"/>
+      <Property name="IndexedLookup" id="14544.IndexedLookup" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14544.IndexedLookup.bool"/>
+      </Property>
+      <Property name="IndexedOpacities" id="14544.IndexedOpacities"/>
+      <Property name="NanColor" id="14544.NanColor" number_of_elements="3">
+        <Element index="0" value="1"/>
+        <Element index="1" value="1"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="NumberOfTableValues" id="14544.NumberOfTableValues" number_of_elements="1">
+        <Element index="0" value="256"/>
+        <Domain name="range" id="14544.NumberOfTableValues.range"/>
+      </Property>
+      <Property name="RGBPoints" id="14544.RGBPoints" number_of_elements="12">
+        <Element index="0" value="0.033345952630043"/>
+        <Element index="1" value="0.231373"/>
+        <Element index="2" value="0.298039"/>
+        <Element index="3" value="0.752941"/>
+        <Element index="4" value="0.0333497673273087"/>
+        <Element index="5" value="0.865003"/>
+        <Element index="6" value="0.865003"/>
+        <Element index="7" value="0.865003"/>
+        <Element index="8" value="0.0333535820245743"/>
+        <Element index="9" value="0.705882"/>
+        <Element index="10" value="0.0156863"/>
+        <Element index="11" value="0.14902"/>
+      </Property>
+      <Property name="RescaleOnVisibilityChange" id="14544.RescaleOnVisibilityChange" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14544.RescaleOnVisibilityChange.bool"/>
+      </Property>
+      <Property name="ScalarOpacityFunction" id="14544.ScalarOpacityFunction" number_of_elements="1">
+        <Proxy value="14543"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="14544.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14544.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="ShowIndexedColorActiveValues" id="14544.ShowIndexedColorActiveValues" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14544.ShowIndexedColorActiveValues.bool"/>
+      </Property>
+      <Property name="UseAboveRangeColor" id="14544.UseAboveRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14544.UseAboveRangeColor.bool"/>
+      </Property>
+      <Property name="UseBelowRangeColor" id="14544.UseBelowRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14544.UseBelowRangeColor.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="14544.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14544.UseLogScale.bool"/>
+      </Property>
+      <Property name="VectorComponent" id="14544.VectorComponent" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="range" id="14544.VectorComponent.range"/>
+      </Property>
+      <Property name="VectorMode" id="14544.VectorMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="14544.VectorMode.enum">
+          <Entry value="0" text="Magnitude"/>
+          <Entry value="1" text="Component"/>
+        </Domain>
+      </Property>
+    </Proxy>
+    <Proxy group="lookup_tables" type="PVLookupTable" id="13629" servers="21">
+      <Property name="AboveRangeColor" id="13629.AboveRangeColor" number_of_elements="3">
+        <Element index="0" value="0.5"/>
+        <Element index="1" value="0.5"/>
+        <Element index="2" value="0.5"/>
+      </Property>
+      <Property name="ActiveAnnotatedValues" id="13629.ActiveAnnotatedValues"/>
+      <Property name="AllowDuplicateScalars" id="13629.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13629.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Annotations" id="13629.Annotations"/>
+      <Property name="AutomaticRescaleRangeMode" id="13629.AutomaticRescaleRangeMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="13629.AutomaticRescaleRangeMode.enum">
+          <Entry value="-1" text="Never"/>
+          <Entry value="0" text="Grow and update on &#x27;Apply&#x27;"/>
+          <Entry value="1" text="Grow and update every timestep"/>
+          <Entry value="3" text="Clamp and update every timestep"/>
+        </Domain>
+      </Property>
+      <Property name="BelowRangeColor" id="13629.BelowRangeColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="Build" id="13629.Build"/>
+      <Property name="ColorSpace" id="13629.ColorSpace" number_of_elements="1">
+        <Element index="0" value="3"/>
+        <Domain name="enum" id="13629.ColorSpace.enum">
+          <Entry value="0" text="RGB"/>
+          <Entry value="1" text="HSV"/>
+          <Entry value="2" text="Lab"/>
+          <Entry value="3" text="Diverging"/>
+          <Entry value="4" text="Lab/CIEDE2000"/>
+        </Domain>
+      </Property>
+      <Property name="Discretize" id="13629.Discretize" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13629.Discretize.bool"/>
+      </Property>
+      <Property name="EnableOpacityMapping" id="13629.EnableOpacityMapping" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13629.EnableOpacityMapping.bool"/>
+      </Property>
+      <Property name="HSVWrap" id="13629.HSVWrap" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13629.HSVWrap.bool"/>
+      </Property>
+      <Property name="IndexedColors" id="13629.IndexedColors"/>
+      <Property name="IndexedLookup" id="13629.IndexedLookup" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13629.IndexedLookup.bool"/>
+      </Property>
+      <Property name="IndexedOpacities" id="13629.IndexedOpacities"/>
+      <Property name="NanColor" id="13629.NanColor" number_of_elements="3">
+        <Element index="0" value="1"/>
+        <Element index="1" value="1"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="NumberOfTableValues" id="13629.NumberOfTableValues" number_of_elements="1">
+        <Element index="0" value="256"/>
+        <Domain name="range" id="13629.NumberOfTableValues.range"/>
+      </Property>
+      <Property name="RGBPoints" id="13629.RGBPoints" number_of_elements="12">
+        <Element index="0" value="2.50904986387468e-06"/>
+        <Element index="1" value="0.231373"/>
+        <Element index="2" value="0.298039"/>
+        <Element index="3" value="0.752941"/>
+        <Element index="4" value="2.50937148393859e-06"/>
+        <Element index="5" value="0.865003"/>
+        <Element index="6" value="0.865003"/>
+        <Element index="7" value="0.865003"/>
+        <Element index="8" value="2.50969310400251e-06"/>
+        <Element index="9" value="0.705882"/>
+        <Element index="10" value="0.0156863"/>
+        <Element index="11" value="0.14902"/>
+      </Property>
+      <Property name="RescaleOnVisibilityChange" id="13629.RescaleOnVisibilityChange" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13629.RescaleOnVisibilityChange.bool"/>
+      </Property>
+      <Property name="ScalarOpacityFunction" id="13629.ScalarOpacityFunction" number_of_elements="1">
+        <Proxy value="13628"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="13629.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13629.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="ShowIndexedColorActiveValues" id="13629.ShowIndexedColorActiveValues" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13629.ShowIndexedColorActiveValues.bool"/>
+      </Property>
+      <Property name="UseAboveRangeColor" id="13629.UseAboveRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13629.UseAboveRangeColor.bool"/>
+      </Property>
+      <Property name="UseBelowRangeColor" id="13629.UseBelowRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13629.UseBelowRangeColor.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="13629.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13629.UseLogScale.bool"/>
+      </Property>
+      <Property name="VectorComponent" id="13629.VectorComponent" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="range" id="13629.VectorComponent.range"/>
+      </Property>
+      <Property name="VectorMode" id="13629.VectorMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="13629.VectorMode.enum">
+          <Entry value="0" text="Magnitude"/>
+          <Entry value="1" text="Component"/>
+        </Domain>
+      </Property>
+    </Proxy>
+    <Proxy group="lookup_tables" type="PVLookupTable" id="14568" servers="21">
+      <Property name="AboveRangeColor" id="14568.AboveRangeColor" number_of_elements="3">
+        <Element index="0" value="0.5"/>
+        <Element index="1" value="0.5"/>
+        <Element index="2" value="0.5"/>
+      </Property>
+      <Property name="ActiveAnnotatedValues" id="14568.ActiveAnnotatedValues"/>
+      <Property name="AllowDuplicateScalars" id="14568.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14568.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Annotations" id="14568.Annotations"/>
+      <Property name="AutomaticRescaleRangeMode" id="14568.AutomaticRescaleRangeMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="14568.AutomaticRescaleRangeMode.enum">
+          <Entry value="-1" text="Never"/>
+          <Entry value="0" text="Grow and update on &#x27;Apply&#x27;"/>
+          <Entry value="1" text="Grow and update every timestep"/>
+          <Entry value="3" text="Clamp and update every timestep"/>
+        </Domain>
+      </Property>
+      <Property name="BelowRangeColor" id="14568.BelowRangeColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="Build" id="14568.Build"/>
+      <Property name="ColorSpace" id="14568.ColorSpace" number_of_elements="1">
+        <Element index="0" value="3"/>
+        <Domain name="enum" id="14568.ColorSpace.enum">
+          <Entry value="0" text="RGB"/>
+          <Entry value="1" text="HSV"/>
+          <Entry value="2" text="Lab"/>
+          <Entry value="3" text="Diverging"/>
+          <Entry value="4" text="Lab/CIEDE2000"/>
+        </Domain>
+      </Property>
+      <Property name="Discretize" id="14568.Discretize" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14568.Discretize.bool"/>
+      </Property>
+      <Property name="EnableOpacityMapping" id="14568.EnableOpacityMapping" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14568.EnableOpacityMapping.bool"/>
+      </Property>
+      <Property name="HSVWrap" id="14568.HSVWrap" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14568.HSVWrap.bool"/>
+      </Property>
+      <Property name="IndexedColors" id="14568.IndexedColors"/>
+      <Property name="IndexedLookup" id="14568.IndexedLookup" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14568.IndexedLookup.bool"/>
+      </Property>
+      <Property name="IndexedOpacities" id="14568.IndexedOpacities"/>
+      <Property name="NanColor" id="14568.NanColor" number_of_elements="3">
+        <Element index="0" value="1"/>
+        <Element index="1" value="1"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="NumberOfTableValues" id="14568.NumberOfTableValues" number_of_elements="1">
+        <Element index="0" value="256"/>
+        <Domain name="range" id="14568.NumberOfTableValues.range"/>
+      </Property>
+      <Property name="RGBPoints" id="14568.RGBPoints" number_of_elements="12">
+        <Element index="0" value="2.50904986387468e-06"/>
+        <Element index="1" value="0.231373"/>
+        <Element index="2" value="0.298039"/>
+        <Element index="3" value="0.752941"/>
+        <Element index="4" value="2.50937148393859e-06"/>
+        <Element index="5" value="0.865003"/>
+        <Element index="6" value="0.865003"/>
+        <Element index="7" value="0.865003"/>
+        <Element index="8" value="2.50969310400251e-06"/>
+        <Element index="9" value="0.705882"/>
+        <Element index="10" value="0.0156863"/>
+        <Element index="11" value="0.14902"/>
+      </Property>
+      <Property name="RescaleOnVisibilityChange" id="14568.RescaleOnVisibilityChange" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14568.RescaleOnVisibilityChange.bool"/>
+      </Property>
+      <Property name="ScalarOpacityFunction" id="14568.ScalarOpacityFunction" number_of_elements="1">
+        <Proxy value="14567"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="14568.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14568.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="ShowIndexedColorActiveValues" id="14568.ShowIndexedColorActiveValues" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14568.ShowIndexedColorActiveValues.bool"/>
+      </Property>
+      <Property name="UseAboveRangeColor" id="14568.UseAboveRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14568.UseAboveRangeColor.bool"/>
+      </Property>
+      <Property name="UseBelowRangeColor" id="14568.UseBelowRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14568.UseBelowRangeColor.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="14568.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14568.UseLogScale.bool"/>
+      </Property>
+      <Property name="VectorComponent" id="14568.VectorComponent" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="range" id="14568.VectorComponent.range"/>
+      </Property>
+      <Property name="VectorMode" id="14568.VectorMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="14568.VectorMode.enum">
+          <Entry value="0" text="Magnitude"/>
+          <Entry value="1" text="Component"/>
+        </Domain>
+      </Property>
+    </Proxy>
+    <Proxy group="lookup_tables" type="PVLookupTable" id="13229" servers="21">
+      <Property name="AboveRangeColor" id="13229.AboveRangeColor" number_of_elements="3">
+        <Element index="0" value="0.5"/>
+        <Element index="1" value="0.5"/>
+        <Element index="2" value="0.5"/>
+      </Property>
+      <Property name="ActiveAnnotatedValues" id="13229.ActiveAnnotatedValues"/>
+      <Property name="AllowDuplicateScalars" id="13229.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13229.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Annotations" id="13229.Annotations"/>
+      <Property name="AutomaticRescaleRangeMode" id="13229.AutomaticRescaleRangeMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="13229.AutomaticRescaleRangeMode.enum">
+          <Entry value="-1" text="Never"/>
+          <Entry value="0" text="Grow and update on &#x27;Apply&#x27;"/>
+          <Entry value="1" text="Grow and update every timestep"/>
+          <Entry value="3" text="Clamp and update every timestep"/>
+        </Domain>
+      </Property>
+      <Property name="BelowRangeColor" id="13229.BelowRangeColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="Build" id="13229.Build"/>
+      <Property name="ColorSpace" id="13229.ColorSpace" number_of_elements="1">
+        <Element index="0" value="3"/>
+        <Domain name="enum" id="13229.ColorSpace.enum">
+          <Entry value="0" text="RGB"/>
+          <Entry value="1" text="HSV"/>
+          <Entry value="2" text="Lab"/>
+          <Entry value="3" text="Diverging"/>
+          <Entry value="4" text="Lab/CIEDE2000"/>
+        </Domain>
+      </Property>
+      <Property name="Discretize" id="13229.Discretize" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13229.Discretize.bool"/>
+      </Property>
+      <Property name="EnableOpacityMapping" id="13229.EnableOpacityMapping" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13229.EnableOpacityMapping.bool"/>
+      </Property>
+      <Property name="HSVWrap" id="13229.HSVWrap" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13229.HSVWrap.bool"/>
+      </Property>
+      <Property name="IndexedColors" id="13229.IndexedColors"/>
+      <Property name="IndexedLookup" id="13229.IndexedLookup" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13229.IndexedLookup.bool"/>
+      </Property>
+      <Property name="IndexedOpacities" id="13229.IndexedOpacities"/>
+      <Property name="NanColor" id="13229.NanColor" number_of_elements="3">
+        <Element index="0" value="1"/>
+        <Element index="1" value="1"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="NumberOfTableValues" id="13229.NumberOfTableValues" number_of_elements="1">
+        <Element index="0" value="256"/>
+        <Domain name="range" id="13229.NumberOfTableValues.range"/>
+      </Property>
+      <Property name="RGBPoints" id="13229.RGBPoints" number_of_elements="12">
+        <Element index="0" value="1.52065557898893e-06"/>
+        <Element index="1" value="0.231373"/>
+        <Element index="2" value="0.298039"/>
+        <Element index="3" value="0.752941"/>
+        <Element index="4" value="39.2371630608151"/>
+        <Element index="5" value="0.865003"/>
+        <Element index="6" value="0.865003"/>
+        <Element index="7" value="0.865003"/>
+        <Element index="8" value="78.4743246009747"/>
+        <Element index="9" value="0.705882"/>
+        <Element index="10" value="0.0156863"/>
+        <Element index="11" value="0.14902"/>
+      </Property>
+      <Property name="RescaleOnVisibilityChange" id="13229.RescaleOnVisibilityChange" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13229.RescaleOnVisibilityChange.bool"/>
+      </Property>
+      <Property name="ScalarOpacityFunction" id="13229.ScalarOpacityFunction" number_of_elements="1">
+        <Proxy value="13228"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="13229.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13229.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="ShowIndexedColorActiveValues" id="13229.ShowIndexedColorActiveValues" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13229.ShowIndexedColorActiveValues.bool"/>
+      </Property>
+      <Property name="UseAboveRangeColor" id="13229.UseAboveRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13229.UseAboveRangeColor.bool"/>
+      </Property>
+      <Property name="UseBelowRangeColor" id="13229.UseBelowRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13229.UseBelowRangeColor.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="13229.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13229.UseLogScale.bool"/>
+      </Property>
+      <Property name="VectorComponent" id="13229.VectorComponent" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="range" id="13229.VectorComponent.range"/>
+      </Property>
+      <Property name="VectorMode" id="13229.VectorMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="13229.VectorMode.enum">
+          <Entry value="0" text="Magnitude"/>
+          <Entry value="1" text="Component"/>
+        </Domain>
+      </Property>
+    </Proxy>
+    <Proxy group="lookup_tables" type="PVLookupTable" id="12984" servers="21">
+      <Property name="AboveRangeColor" id="12984.AboveRangeColor" number_of_elements="3">
+        <Element index="0" value="0.5"/>
+        <Element index="1" value="0.5"/>
+        <Element index="2" value="0.5"/>
+      </Property>
+      <Property name="ActiveAnnotatedValues" id="12984.ActiveAnnotatedValues"/>
+      <Property name="AllowDuplicateScalars" id="12984.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="12984.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Annotations" id="12984.Annotations"/>
+      <Property name="AutomaticRescaleRangeMode" id="12984.AutomaticRescaleRangeMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="12984.AutomaticRescaleRangeMode.enum">
+          <Entry value="-1" text="Never"/>
+          <Entry value="0" text="Grow and update on &#x27;Apply&#x27;"/>
+          <Entry value="1" text="Grow and update every timestep"/>
+          <Entry value="3" text="Clamp and update every timestep"/>
+        </Domain>
+      </Property>
+      <Property name="BelowRangeColor" id="12984.BelowRangeColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="Build" id="12984.Build"/>
+      <Property name="ColorSpace" id="12984.ColorSpace" number_of_elements="1">
+        <Element index="0" value="3"/>
+        <Domain name="enum" id="12984.ColorSpace.enum">
+          <Entry value="0" text="RGB"/>
+          <Entry value="1" text="HSV"/>
+          <Entry value="2" text="Lab"/>
+          <Entry value="3" text="Diverging"/>
+          <Entry value="4" text="Lab/CIEDE2000"/>
+        </Domain>
+      </Property>
+      <Property name="Discretize" id="12984.Discretize" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="12984.Discretize.bool"/>
+      </Property>
+      <Property name="EnableOpacityMapping" id="12984.EnableOpacityMapping" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12984.EnableOpacityMapping.bool"/>
+      </Property>
+      <Property name="HSVWrap" id="12984.HSVWrap" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12984.HSVWrap.bool"/>
+      </Property>
+      <Property name="IndexedColors" id="12984.IndexedColors"/>
+      <Property name="IndexedLookup" id="12984.IndexedLookup" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12984.IndexedLookup.bool"/>
+      </Property>
+      <Property name="IndexedOpacities" id="12984.IndexedOpacities"/>
+      <Property name="NanColor" id="12984.NanColor" number_of_elements="3">
+        <Element index="0" value="1"/>
+        <Element index="1" value="1"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="NumberOfTableValues" id="12984.NumberOfTableValues" number_of_elements="1">
+        <Element index="0" value="256"/>
+        <Domain name="range" id="12984.NumberOfTableValues.range"/>
+      </Property>
+      <Property name="RGBPoints" id="12984.RGBPoints" number_of_elements="12">
+        <Element index="0" value="1.54130839291611e-06"/>
+        <Element index="1" value="0.231373"/>
+        <Element index="2" value="0.298039"/>
+        <Element index="3" value="0.752941"/>
+        <Element index="4" value="39.2371643143554"/>
+        <Element index="5" value="0.865003"/>
+        <Element index="6" value="0.865003"/>
+        <Element index="7" value="0.865003"/>
+        <Element index="8" value="78.4743270874023"/>
+        <Element index="9" value="0.705882"/>
+        <Element index="10" value="0.0156863"/>
+        <Element index="11" value="0.14902"/>
+      </Property>
+      <Property name="RescaleOnVisibilityChange" id="12984.RescaleOnVisibilityChange" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12984.RescaleOnVisibilityChange.bool"/>
+      </Property>
+      <Property name="ScalarOpacityFunction" id="12984.ScalarOpacityFunction" number_of_elements="1">
+        <Proxy value="12983"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="12984.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="12984.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="ShowIndexedColorActiveValues" id="12984.ShowIndexedColorActiveValues" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12984.ShowIndexedColorActiveValues.bool"/>
+      </Property>
+      <Property name="UseAboveRangeColor" id="12984.UseAboveRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12984.UseAboveRangeColor.bool"/>
+      </Property>
+      <Property name="UseBelowRangeColor" id="12984.UseBelowRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12984.UseBelowRangeColor.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="12984.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12984.UseLogScale.bool"/>
+      </Property>
+      <Property name="VectorComponent" id="12984.VectorComponent" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="range" id="12984.VectorComponent.range"/>
+      </Property>
+      <Property name="VectorMode" id="12984.VectorMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="12984.VectorMode.enum">
+          <Entry value="0" text="Magnitude"/>
+          <Entry value="1" text="Component"/>
+        </Domain>
+      </Property>
+    </Proxy>
+    <Proxy group="lookup_tables" type="PVLookupTable" id="13940" servers="21">
+      <Property name="AboveRangeColor" id="13940.AboveRangeColor" number_of_elements="3">
+        <Element index="0" value="0.5"/>
+        <Element index="1" value="0.5"/>
+        <Element index="2" value="0.5"/>
+      </Property>
+      <Property name="ActiveAnnotatedValues" id="13940.ActiveAnnotatedValues"/>
+      <Property name="AllowDuplicateScalars" id="13940.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13940.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Annotations" id="13940.Annotations"/>
+      <Property name="AutomaticRescaleRangeMode" id="13940.AutomaticRescaleRangeMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="13940.AutomaticRescaleRangeMode.enum">
+          <Entry value="-1" text="Never"/>
+          <Entry value="0" text="Grow and update on &#x27;Apply&#x27;"/>
+          <Entry value="1" text="Grow and update every timestep"/>
+          <Entry value="3" text="Clamp and update every timestep"/>
+        </Domain>
+      </Property>
+      <Property name="BelowRangeColor" id="13940.BelowRangeColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="Build" id="13940.Build"/>
+      <Property name="ColorSpace" id="13940.ColorSpace" number_of_elements="1">
+        <Element index="0" value="3"/>
+        <Domain name="enum" id="13940.ColorSpace.enum">
+          <Entry value="0" text="RGB"/>
+          <Entry value="1" text="HSV"/>
+          <Entry value="2" text="Lab"/>
+          <Entry value="3" text="Diverging"/>
+          <Entry value="4" text="Lab/CIEDE2000"/>
+        </Domain>
+      </Property>
+      <Property name="Discretize" id="13940.Discretize" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13940.Discretize.bool"/>
+      </Property>
+      <Property name="EnableOpacityMapping" id="13940.EnableOpacityMapping" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13940.EnableOpacityMapping.bool"/>
+      </Property>
+      <Property name="HSVWrap" id="13940.HSVWrap" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13940.HSVWrap.bool"/>
+      </Property>
+      <Property name="IndexedColors" id="13940.IndexedColors"/>
+      <Property name="IndexedLookup" id="13940.IndexedLookup" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13940.IndexedLookup.bool"/>
+      </Property>
+      <Property name="IndexedOpacities" id="13940.IndexedOpacities"/>
+      <Property name="NanColor" id="13940.NanColor" number_of_elements="3">
+        <Element index="0" value="1"/>
+        <Element index="1" value="1"/>
+        <Element index="2" value="0"/>
+      </Property>
+      <Property name="NumberOfTableValues" id="13940.NumberOfTableValues" number_of_elements="1">
+        <Element index="0" value="256"/>
+        <Domain name="range" id="13940.NumberOfTableValues.range"/>
+      </Property>
+      <Property name="RGBPoints" id="13940.RGBPoints" number_of_elements="12">
+        <Element index="0" value="3.5425443911663e-08"/>
+        <Element index="1" value="0.231373"/>
+        <Element index="2" value="0.298039"/>
+        <Element index="3" value="0.752941"/>
+        <Element index="4" value="1.79283048851177e-07"/>
+        <Element index="5" value="0.865003"/>
+        <Element index="6" value="0.865003"/>
+        <Element index="7" value="0.865003"/>
+        <Element index="8" value="3.23140653790688e-07"/>
+        <Element index="9" value="0.705882"/>
+        <Element index="10" value="0.0156863"/>
+        <Element index="11" value="0.14902"/>
+      </Property>
+      <Property name="RescaleOnVisibilityChange" id="13940.RescaleOnVisibilityChange" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13940.RescaleOnVisibilityChange.bool"/>
+      </Property>
+      <Property name="ScalarOpacityFunction" id="13940.ScalarOpacityFunction" number_of_elements="1">
+        <Proxy value="13939"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="13940.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13940.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="ShowIndexedColorActiveValues" id="13940.ShowIndexedColorActiveValues" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13940.ShowIndexedColorActiveValues.bool"/>
+      </Property>
+      <Property name="UseAboveRangeColor" id="13940.UseAboveRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13940.UseAboveRangeColor.bool"/>
+      </Property>
+      <Property name="UseBelowRangeColor" id="13940.UseBelowRangeColor" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13940.UseBelowRangeColor.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="13940.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13940.UseLogScale.bool"/>
+      </Property>
+      <Property name="VectorComponent" id="13940.VectorComponent" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="range" id="13940.VectorComponent.range"/>
+      </Property>
+      <Property name="VectorMode" id="13940.VectorMode" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="13940.VectorMode.enum">
+          <Entry value="0" text="Magnitude"/>
+          <Entry value="1" text="Component"/>
+        </Domain>
+      </Property>
+    </Proxy>
+    <Proxy group="materials" type="MaterialLibrary" id="263" servers="20">
+      <Property name="LoadMaterials" id="263.LoadMaterials" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+    </Proxy>
+    <Proxy group="piecewise_functions" type="PiecewiseFunction" id="12975" servers="21">
+      <Property name="AllowDuplicateScalars" id="12975.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="12975.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Points" id="12975.Points" number_of_elements="8">
+        <Element index="0" value="1.54130839291611e-06"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0.5"/>
+        <Element index="3" value="0"/>
+        <Element index="4" value="107.577430725098"/>
+        <Element index="5" value="1"/>
+        <Element index="6" value="0.5"/>
+        <Element index="7" value="0"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="12975.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="12975.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="12975.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12975.UseLogScale.bool"/>
+      </Property>
+    </Proxy>
+    <Proxy group="piecewise_functions" type="PiecewiseFunction" id="13391" servers="21">
+      <Property name="AllowDuplicateScalars" id="13391.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13391.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Points" id="13391.Points" number_of_elements="8">
+        <Element index="0" value="3.54254441133516e-08"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0.5"/>
+        <Element index="3" value="0"/>
+        <Element index="4" value="3.23140663310497e-07"/>
+        <Element index="5" value="1"/>
+        <Element index="6" value="0.5"/>
+        <Element index="7" value="0"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="13391.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13391.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="13391.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13391.UseLogScale.bool"/>
+      </Property>
+    </Proxy>
+    <Proxy group="piecewise_functions" type="PiecewiseFunction" id="13146" servers="21">
+      <Property name="AllowDuplicateScalars" id="13146.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13146.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Points" id="13146.Points" number_of_elements="8">
+        <Element index="0" value="0.033345952630043"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0.5"/>
+        <Element index="3" value="0"/>
+        <Element index="4" value="0.0333535820245743"/>
+        <Element index="5" value="1"/>
+        <Element index="6" value="0.5"/>
+        <Element index="7" value="0"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="13146.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13146.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="13146.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13146.UseLogScale.bool"/>
+      </Property>
+    </Proxy>
+    <Proxy group="piecewise_functions" type="PiecewiseFunction" id="14543" servers="21">
+      <Property name="AllowDuplicateScalars" id="14543.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14543.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Points" id="14543.Points" number_of_elements="8">
+        <Element index="0" value="0.033345952630043"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0.5"/>
+        <Element index="3" value="0"/>
+        <Element index="4" value="0.0333535820245743"/>
+        <Element index="5" value="1"/>
+        <Element index="6" value="0.5"/>
+        <Element index="7" value="0"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="14543.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14543.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="14543.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14543.UseLogScale.bool"/>
+      </Property>
+    </Proxy>
+    <Proxy group="piecewise_functions" type="PiecewiseFunction" id="13628" servers="21">
+      <Property name="AllowDuplicateScalars" id="13628.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13628.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Points" id="13628.Points" number_of_elements="8">
+        <Element index="0" value="2.50904986387468e-06"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0.5"/>
+        <Element index="3" value="0"/>
+        <Element index="4" value="2.50969310400251e-06"/>
+        <Element index="5" value="1"/>
+        <Element index="6" value="0.5"/>
+        <Element index="7" value="0"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="13628.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13628.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="13628.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13628.UseLogScale.bool"/>
+      </Property>
+    </Proxy>
+    <Proxy group="piecewise_functions" type="PiecewiseFunction" id="14567" servers="21">
+      <Property name="AllowDuplicateScalars" id="14567.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14567.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Points" id="14567.Points" number_of_elements="8">
+        <Element index="0" value="2.50904986387468e-06"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0.5"/>
+        <Element index="3" value="0"/>
+        <Element index="4" value="2.50969310400251e-06"/>
+        <Element index="5" value="1"/>
+        <Element index="6" value="0.5"/>
+        <Element index="7" value="0"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="14567.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14567.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="14567.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14567.UseLogScale.bool"/>
+      </Property>
+    </Proxy>
+    <Proxy group="piecewise_functions" type="PiecewiseFunction" id="13228" servers="21">
+      <Property name="AllowDuplicateScalars" id="13228.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13228.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Points" id="13228.Points" number_of_elements="8">
+        <Element index="0" value="1.52065557898893e-06"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0.5"/>
+        <Element index="3" value="0"/>
+        <Element index="4" value="78.4743246009747"/>
+        <Element index="5" value="1"/>
+        <Element index="6" value="0.5"/>
+        <Element index="7" value="0"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="13228.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13228.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="13228.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13228.UseLogScale.bool"/>
+      </Property>
+    </Proxy>
+    <Proxy group="piecewise_functions" type="PiecewiseFunction" id="12983" servers="21">
+      <Property name="AllowDuplicateScalars" id="12983.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="12983.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Points" id="12983.Points" number_of_elements="8">
+        <Element index="0" value="1.54130839291611e-06"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0.5"/>
+        <Element index="3" value="0"/>
+        <Element index="4" value="78.4743270874023"/>
+        <Element index="5" value="1"/>
+        <Element index="6" value="0.5"/>
+        <Element index="7" value="0"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="12983.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="12983.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="12983.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="12983.UseLogScale.bool"/>
+      </Property>
+    </Proxy>
+    <Proxy group="piecewise_functions" type="PiecewiseFunction" id="13939" servers="21">
+      <Property name="AllowDuplicateScalars" id="13939.AllowDuplicateScalars" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13939.AllowDuplicateScalars.bool"/>
+      </Property>
+      <Property name="Points" id="13939.Points" number_of_elements="8">
+        <Element index="0" value="3.5425443911663e-08"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0.5"/>
+        <Element index="3" value="0"/>
+        <Element index="4" value="3.23140653790688e-07"/>
+        <Element index="5" value="1"/>
+        <Element index="6" value="0.5"/>
+        <Element index="7" value="0"/>
+      </Property>
+      <Property name="ScalarRangeInitialized" id="13939.ScalarRangeInitialized" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="13939.ScalarRangeInitialized.bool"/>
+      </Property>
+      <Property name="UseLogScale" id="13939.UseLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="13939.UseLogScale.bool"/>
+      </Property>
+    </Proxy>
+    <Proxy group="misc" type="RepresentationAnimationHelper" id="14986" servers="16">
+      <Property name="Source" id="14986.Source" number_of_elements="1">
+        <Proxy value="14975"/>
+      </Property>
+    </Proxy>
+    <Proxy group="misc" type="RepresentationAnimationHelper" id="15050" servers="16">
+      <Property name="Source" id="15050.Source" number_of_elements="1">
+        <Proxy value="15039"/>
+      </Property>
+    </Proxy>
+    <Proxy group="misc" type="RepresentationAnimationHelper" id="15062" servers="16">
+      <Property name="Source" id="15062.Source" number_of_elements="1">
+        <Proxy value="15051"/>
+      </Property>
+    </Proxy>
+    <Proxy group="misc" type="RepresentationAnimationHelper" id="15074" servers="16">
+      <Property name="Source" id="15074.Source" number_of_elements="1">
+        <Proxy value="15063"/>
+      </Property>
+    </Proxy>
+    <Proxy group="misc" type="RepresentationAnimationHelper" id="15086" servers="16">
+      <Property name="Source" id="15086.Source" number_of_elements="1">
+        <Proxy value="15075"/>
+      </Property>
+    </Proxy>
+    <Proxy group="misc" type="RepresentationAnimationHelper" id="15201" servers="16">
+      <Property name="Source" id="15201.Source" number_of_elements="1">
+        <Proxy value="15190"/>
+      </Property>
+    </Proxy>
+    <Proxy group="extended_sources" type="HighResLineSource" id="15157" servers="1">
+      <Property name="Point1" id="15157.Point1" number_of_elements="3">
+        <Element index="0" value="0.0500000081956387"/>
+        <Element index="1" value="0.0335003696382046"/>
+        <Element index="2" value="0.011009999999404"/>
+        <Domain name="range" id="15157.Point1.range"/>
+      </Property>
+      <Property name="Point2" id="15157.Point2" number_of_elements="3">
+        <Element index="0" value="0.0500000081956387"/>
+        <Element index="1" value="0.0664997845888138"/>
+        <Element index="2" value="0.0110099999922514"/>
+        <Domain name="range" id="15157.Point2.range"/>
+      </Property>
+      <Property name="Resolution" id="15157.Resolution" number_of_elements="1">
+        <Element index="0" value="1000"/>
+        <Domain name="range" id="15157.Resolution.range"/>
+      </Property>
+    </Proxy>
+    <Proxy group="representations" type="XYChartRepresentation" id="15216" servers="21">
+      <Property name="AttributeType" id="15216.AttributeType" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="15216.AttributeType.enum">
+          <Entry value="0" text="Point Data"/>
+          <Entry value="1" text="Cell Data"/>
+          <Entry value="2" text="Field Data"/>
+          <Entry value="4" text="Vertex Data"/>
+          <Entry value="5" text="Edge Data"/>
+          <Entry value="6" text="Row Data"/>
+        </Domain>
+      </Property>
+      <Property name="Color" id="15216.Color" number_of_elements="3">
+        <Element index="0" value="1"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="1"/>
+        <Domain name="range" id="15216.Color.range"/>
+      </Property>
+      <Property name="CompositeDataSetIndex" id="15216.CompositeDataSetIndex" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="tree" id="15216.CompositeDataSetIndex.tree"/>
+      </Property>
+      <Property name="Input" id="15216.Input" number_of_elements="1">
+        <Proxy value="15190" output_port="0"/>
+        <Domain name="input_type" id="15216.Input.input_type"/>
+      </Property>
+      <Property name="SeriesColor" id="15216.SeriesColor" number_of_elements="32">
+        <Element index="0" value="arc_length"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+        <Element index="3" value="0"/>
+        <Element index="4" value="potential real part"/>
+        <Element index="5" value="0.889998"/>
+        <Element index="6" value="0.100008"/>
+        <Element index="7" value="0.110002"/>
+        <Element index="8" value="result"/>
+        <Element index="9" value="0.666667"/>
+        <Element index="10" value="0"/>
+        <Element index="11" value="0"/>
+        <Element index="12" value="vtkValidPointMask"/>
+        <Element index="13" value="0.300008"/>
+        <Element index="14" value="0.689998"/>
+        <Element index="15" value="0.289998"/>
+        <Element index="16" value="Points_X"/>
+        <Element index="17" value="0.6"/>
+        <Element index="18" value="0.310002"/>
+        <Element index="19" value="0.639994"/>
+        <Element index="20" value="Points_Y"/>
+        <Element index="21" value="1"/>
+        <Element index="22" value="0.500008"/>
+        <Element index="23" value="0"/>
+        <Element index="24" value="Points_Z"/>
+        <Element index="25" value="0.650004"/>
+        <Element index="26" value="0.340002"/>
+        <Element index="27" value="0.160006"/>
+        <Element index="28" value="Points_Magnitude"/>
+        <Element index="29" value="0"/>
+        <Element index="30" value="0"/>
+        <Element index="31" value="0"/>
+        <Domain name="array_list" id="15216.SeriesColor.array_list">
+          <String text="arc_length"/>
+          <String text="potential real part"/>
+          <String text="result"/>
+          <String text="vtkValidPointMask"/>
+          <String text="Points_X"/>
+          <String text="Points_Y"/>
+          <String text="Points_Z"/>
+          <String text="Points_Magnitude"/>
+        </Domain>
+      </Property>
+      <Property name="SeriesLabel" id="15216.SeriesLabel" number_of_elements="16">
+        <Element index="0" value="arc_length"/>
+        <Element index="1" value="arc_length"/>
+        <Element index="2" value="potential real part"/>
+        <Element index="3" value="potential real part"/>
+        <Element index="4" value="result"/>
+        <Element index="5" value="result"/>
+        <Element index="6" value="vtkValidPointMask"/>
+        <Element index="7" value="vtkValidPointMask"/>
+        <Element index="8" value="Points_X"/>
+        <Element index="9" value="Points_X"/>
+        <Element index="10" value="Points_Y"/>
+        <Element index="11" value="Points_Y"/>
+        <Element index="12" value="Points_Z"/>
+        <Element index="13" value="Points_Z"/>
+        <Element index="14" value="Points_Magnitude"/>
+        <Element index="15" value="Points_Magnitude"/>
+        <Domain name="array_list" id="15216.SeriesLabel.array_list">
+          <String text="arc_length"/>
+          <String text="potential real part"/>
+          <String text="result"/>
+          <String text="vtkValidPointMask"/>
+          <String text="Points_X"/>
+          <String text="Points_Y"/>
+          <String text="Points_Z"/>
+          <String text="Points_Magnitude"/>
+        </Domain>
+      </Property>
+      <Property name="SeriesLabelPrefix" id="15216.SeriesLabelPrefix" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="SeriesLineStyle" id="15216.SeriesLineStyle" number_of_elements="16">
+        <Element index="0" value="Points_Magnitude"/>
+        <Element index="1" value="1"/>
+        <Element index="2" value="Points_X"/>
+        <Element index="3" value="1"/>
+        <Element index="4" value="Points_Y"/>
+        <Element index="5" value="1"/>
+        <Element index="6" value="Points_Z"/>
+        <Element index="7" value="1"/>
+        <Element index="8" value="arc_length"/>
+        <Element index="9" value="1"/>
+        <Element index="10" value="potential real part"/>
+        <Element index="11" value="1"/>
+        <Element index="12" value="result"/>
+        <Element index="13" value="1"/>
+        <Element index="14" value="vtkValidPointMask"/>
+        <Element index="15" value="1"/>
+        <Domain name="array_list" id="15216.SeriesLineStyle.array_list">
+          <String text="arc_length"/>
+          <String text="potential real part"/>
+          <String text="result"/>
+          <String text="vtkValidPointMask"/>
+          <String text="Points_X"/>
+          <String text="Points_Y"/>
+          <String text="Points_Z"/>
+          <String text="Points_Magnitude"/>
+        </Domain>
+      </Property>
+      <Property name="SeriesLineThickness" id="15216.SeriesLineThickness" number_of_elements="16">
+        <Element index="0" value="Points_Magnitude"/>
+        <Element index="1" value="2"/>
+        <Element index="2" value="Points_X"/>
+        <Element index="3" value="2"/>
+        <Element index="4" value="Points_Y"/>
+        <Element index="5" value="2"/>
+        <Element index="6" value="Points_Z"/>
+        <Element index="7" value="2"/>
+        <Element index="8" value="arc_length"/>
+        <Element index="9" value="2"/>
+        <Element index="10" value="potential real part"/>
+        <Element index="11" value="2"/>
+        <Element index="12" value="result"/>
+        <Element index="13" value="2"/>
+        <Element index="14" value="vtkValidPointMask"/>
+        <Element index="15" value="2"/>
+        <Domain name="array_list" id="15216.SeriesLineThickness.array_list">
+          <String text="arc_length"/>
+          <String text="potential real part"/>
+          <String text="result"/>
+          <String text="vtkValidPointMask"/>
+          <String text="Points_X"/>
+          <String text="Points_Y"/>
+          <String text="Points_Z"/>
+          <String text="Points_Magnitude"/>
+        </Domain>
+      </Property>
+      <Property name="SeriesMarkerStyle" id="15216.SeriesMarkerStyle" number_of_elements="16">
+        <Element index="0" value="Points_Magnitude"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="Points_X"/>
+        <Element index="3" value="0"/>
+        <Element index="4" value="Points_Y"/>
+        <Element index="5" value="0"/>
+        <Element index="6" value="Points_Z"/>
+        <Element index="7" value="0"/>
+        <Element index="8" value="arc_length"/>
+        <Element index="9" value="0"/>
+        <Element index="10" value="potential real part"/>
+        <Element index="11" value="0"/>
+        <Element index="12" value="result"/>
+        <Element index="13" value="0"/>
+        <Element index="14" value="vtkValidPointMask"/>
+        <Element index="15" value="0"/>
+        <Domain name="array_list" id="15216.SeriesMarkerStyle.array_list">
+          <String text="arc_length"/>
+          <String text="potential real part"/>
+          <String text="result"/>
+          <String text="vtkValidPointMask"/>
+          <String text="Points_X"/>
+          <String text="Points_Y"/>
+          <String text="Points_Z"/>
+          <String text="Points_Magnitude"/>
+        </Domain>
+      </Property>
+      <Property name="SeriesPlotCorner" id="15216.SeriesPlotCorner" number_of_elements="16">
+        <Element index="0" value="Points_Magnitude"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="Points_X"/>
+        <Element index="3" value="0"/>
+        <Element index="4" value="Points_Y"/>
+        <Element index="5" value="0"/>
+        <Element index="6" value="Points_Z"/>
+        <Element index="7" value="0"/>
+        <Element index="8" value="arc_length"/>
+        <Element index="9" value="0"/>
+        <Element index="10" value="potential real part"/>
+        <Element index="11" value="0"/>
+        <Element index="12" value="result"/>
+        <Element index="13" value="0"/>
+        <Element index="14" value="vtkValidPointMask"/>
+        <Element index="15" value="0"/>
+        <Domain name="array_list" id="15216.SeriesPlotCorner.array_list">
+          <String text="arc_length"/>
+          <String text="potential real part"/>
+          <String text="result"/>
+          <String text="vtkValidPointMask"/>
+          <String text="Points_X"/>
+          <String text="Points_Y"/>
+          <String text="Points_Z"/>
+          <String text="Points_Magnitude"/>
+        </Domain>
+      </Property>
+      <Property name="SeriesVisibility" id="15216.SeriesVisibility" number_of_elements="16">
+        <Element index="0" value="arc_length"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="potential real part"/>
+        <Element index="3" value="0"/>
+        <Element index="4" value="result"/>
+        <Element index="5" value="1"/>
+        <Element index="6" value="vtkValidPointMask"/>
+        <Element index="7" value="0"/>
+        <Element index="8" value="Points_X"/>
+        <Element index="9" value="0"/>
+        <Element index="10" value="Points_Y"/>
+        <Element index="11" value="0"/>
+        <Element index="12" value="Points_Z"/>
+        <Element index="13" value="0"/>
+        <Element index="14" value="Points_Magnitude"/>
+        <Element index="15" value="0"/>
+        <Domain name="array_list" id="15216.SeriesVisibility.array_list">
+          <String text="arc_length"/>
+          <String text="potential real part"/>
+          <String text="result"/>
+          <String text="vtkValidPointMask"/>
+          <String text="Points_X"/>
+          <String text="Points_Y"/>
+          <String text="Points_Z"/>
+          <String text="Points_Magnitude"/>
+        </Domain>
+      </Property>
+      <Property name="UseIndexForXAxis" id="15216.UseIndexForXAxis" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="15216.UseIndexForXAxis.bool"/>
+      </Property>
+      <Property name="Visibility" id="15216.Visibility" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="15216.Visibility.bool"/>
+      </Property>
+      <Property name="XArrayName" id="15216.XArrayName" number_of_elements="1">
+        <Element index="0" value="arc_length"/>
+        <Domain name="array_list" id="15216.XArrayName.array_list">
+          <String text="arc_length"/>
+          <String text="potential real part"/>
+          <String text="result"/>
+          <String text="vtkValidPointMask"/>
+          <String text="Points_X"/>
+          <String text="Points_Y"/>
+          <String text="Points_Z"/>
+          <String text="Points_Magnitude"/>
+        </Domain>
+      </Property>
+    </Proxy>
+    <Proxy group="filters" type="UnstructuredGradient" id="15051" servers="1">
+      <Property name="ComputeDivergence" id="15051.ComputeDivergence" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="15051.ComputeDivergence.bool"/>
+      </Property>
+      <Property name="ComputeGradient" id="15051.ComputeGradient" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="15051.ComputeGradient.bool"/>
+      </Property>
+      <Property name="ComputeQCriterion" id="15051.ComputeQCriterion" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="15051.ComputeQCriterion.bool"/>
+      </Property>
+      <Property name="ComputeVorticity" id="15051.ComputeVorticity" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="15051.ComputeVorticity.bool"/>
+      </Property>
+      <Property name="ContributingCellOption" id="15051.ContributingCellOption" number_of_elements="1">
+        <Element index="0" value="2"/>
+        <Domain name="enum" id="15051.ContributingCellOption.enum">
+          <Entry value="0" text="All"/>
+          <Entry value="1" text="Patch"/>
+          <Entry value="2" text="Dataset Max"/>
+        </Domain>
+      </Property>
+      <Property name="DivergenceArrayName" id="15051.DivergenceArrayName" number_of_elements="1">
+        <Element index="0" value="Divergence"/>
+      </Property>
+      <Property name="FasterApproximation" id="15051.FasterApproximation" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="15051.FasterApproximation.bool"/>
+      </Property>
+      <Property name="Input" id="15051.Input" number_of_elements="1">
+        <Proxy value="14975" output_port="0"/>
+        <Domain name="groups" id="15051.Input.groups"/>
+        <Domain name="input_array" id="15051.Input.input_array"/>
+        <Domain name="input_type" id="15051.Input.input_type"/>
+      </Property>
+      <Property name="QCriterionArrayName" id="15051.QCriterionArrayName" number_of_elements="1">
+        <Element index="0" value="Q-criterion"/>
+      </Property>
+      <Property name="ReplacementValueOption" id="15051.ReplacementValueOption" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="enum" id="15051.ReplacementValueOption.enum">
+          <Entry value="0" text="Zero"/>
+          <Entry value="1" text="NaN"/>
+          <Entry value="2" text="Data Type Min"/>
+          <Entry value="2" text="Data Type Max"/>
+        </Domain>
+      </Property>
+      <Property name="ResultArrayName" id="15051.ResultArrayName" number_of_elements="1">
+        <Element index="0" value="Gradients"/>
+      </Property>
+      <Property name="SelectInputScalars" id="15051.SelectInputScalars" number_of_elements="5">
+        <Element index="0" value=""/>
+        <Element index="1" value=""/>
+        <Element index="2" value=""/>
+        <Element index="3" value="0"/>
+        <Element index="4" value="potential real part"/>
+        <Domain name="array_list" id="15051.SelectInputScalars.array_list">
+          <String text="potential real part"/>
+        </Domain>
+        <Domain name="field_list" id="15051.SelectInputScalars.field_list">
+          <Entry value="0" text="Point Data"/>
+        </Domain>
+      </Property>
+      <Property name="VorticityArrayName" id="15051.VorticityArrayName" number_of_elements="1">
+        <Element index="0" value="Vorticity"/>
+      </Property>
+    </Proxy>
+    <Proxy group="filters" type="UnstructuredGradient" id="15063" servers="1">
+      <Property name="ComputeDivergence" id="15063.ComputeDivergence" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="15063.ComputeDivergence.bool"/>
+      </Property>
+      <Property name="ComputeGradient" id="15063.ComputeGradient" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="15063.ComputeGradient.bool"/>
+      </Property>
+      <Property name="ComputeQCriterion" id="15063.ComputeQCriterion" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="15063.ComputeQCriterion.bool"/>
+      </Property>
+      <Property name="ComputeVorticity" id="15063.ComputeVorticity" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="15063.ComputeVorticity.bool"/>
+      </Property>
+      <Property name="ContributingCellOption" id="15063.ContributingCellOption" number_of_elements="1">
+        <Element index="0" value="2"/>
+        <Domain name="enum" id="15063.ContributingCellOption.enum">
+          <Entry value="0" text="All"/>
+          <Entry value="1" text="Patch"/>
+          <Entry value="2" text="Dataset Max"/>
+        </Domain>
+      </Property>
+      <Property name="DivergenceArrayName" id="15063.DivergenceArrayName" number_of_elements="1">
+        <Element index="0" value="Divergence"/>
+      </Property>
+      <Property name="FasterApproximation" id="15063.FasterApproximation" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="15063.FasterApproximation.bool"/>
+      </Property>
+      <Property name="Input" id="15063.Input" number_of_elements="1">
+        <Proxy value="15039" output_port="0"/>
+        <Domain name="groups" id="15063.Input.groups"/>
+        <Domain name="input_array" id="15063.Input.input_array"/>
+        <Domain name="input_type" id="15063.Input.input_type"/>
+      </Property>
+      <Property name="QCriterionArrayName" id="15063.QCriterionArrayName" number_of_elements="1">
+        <Element index="0" value="Q-criterion"/>
+      </Property>
+      <Property name="ReplacementValueOption" id="15063.ReplacementValueOption" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="enum" id="15063.ReplacementValueOption.enum">
+          <Entry value="0" text="Zero"/>
+          <Entry value="1" text="NaN"/>
+          <Entry value="2" text="Data Type Min"/>
+          <Entry value="2" text="Data Type Max"/>
+        </Domain>
+      </Property>
+      <Property name="ResultArrayName" id="15063.ResultArrayName" number_of_elements="1">
+        <Element index="0" value="Gradients"/>
+      </Property>
+      <Property name="SelectInputScalars" id="15063.SelectInputScalars" number_of_elements="5">
+        <Element index="0" value=""/>
+        <Element index="1" value=""/>
+        <Element index="2" value=""/>
+        <Element index="3" value="0"/>
+        <Element index="4" value="potential imag part"/>
+        <Domain name="array_list" id="15063.SelectInputScalars.array_list">
+          <String text="potential imag part"/>
+        </Domain>
+        <Domain name="field_list" id="15063.SelectInputScalars.field_list">
+          <Entry value="0" text="Point Data"/>
+        </Domain>
+      </Property>
+      <Property name="VorticityArrayName" id="15063.VorticityArrayName" number_of_elements="1">
+        <Element index="0" value="Vorticity"/>
+      </Property>
+    </Proxy>
+    <Proxy group="filters" type="ProbeLine" id="15190" servers="1">
+      <Property name="ComputeTolerance" id="15190.ComputeTolerance" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="15190.ComputeTolerance.bool"/>
+      </Property>
+      <Property name="Input" id="15190.Input" number_of_elements="1">
+        <Proxy value="15075" output_port="0"/>
+        <Domain name="groups" id="15190.Input.groups"/>
+        <Domain name="input_array" id="15190.Input.input_array"/>
+        <Domain name="input_type" id="15190.Input.input_type"/>
+      </Property>
+      <Property name="PassPartialArrays" id="15190.PassPartialArrays" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="15190.PassPartialArrays.bool"/>
+      </Property>
+      <Property name="Source" id="15190.Source" number_of_elements="1">
+        <Proxy value="15157" output_port="0"/>
+        <Domain name="groups" id="15190.Source.groups"/>
+        <Domain name="proxy_list" id="15190.Source.proxy_list">
+          <Proxy value="15157"/>
+        </Domain>
+      </Property>
+      <Property name="Tolerance" id="15190.Tolerance" number_of_elements="1">
+        <Element index="0" value="2.22044604925031e-16"/>
+        <Domain name="range" id="15190.Tolerance.range"/>
+      </Property>
+    </Proxy>
+    <Proxy group="filters" type="PythonCalculator" id="15075" servers="1">
+      <Property name="ArrayAssociation" id="15075.ArrayAssociation" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="15075.ArrayAssociation.enum">
+          <Entry value="0" text="Point Data"/>
+          <Entry value="1" text="Cell Data"/>
+        </Domain>
+      </Property>
+      <Property name="ArrayName" id="15075.ArrayName" number_of_elements="1">
+        <Element index="0" value="result"/>
+      </Property>
+      <Property name="CopyArrays" id="15075.CopyArrays" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="15075.CopyArrays.bool"/>
+      </Property>
+      <Property name="Expression" id="15075.Expression" number_of_elements="1">
+        <Element index="0" value="sqrt(dot(inputs[1].PointData[&#x27;Gradients&#x27;], inputs[1].PointData[&#x27;Gradients&#x27;]) + dot(inputs[3].PointData[&#x27;Gradients&#x27;], inputs[3].PointData[&#x27;Gradients&#x27;]))"/>
+      </Property>
+      <Property name="Input" id="15075.Input" number_of_elements="4">
+        <Proxy value="14975" output_port="0"/>
+        <Proxy value="15051" output_port="0"/>
+        <Proxy value="15039" output_port="0"/>
+        <Proxy value="15063" output_port="0"/>
+        <Domain name="groups" id="15075.Input.groups"/>
+        <Domain name="input_type" id="15075.Input.input_type"/>
+      </Property>
+    </Proxy>
+    <Proxy group="sources" type="Xdmf3ReaderS" id="15039" servers="1">
+      <Property name="AsTime" id="15039.AsTime" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="15039.AsTime.bool"/>
+      </Property>
+      <Property name="CellArrayInfo" id="15039.CellArrayInfo"/>
+      <Property name="CellArrayStatus" id="15039.CellArrayStatus">
+        <Domain name="array_list" id="15039.CellArrayStatus.array_list"/>
+      </Property>
+      <Property name="FileName" id="15039.FileName" number_of_elements="1">
+        <Element index="0" value="/data/julius/gitlab/EMStimTools/examples/Griffin2011/results/solution_imagstudy_griffin2011.xdmf"/>
+        <Domain name="files" id="15039.FileName.files"/>
+      </Property>
+      <Property name="PointArrayInfo" id="15039.PointArrayInfo"/>
+      <Property name="PointArrayStatus" id="15039.PointArrayStatus">
+        <Domain name="array_list" id="15039.PointArrayStatus.array_list"/>
+      </Property>
+      <Property name="SetInfo" id="15039.SetInfo"/>
+      <Property name="SetStatus" id="15039.SetStatus">
+        <Domain name="array_list" id="15039.SetStatus.array_list"/>
+      </Property>
+      <Property name="TimestepValues" id="15039.TimestepValues" number_of_elements="1">
+        <Element index="0" value="15"/>
+      </Property>
+    </Proxy>
+    <Proxy group="sources" type="Xdmf3ReaderS" id="14975" servers="1">
+      <Property name="AsTime" id="14975.AsTime" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14975.AsTime.bool"/>
+      </Property>
+      <Property name="CellArrayInfo" id="14975.CellArrayInfo"/>
+      <Property name="CellArrayStatus" id="14975.CellArrayStatus">
+        <Domain name="array_list" id="14975.CellArrayStatus.array_list"/>
+      </Property>
+      <Property name="FileName" id="14975.FileName" number_of_elements="1">
+        <Element index="0" value="/data/julius/gitlab/EMStimTools/examples/Griffin2011/results/solution_realstudy_griffin2011.xdmf"/>
+        <Domain name="files" id="14975.FileName.files"/>
+      </Property>
+      <Property name="PointArrayInfo" id="14975.PointArrayInfo"/>
+      <Property name="PointArrayStatus" id="14975.PointArrayStatus">
+        <Domain name="array_list" id="14975.PointArrayStatus.array_list"/>
+      </Property>
+      <Property name="SetInfo" id="14975.SetInfo"/>
+      <Property name="SetStatus" id="14975.SetStatus">
+        <Domain name="array_list" id="14975.SetStatus.array_list"/>
+      </Property>
+      <Property name="TimestepValues" id="14975.TimestepValues" number_of_elements="1">
+        <Element index="0" value="15"/>
+      </Property>
+    </Proxy>
+    <Proxy group="misc" type="TimeKeeper" id="259" servers="16">
+      <Property name="SuppressedTimeSources" id="259.SuppressedTimeSources"/>
+      <Property name="Time" id="259.Time" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="range" id="259.Time.range"/>
+      </Property>
+      <Property name="TimeLabel" id="259.TimeLabel" number_of_elements="1">
+        <Element index="0" value="Time"/>
+      </Property>
+      <Property name="TimeRange" id="259.TimeRange" number_of_elements="2">
+        <Element index="0" value="15"/>
+        <Element index="1" value="15"/>
+      </Property>
+      <Property name="TimeSources" id="259.TimeSources" number_of_elements="6">
+        <Proxy value="14975"/>
+        <Proxy value="15039"/>
+        <Proxy value="15051"/>
+        <Proxy value="15063"/>
+        <Proxy value="15075"/>
+        <Proxy value="15190"/>
+      </Property>
+      <Property name="TimestepValues" id="259.TimestepValues" number_of_elements="1">
+        <Element index="0" value="15"/>
+      </Property>
+      <Property name="Views" id="259.Views" number_of_elements="1">
+        <Proxy value="14878"/>
+      </Property>
+    </Proxy>
+    <Proxy group="views" type="XYChartView" id="14878" servers="21">
+      <Property name="BottomAxisColor" id="14878.BottomAxisColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+        <Domain name="range" id="14878.BottomAxisColor.range"/>
+      </Property>
+      <Property name="BottomAxisGridColor" id="14878.BottomAxisGridColor" number_of_elements="3">
+        <Element index="0" value="0.95"/>
+        <Element index="1" value="0.95"/>
+        <Element index="2" value="0.95"/>
+        <Domain name="range" id="14878.BottomAxisGridColor.range"/>
+      </Property>
+      <Property name="BottomAxisLabelBold" id="14878.BottomAxisLabelBold" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.BottomAxisLabelBold.bool"/>
+      </Property>
+      <Property name="BottomAxisLabelColor" id="14878.BottomAxisLabelColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+        <Domain name="range" id="14878.BottomAxisLabelColor.range"/>
+      </Property>
+      <Property name="BottomAxisLabelFontFamily" id="14878.BottomAxisLabelFontFamily" number_of_elements="1">
+        <Element index="0" value="Arial"/>
+        <Domain name="list" id="14878.BottomAxisLabelFontFamily.list">
+          <String text="Arial"/>
+          <String text="Courier"/>
+          <String text="Times"/>
+          <String text="File"/>
+        </Domain>
+      </Property>
+      <Property name="BottomAxisLabelFontFile" id="14878.BottomAxisLabelFontFile" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="BottomAxisLabelFontSize" id="14878.BottomAxisLabelFontSize" number_of_elements="1">
+        <Element index="0" value="12"/>
+      </Property>
+      <Property name="BottomAxisLabelItalic" id="14878.BottomAxisLabelItalic" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.BottomAxisLabelItalic.bool"/>
+      </Property>
+      <Property name="BottomAxisLabelNotation" id="14878.BottomAxisLabelNotation" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="14878.BottomAxisLabelNotation.enum">
+          <Entry value="0" text="Mixed"/>
+          <Entry value="1" text="Scientific"/>
+          <Entry value="2" text="Fixed"/>
+        </Domain>
+      </Property>
+      <Property name="BottomAxisLabelPrecision" id="14878.BottomAxisLabelPrecision" number_of_elements="1">
+        <Element index="0" value="2"/>
+        <Domain name="range" id="14878.BottomAxisLabelPrecision.range"/>
+      </Property>
+      <Property name="BottomAxisLabels" id="14878.BottomAxisLabels">
+        <Domain name="scalar_range" id="14878.BottomAxisLabels.scalar_range"/>
+      </Property>
+      <Property name="BottomAxisLogScale" id="14878.BottomAxisLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.BottomAxisLogScale.bool"/>
+      </Property>
+      <Property name="BottomAxisRangeMaximum" id="14878.BottomAxisRangeMaximum" number_of_elements="1">
+        <Element index="0" value="0.035"/>
+      </Property>
+      <Property name="BottomAxisRangeMinimum" id="14878.BottomAxisRangeMinimum" number_of_elements="1">
+        <Element index="0" value="0"/>
+      </Property>
+      <Property name="BottomAxisTitle" id="14878.BottomAxisTitle" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="BottomAxisTitleBold" id="14878.BottomAxisTitleBold" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14878.BottomAxisTitleBold.bool"/>
+      </Property>
+      <Property name="BottomAxisTitleColor" id="14878.BottomAxisTitleColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+        <Domain name="range" id="14878.BottomAxisTitleColor.range"/>
+      </Property>
+      <Property name="BottomAxisTitleFontFamily" id="14878.BottomAxisTitleFontFamily" number_of_elements="1">
+        <Element index="0" value="Arial"/>
+        <Domain name="list" id="14878.BottomAxisTitleFontFamily.list">
+          <String text="Arial"/>
+          <String text="Courier"/>
+          <String text="Times"/>
+          <String text="File"/>
+        </Domain>
+      </Property>
+      <Property name="BottomAxisTitleFontFile" id="14878.BottomAxisTitleFontFile" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="BottomAxisTitleFontSize" id="14878.BottomAxisTitleFontSize" number_of_elements="1">
+        <Element index="0" value="12"/>
+      </Property>
+      <Property name="BottomAxisTitleItalic" id="14878.BottomAxisTitleItalic" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.BottomAxisTitleItalic.bool"/>
+      </Property>
+      <Property name="BottomAxisUseCustomLabels" id="14878.BottomAxisUseCustomLabels" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.BottomAxisUseCustomLabels.bool"/>
+      </Property>
+      <Property name="BottomAxisUseCustomRange" id="14878.BottomAxisUseCustomRange" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.BottomAxisUseCustomRange.bool"/>
+      </Property>
+      <Property name="CacheKey" id="14878.CacheKey" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="range" id="14878.CacheKey.range"/>
+      </Property>
+      <Property name="ChartTitle" id="14878.ChartTitle" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="ChartTitleAlignment" id="14878.ChartTitleAlignment" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="enum" id="14878.ChartTitleAlignment.enum">
+          <Entry value="0" text="Left"/>
+          <Entry value="1" text="Center"/>
+          <Entry value="2" text="Right"/>
+        </Domain>
+      </Property>
+      <Property name="ChartTitleBold" id="14878.ChartTitleBold" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.ChartTitleBold.bool"/>
+      </Property>
+      <Property name="ChartTitleColor" id="14878.ChartTitleColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+        <Domain name="range" id="14878.ChartTitleColor.range"/>
+      </Property>
+      <Property name="ChartTitleFontFamily" id="14878.ChartTitleFontFamily" number_of_elements="1">
+        <Element index="0" value="Arial"/>
+        <Domain name="list" id="14878.ChartTitleFontFamily.list">
+          <String text="Arial"/>
+          <String text="Courier"/>
+          <String text="Times"/>
+          <String text="File"/>
+        </Domain>
+      </Property>
+      <Property name="ChartTitleFontFile" id="14878.ChartTitleFontFile" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="ChartTitleFontSize" id="14878.ChartTitleFontSize" number_of_elements="1">
+        <Element index="0" value="14"/>
+      </Property>
+      <Property name="ChartTitleItalic" id="14878.ChartTitleItalic" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.ChartTitleItalic.bool"/>
+      </Property>
+      <Property name="HideTimeMarker" id="14878.HideTimeMarker" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.HideTimeMarker.bool"/>
+      </Property>
+      <Property name="LeftAxisColor" id="14878.LeftAxisColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+        <Domain name="range" id="14878.LeftAxisColor.range"/>
+      </Property>
+      <Property name="LeftAxisGridColor" id="14878.LeftAxisGridColor" number_of_elements="3">
+        <Element index="0" value="0.95"/>
+        <Element index="1" value="0.95"/>
+        <Element index="2" value="0.95"/>
+        <Domain name="range" id="14878.LeftAxisGridColor.range"/>
+      </Property>
+      <Property name="LeftAxisLabelBold" id="14878.LeftAxisLabelBold" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.LeftAxisLabelBold.bool"/>
+      </Property>
+      <Property name="LeftAxisLabelColor" id="14878.LeftAxisLabelColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+        <Domain name="range" id="14878.LeftAxisLabelColor.range"/>
+      </Property>
+      <Property name="LeftAxisLabelFontFamily" id="14878.LeftAxisLabelFontFamily" number_of_elements="1">
+        <Element index="0" value="Arial"/>
+        <Domain name="list" id="14878.LeftAxisLabelFontFamily.list">
+          <String text="Arial"/>
+          <String text="Courier"/>
+          <String text="Times"/>
+          <String text="File"/>
+        </Domain>
+      </Property>
+      <Property name="LeftAxisLabelFontFile" id="14878.LeftAxisLabelFontFile" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="LeftAxisLabelFontSize" id="14878.LeftAxisLabelFontSize" number_of_elements="1">
+        <Element index="0" value="12"/>
+      </Property>
+      <Property name="LeftAxisLabelItalic" id="14878.LeftAxisLabelItalic" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.LeftAxisLabelItalic.bool"/>
+      </Property>
+      <Property name="LeftAxisLabelNotation" id="14878.LeftAxisLabelNotation" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="14878.LeftAxisLabelNotation.enum">
+          <Entry value="0" text="Mixed"/>
+          <Entry value="1" text="Scientific"/>
+          <Entry value="2" text="Fixed"/>
+        </Domain>
+      </Property>
+      <Property name="LeftAxisLabelPrecision" id="14878.LeftAxisLabelPrecision" number_of_elements="1">
+        <Element index="0" value="2"/>
+        <Domain name="range" id="14878.LeftAxisLabelPrecision.range"/>
+      </Property>
+      <Property name="LeftAxisLabels" id="14878.LeftAxisLabels">
+        <Domain name="scalar_range" id="14878.LeftAxisLabels.scalar_range"/>
+      </Property>
+      <Property name="LeftAxisLogScale" id="14878.LeftAxisLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.LeftAxisLogScale.bool"/>
+      </Property>
+      <Property name="LeftAxisRangeMaximum" id="14878.LeftAxisRangeMaximum" number_of_elements="1">
+        <Element index="0" value="24"/>
+      </Property>
+      <Property name="LeftAxisRangeMinimum" id="14878.LeftAxisRangeMinimum" number_of_elements="1">
+        <Element index="0" value="0"/>
+      </Property>
+      <Property name="LeftAxisTitle" id="14878.LeftAxisTitle" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="LeftAxisTitleBold" id="14878.LeftAxisTitleBold" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14878.LeftAxisTitleBold.bool"/>
+      </Property>
+      <Property name="LeftAxisTitleColor" id="14878.LeftAxisTitleColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+        <Domain name="range" id="14878.LeftAxisTitleColor.range"/>
+      </Property>
+      <Property name="LeftAxisTitleFontFamily" id="14878.LeftAxisTitleFontFamily" number_of_elements="1">
+        <Element index="0" value="Arial"/>
+        <Domain name="list" id="14878.LeftAxisTitleFontFamily.list">
+          <String text="Arial"/>
+          <String text="Courier"/>
+          <String text="Times"/>
+          <String text="File"/>
+        </Domain>
+      </Property>
+      <Property name="LeftAxisTitleFontFile" id="14878.LeftAxisTitleFontFile" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="LeftAxisTitleFontSize" id="14878.LeftAxisTitleFontSize" number_of_elements="1">
+        <Element index="0" value="12"/>
+      </Property>
+      <Property name="LeftAxisTitleItalic" id="14878.LeftAxisTitleItalic" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.LeftAxisTitleItalic.bool"/>
+      </Property>
+      <Property name="LeftAxisUseCustomLabels" id="14878.LeftAxisUseCustomLabels" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.LeftAxisUseCustomLabels.bool"/>
+      </Property>
+      <Property name="LeftAxisUseCustomRange" id="14878.LeftAxisUseCustomRange" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.LeftAxisUseCustomRange.bool"/>
+      </Property>
+      <Property name="LegendBold" id="14878.LegendBold" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.LegendBold.bool"/>
+      </Property>
+      <Property name="LegendFontFamily" id="14878.LegendFontFamily" number_of_elements="1">
+        <Element index="0" value="Arial"/>
+        <Domain name="list" id="14878.LegendFontFamily.list">
+          <String text="Arial"/>
+          <String text="Courier"/>
+          <String text="Times"/>
+          <String text="File"/>
+        </Domain>
+      </Property>
+      <Property name="LegendFontFile" id="14878.LegendFontFile" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="LegendFontSize" id="14878.LegendFontSize" number_of_elements="1">
+        <Element index="0" value="12"/>
+      </Property>
+      <Property name="LegendItalic" id="14878.LegendItalic" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.LegendItalic.bool"/>
+      </Property>
+      <Property name="LegendLocation" id="14878.LegendLocation" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="enum" id="14878.LegendLocation.enum">
+          <Entry value="0" text="TopLeft"/>
+          <Entry value="1" text="TopRight"/>
+          <Entry value="2" text="BottomRight"/>
+          <Entry value="3" text="BottomLeft"/>
+          <Entry value="4" text="Left"/>
+          <Entry value="5" text="Top"/>
+          <Entry value="6" text="Right"/>
+          <Entry value="7" text="Bottom"/>
+          <Entry value="8" text="Custom"/>
+        </Domain>
+      </Property>
+      <Property name="LegendPosition" id="14878.LegendPosition" number_of_elements="2">
+        <Element index="0" value="413"/>
+        <Element index="1" value="778"/>
+      </Property>
+      <Property name="PPI" id="14878.PPI" number_of_elements="1">
+        <Element index="0" value="96"/>
+      </Property>
+      <Property name="Representations" id="14878.Representations" number_of_elements="1">
+        <Proxy value="15216"/>
+      </Property>
+      <Property name="RightAxisColor" id="14878.RightAxisColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+        <Domain name="range" id="14878.RightAxisColor.range"/>
+      </Property>
+      <Property name="RightAxisGridColor" id="14878.RightAxisGridColor" number_of_elements="3">
+        <Element index="0" value="0.95"/>
+        <Element index="1" value="0.95"/>
+        <Element index="2" value="0.95"/>
+        <Domain name="range" id="14878.RightAxisGridColor.range"/>
+      </Property>
+      <Property name="RightAxisLabelBold" id="14878.RightAxisLabelBold" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.RightAxisLabelBold.bool"/>
+      </Property>
+      <Property name="RightAxisLabelColor" id="14878.RightAxisLabelColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+        <Domain name="range" id="14878.RightAxisLabelColor.range"/>
+      </Property>
+      <Property name="RightAxisLabelFontFamily" id="14878.RightAxisLabelFontFamily" number_of_elements="1">
+        <Element index="0" value="Arial"/>
+        <Domain name="list" id="14878.RightAxisLabelFontFamily.list">
+          <String text="Arial"/>
+          <String text="Courier"/>
+          <String text="Times"/>
+          <String text="File"/>
+        </Domain>
+      </Property>
+      <Property name="RightAxisLabelFontFile" id="14878.RightAxisLabelFontFile" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="RightAxisLabelFontSize" id="14878.RightAxisLabelFontSize" number_of_elements="1">
+        <Element index="0" value="12"/>
+      </Property>
+      <Property name="RightAxisLabelItalic" id="14878.RightAxisLabelItalic" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.RightAxisLabelItalic.bool"/>
+      </Property>
+      <Property name="RightAxisLabelNotation" id="14878.RightAxisLabelNotation" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="14878.RightAxisLabelNotation.enum">
+          <Entry value="0" text="Mixed"/>
+          <Entry value="1" text="Scientific"/>
+          <Entry value="2" text="Fixed"/>
+        </Domain>
+      </Property>
+      <Property name="RightAxisLabelPrecision" id="14878.RightAxisLabelPrecision" number_of_elements="1">
+        <Element index="0" value="2"/>
+        <Domain name="range" id="14878.RightAxisLabelPrecision.range"/>
+      </Property>
+      <Property name="RightAxisLabels" id="14878.RightAxisLabels">
+        <Domain name="scalar_range" id="14878.RightAxisLabels.scalar_range"/>
+      </Property>
+      <Property name="RightAxisLogScale" id="14878.RightAxisLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.RightAxisLogScale.bool"/>
+      </Property>
+      <Property name="RightAxisRangeMaximum" id="14878.RightAxisRangeMaximum" number_of_elements="1">
+        <Element index="0" value="6.66"/>
+      </Property>
+      <Property name="RightAxisRangeMinimum" id="14878.RightAxisRangeMinimum" number_of_elements="1">
+        <Element index="0" value="0"/>
+      </Property>
+      <Property name="RightAxisTitle" id="14878.RightAxisTitle" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="RightAxisTitleBold" id="14878.RightAxisTitleBold" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14878.RightAxisTitleBold.bool"/>
+      </Property>
+      <Property name="RightAxisTitleColor" id="14878.RightAxisTitleColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+        <Domain name="range" id="14878.RightAxisTitleColor.range"/>
+      </Property>
+      <Property name="RightAxisTitleFontFamily" id="14878.RightAxisTitleFontFamily" number_of_elements="1">
+        <Element index="0" value="Arial"/>
+        <Domain name="list" id="14878.RightAxisTitleFontFamily.list">
+          <String text="Arial"/>
+          <String text="Courier"/>
+          <String text="Times"/>
+          <String text="File"/>
+        </Domain>
+      </Property>
+      <Property name="RightAxisTitleFontFile" id="14878.RightAxisTitleFontFile" number_of_elements="1">
+        <Element index="0" value="Arial"/>
+      </Property>
+      <Property name="RightAxisTitleFontSize" id="14878.RightAxisTitleFontSize" number_of_elements="1">
+        <Element index="0" value="12"/>
+      </Property>
+      <Property name="RightAxisTitleItalic" id="14878.RightAxisTitleItalic" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.RightAxisTitleItalic.bool"/>
+      </Property>
+      <Property name="RightAxisUseCustomLabels" id="14878.RightAxisUseCustomLabels" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.RightAxisUseCustomLabels.bool"/>
+      </Property>
+      <Property name="RightAxisUseCustomRange" id="14878.RightAxisUseCustomRange" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.RightAxisUseCustomRange.bool"/>
+      </Property>
+      <Property name="ShowBottomAxisGrid" id="14878.ShowBottomAxisGrid" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14878.ShowBottomAxisGrid.bool"/>
+      </Property>
+      <Property name="ShowBottomAxisLabels" id="14878.ShowBottomAxisLabels" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14878.ShowBottomAxisLabels.bool"/>
+      </Property>
+      <Property name="ShowLeftAxisGrid" id="14878.ShowLeftAxisGrid" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14878.ShowLeftAxisGrid.bool"/>
+      </Property>
+      <Property name="ShowLeftAxisLabels" id="14878.ShowLeftAxisLabels" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14878.ShowLeftAxisLabels.bool"/>
+      </Property>
+      <Property name="ShowLegend" id="14878.ShowLegend" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14878.ShowLegend.bool"/>
+      </Property>
+      <Property name="ShowRightAxisGrid" id="14878.ShowRightAxisGrid" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14878.ShowRightAxisGrid.bool"/>
+      </Property>
+      <Property name="ShowRightAxisLabels" id="14878.ShowRightAxisLabels" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14878.ShowRightAxisLabels.bool"/>
+      </Property>
+      <Property name="ShowTopAxisGrid" id="14878.ShowTopAxisGrid" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14878.ShowTopAxisGrid.bool"/>
+      </Property>
+      <Property name="ShowTopAxisLabels" id="14878.ShowTopAxisLabels" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14878.ShowTopAxisLabels.bool"/>
+      </Property>
+      <Property name="SortByXAxis" id="14878.SortByXAxis" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.SortByXAxis.bool"/>
+      </Property>
+      <Property name="TooltipNotation" id="14878.TooltipNotation" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="14878.TooltipNotation.enum">
+          <Entry value="0" text="Mixed"/>
+          <Entry value="1" text="Scientific"/>
+          <Entry value="2" text="Fixed"/>
+        </Domain>
+      </Property>
+      <Property name="TooltipPrecision" id="14878.TooltipPrecision" number_of_elements="1">
+        <Element index="0" value="6"/>
+        <Domain name="range" id="14878.TooltipPrecision.range"/>
+      </Property>
+      <Property name="TopAxisColor" id="14878.TopAxisColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+        <Domain name="range" id="14878.TopAxisColor.range"/>
+      </Property>
+      <Property name="TopAxisGridColor" id="14878.TopAxisGridColor" number_of_elements="3">
+        <Element index="0" value="0.95"/>
+        <Element index="1" value="0.95"/>
+        <Element index="2" value="0.95"/>
+        <Domain name="range" id="14878.TopAxisGridColor.range"/>
+      </Property>
+      <Property name="TopAxisLabelBold" id="14878.TopAxisLabelBold" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.TopAxisLabelBold.bool"/>
+      </Property>
+      <Property name="TopAxisLabelColor" id="14878.TopAxisLabelColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+        <Domain name="range" id="14878.TopAxisLabelColor.range"/>
+      </Property>
+      <Property name="TopAxisLabelFontFamily" id="14878.TopAxisLabelFontFamily" number_of_elements="1">
+        <Element index="0" value="Arial"/>
+        <Domain name="list" id="14878.TopAxisLabelFontFamily.list">
+          <String text="Arial"/>
+          <String text="Courier"/>
+          <String text="Times"/>
+          <String text="File"/>
+        </Domain>
+      </Property>
+      <Property name="TopAxisLabelFontFile" id="14878.TopAxisLabelFontFile" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="TopAxisLabelFontSize" id="14878.TopAxisLabelFontSize" number_of_elements="1">
+        <Element index="0" value="12"/>
+      </Property>
+      <Property name="TopAxisLabelItalic" id="14878.TopAxisLabelItalic" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.TopAxisLabelItalic.bool"/>
+      </Property>
+      <Property name="TopAxisLabelNotation" id="14878.TopAxisLabelNotation" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="enum" id="14878.TopAxisLabelNotation.enum">
+          <Entry value="0" text="Mixed"/>
+          <Entry value="1" text="Scientific"/>
+          <Entry value="2" text="Fixed"/>
+        </Domain>
+      </Property>
+      <Property name="TopAxisLabelPrecision" id="14878.TopAxisLabelPrecision" number_of_elements="1">
+        <Element index="0" value="2"/>
+        <Domain name="range" id="14878.TopAxisLabelPrecision.range"/>
+      </Property>
+      <Property name="TopAxisLabels" id="14878.TopAxisLabels">
+        <Domain name="scalar_range" id="14878.TopAxisLabels.scalar_range"/>
+      </Property>
+      <Property name="TopAxisLogScale" id="14878.TopAxisLogScale" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.TopAxisLogScale.bool"/>
+      </Property>
+      <Property name="TopAxisRangeMaximum" id="14878.TopAxisRangeMaximum" number_of_elements="1">
+        <Element index="0" value="6.66"/>
+      </Property>
+      <Property name="TopAxisRangeMinimum" id="14878.TopAxisRangeMinimum" number_of_elements="1">
+        <Element index="0" value="0"/>
+      </Property>
+      <Property name="TopAxisTitle" id="14878.TopAxisTitle" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="TopAxisTitleBold" id="14878.TopAxisTitleBold" number_of_elements="1">
+        <Element index="0" value="1"/>
+        <Domain name="bool" id="14878.TopAxisTitleBold.bool"/>
+      </Property>
+      <Property name="TopAxisTitleColor" id="14878.TopAxisTitleColor" number_of_elements="3">
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
+        <Domain name="range" id="14878.TopAxisTitleColor.range"/>
+      </Property>
+      <Property name="TopAxisTitleFontFamily" id="14878.TopAxisTitleFontFamily" number_of_elements="1">
+        <Element index="0" value="Arial"/>
+        <Domain name="list" id="14878.TopAxisTitleFontFamily.list">
+          <String text="Arial"/>
+          <String text="Courier"/>
+          <String text="Times"/>
+          <String text="File"/>
+        </Domain>
+      </Property>
+      <Property name="TopAxisTitleFontFile" id="14878.TopAxisTitleFontFile" number_of_elements="1">
+        <Element index="0" value=""/>
+      </Property>
+      <Property name="TopAxisTitleFontSize" id="14878.TopAxisTitleFontSize" number_of_elements="1">
+        <Element index="0" value="12"/>
+      </Property>
+      <Property name="TopAxisTitleItalic" id="14878.TopAxisTitleItalic" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.TopAxisTitleItalic.bool"/>
+      </Property>
+      <Property name="TopAxisUseCustomLabels" id="14878.TopAxisUseCustomLabels" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.TopAxisUseCustomLabels.bool"/>
+      </Property>
+      <Property name="TopAxisUseCustomRange" id="14878.TopAxisUseCustomRange" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.TopAxisUseCustomRange.bool"/>
+      </Property>
+      <Property name="UseCache" id="14878.UseCache" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="bool" id="14878.UseCache.bool"/>
+      </Property>
+      <Property name="ViewSize" id="14878.ViewSize" number_of_elements="2">
+        <Element index="0" value="527"/>
+        <Element index="1" value="565"/>
+      </Property>
+      <Property name="ViewTime" id="14878.ViewTime" number_of_elements="1">
+        <Element index="0" value="0"/>
+        <Domain name="range" id="14878.ViewTime.range"/>
+      </Property>
+    </Proxy>
+    <ProxyCollection name="animation">
+      <Item id="265" name="AnimationScene1"/>
+      <Item id="267" name="TimeAnimationCue1"/>
+    </ProxyCollection>
+    <ProxyCollection name="layouts">
+      <Item id="14395" name="Layout #1"/>
+    </ProxyCollection>
+    <ProxyCollection name="lookup_tables">
+      <Item id="12976" name="EFieldnorm.PVLookupTable"/>
+      <Item id="13392" name="Gradients.PVLookupTable"/>
+      <Item id="13147" name="f_193.PVLookupTable"/>
+      <Item id="14544" name="f_195.PVLookupTable"/>
+      <Item id="13629" name="f_209.PVLookupTable"/>
+      <Item id="14568" name="f_211.PVLookupTable"/>
+      <Item id="13229" name="f_231.PVLookupTable"/>
+      <Item id="12984" name="f_266.PVLookupTable"/>
+      <Item id="13940" name="result.PVLookupTable"/>
+    </ProxyCollection>
+    <ProxyCollection name="materiallibrary">
+      <Item id="263" name="MaterialLibrary1"/>
+    </ProxyCollection>
+    <ProxyCollection name="piecewise_functions">
+      <Item id="12975" name="EFieldnorm.PiecewiseFunction"/>
+      <Item id="13391" name="Gradients.PiecewiseFunction"/>
+      <Item id="13146" name="f_193.PiecewiseFunction"/>
+      <Item id="14543" name="f_195.PiecewiseFunction"/>
+      <Item id="13628" name="f_209.PiecewiseFunction"/>
+      <Item id="14567" name="f_211.PiecewiseFunction"/>
+      <Item id="13228" name="f_231.PiecewiseFunction"/>
+      <Item id="12983" name="f_266.PiecewiseFunction"/>
+      <Item id="13939" name="result.PiecewiseFunction"/>
+    </ProxyCollection>
+    <ProxyCollection name="pq_helper_proxies.14975">
+      <Item id="14986" name="RepresentationAnimationHelper"/>
+    </ProxyCollection>
+    <ProxyCollection name="pq_helper_proxies.15039">
+      <Item id="15050" name="RepresentationAnimationHelper"/>
+    </ProxyCollection>
+    <ProxyCollection name="pq_helper_proxies.15051">
+      <Item id="15062" name="RepresentationAnimationHelper"/>
+    </ProxyCollection>
+    <ProxyCollection name="pq_helper_proxies.15063">
+      <Item id="15074" name="RepresentationAnimationHelper"/>
+    </ProxyCollection>
+    <ProxyCollection name="pq_helper_proxies.15075">
+      <Item id="15086" name="RepresentationAnimationHelper"/>
+    </ProxyCollection>
+    <ProxyCollection name="pq_helper_proxies.15190">
+      <Item id="15201" name="RepresentationAnimationHelper"/>
+      <Item id="15157" name="Source"/>
+    </ProxyCollection>
+    <ProxyCollection name="representations">
+      <Item id="15216" name="XYChartRepresentation2"/>
+    </ProxyCollection>
+    <ProxyCollection name="sources">
+      <Item id="15051" name="GradientOfUnstructuredDataSet3"/>
+      <Item id="15063" name="GradientOfUnstructuredDataSet4"/>
+      <Item id="15190" name="PlotOverLine2"/>
+      <Item id="15075" name="PythonCalculator2"/>
+      <Item id="15039" name="solution_imagstudy_griffin2011.xdmf"/>
+      <Item id="14975" name="solution_realstudy_griffin2011.xdmf"/>
+    </ProxyCollection>
+    <ProxyCollection name="timekeeper">
+      <Item id="259" name="TimeKeeper1"/>
+    </ProxyCollection>
+    <ProxyCollection name="views">
+      <Item id="14878" name="LineChartView1"/>
+    </ProxyCollection>
+    <CustomProxyDefinitions/>
+    <Links>
+      <GlobalPropertyLink global_name="SelectionColor" proxy="15216" property="Color"/>
+    </Links>
+  </ServerManagerState>
+  <InteractiveViewLinks/>
+</ParaView>
