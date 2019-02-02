@@ -7,6 +7,19 @@ The entire package is developed and tested on Ubuntu 18.04.
 Installation
 ------------
 
+Install Prerequisites
+^^^^^^^^^^^^^^^^^^^^^
+
+To install the external packages, just run:
+
+.. code::
+
+	sudo install.sh 
+
+This should give you all dependencies and correct setting of the environment.
+
+Install EMStimTools (SALOME and GMSH there)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Simply run:
 
 .. code::
@@ -25,8 +38,8 @@ Third party code
 
 The files 'meshconvert.py' and 'xml_writer.py' from the site-package 'dolfin_utils' of dolfin. They can be found in 'emstimtools/utils' and the first file was modified slightly (change indicated in file header). It is licensed under the GNU Lesser General Public License (LGPL) version 3, which can be found in the file LICENSE-3RD-PARTY.txt.
 
-External depedencies
---------------------
+External dependencies
+---------------------
 
 The package works with:
 
@@ -48,6 +61,8 @@ Optional:
 
 - ParaView > V5.5 (https://www.paraview.org/) for postprocessing (XDMF support needed).
 
+.. note:: For SALOME and GMSH certain manual installations are needed. Those are specified in the documentation.
+
 
 Overview
 --------
@@ -58,18 +73,17 @@ Then a fully-automated workflow yields the desired output data and files, which 
 Documentation
 -------------
 
-This code is more or less documented by the help of Sphinx.
-For a good user experience, install sphinx of your machine and run 
+This code is documented by the help of Sphinx.
+For a good user experience, install sphinx on your machine and run 
 
 .. code::
 
 	make latexpdf
 
-in the doc directory. It will give you a good overview of the capabilities of this tool.
+in the `doc` directory. It will give you a good overview of the capabilities of this tool.
 Also, certain bugs ('features') are explained in case an error occurs during execution.
 
 Examples
 --------
 
 In the examples directory, a few published as well as unpublished examples are given. Please feel free to add some on your own!
-If paraview postprocessing scripts are present, they are to be found in the 'paraview' directory.

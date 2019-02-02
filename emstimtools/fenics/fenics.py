@@ -58,9 +58,61 @@ class Fenics(object):
     For visualization:
     Starting from Fenics 2017.2 and Paraview 5.5, XDMF files can be used for visualization AND checkpointing. See for instance slides `here <https://orbilu.uni.lu/bitstream/10993/35848/1/main.pdf>`_
 
+    To tune the solver, choose something from the following keys.
+    The following keys are accessible by just using the keyword, e.g. 'linear_solver' in the YAML-file:
+
+        +---------------------------+---------+---------+
+        | linear_variational_solver |  type   |  value  |
+        +===========================+=========+=========+
+        | linear_solver             |  string | default |
+        +---------------------------+---------+---------+
+        | preconditioner            |  string | default |
+        +---------------------------+---------+---------+
+        | print_matrix              |    bool |    0    |
+        +---------------------------+---------+---------+
+        | print_rhs                 |    bool |    0    |
+        +---------------------------+---------+---------+
+        | symmetric                 |    bool |    0    |
+        +---------------------------+---------+---------+
+
+    The following keys are accessible by using a nested dictionary starting with 'krylov_solver' in the YAML-file (only for Krylov subspace solvers):
+
+        +--------------------------+----------+---------+
+        | **krylov_solver**        |   type   |  value  |
+        +==========================+==========+=========+
+        | absolute_tolerance       |  double  | <unset> |
+        +--------------------------+----------+---------+
+        | divergence_limit         |  double  | <unset> |
+        +--------------------------+----------+---------+
+        | error_on_nonconvergence  |    bool  | <unset> |
+        +--------------------------+----------+---------+
+        | maximum_iterations       |     int  | <unset> |
+        +--------------------------+----------+---------+
+        | monitor_convergence      |    bool  | <unset> |
+        +--------------------------+----------+---------+
+        | nonzero_initial_guess    |    bool  | <unset> |
+        +--------------------------+----------+---------+
+        | relative_tolerance       |  double  | <unset> |
+        +--------------------------+----------+---------+
+        | report                   |    bool  | <unset> |
+        +--------------------------+----------+---------+
+
+    The following keys are accessible by using a nested dictionary starting with 'lu_solver' in the YAML-file (only for direct solvers):
+
+        +----------------+-------+-------+
+        | **lu_solver**  |  type | value |
+        +================+=======+=======+
+        | report         |  bool |   1   |
+        +----------------+-------+-------+
+        | symmetric      |  bool |   0   |
+        +----------------+-------+-------+
+        | verbose        |  bool |   0   |
+        +----------------+-------+-------+
+
+
     .. todo:: make output nicer
     .. todo:: implement more properties, e.g. `capacitance or resistance <http://www.iue.tuwien.ac.at/phd/heinzl/node55.html>`_
-
+    .. todo:: analyse system matrix, idea at bottom of file in comment
     """
     def __init__(self, data, logger):
         self.data = data
@@ -117,23 +169,24 @@ class Fenics(object):
             self.logger.debug("Mesh was plotted, subdomains and facets also match the mesh")
         else:
             self.logger.info("Plotting mesh does not make sense in 3D. Output is written to paraview readable files.")
-            mesh_dir = "mesh/"
-            if not os.path.exists(mesh_dir):
+            self.mesh_dir = "mesh/"
+            if not os.path.exists(self.mesh_dir):
                 try:
-                    os.makedirs(mesh_dir)
+                    os.makedirs(self.mesh_dir)
                 except OSError as exc:  # Guard against race condition
                     if exc.errno != errno.EEXIST:
                         raise
 
-            tmp = d.XDMFFile(self.mesh.mesh.mpi_comm(), mesh_dir + self.mesh.meshname + str('_plot.xdmf'))
+            tmp = d.XDMFFile(self.mesh.mesh.mpi_comm(), self.mesh_dir + self.mesh.meshname + str('_plot.xdmf'))
             tmp.write(self.mesh.mesh)
             tmp.close()
-            tmp = d.XDMFFile(self.mesh.mesh.mpi_comm(), mesh_dir + self.mesh.meshname + str('_subdomains') + str('.xdmf'))
+            tmp = d.XDMFFile(self.mesh.mesh.mpi_comm(), self.mesh_dir + self.mesh.meshname + str('_subdomains') + str('.xdmf'))
             tmp.write(self.mesh.cells)
             tmp.close()
-            tmp = d.XDMFFile(self.mesh.mesh.mpi_comm(), mesh_dir + self.mesh.meshname + str('_facets') + str('.xdmf'))
+            tmp = d.XDMFFile(self.mesh.mesh.mpi_comm(), self.mesh_dir + self.mesh.meshname + str('_facets') + str('.xdmf'))
             tmp.write(self.mesh.facets)
             tmp.close()
+
             self.logger.debug("Mesh was written out.")
 
     def _prepare_result_dir(self):
@@ -166,6 +219,11 @@ class Fenics(object):
 
     def _prepare_fem(self):
         self.element = d.FiniteElement(self.data['element'], self.mesh.mesh.ufl_cell(), self.data['degree'])
+        if 'properties' in self.data:
+            if 'project_element' not in self.data['properties']:
+                self.data['properties']['project_element'] = self.element
+            if 'project_degree' not in self.data['properties']:
+                self.data['properties']['project_degree'] = self.data['element']
         # to set constants element-wise, we choose a discontinuous basis of degree 0 (piecewise constant)
         self.ConstantsSpace = d.FunctionSpace(self.mesh.mesh, 'DG', 0)
         self.cells_array = np.asarray(self.mesh.cells.array(), dtype=np.int32)
@@ -175,8 +233,13 @@ class Fenics(object):
         solver_info = return_solver(self.data)
         if solver_info is not None:
             for i in solver_info:
-                self.logger.debug("Setting " + str(self.solver.parameters[i]) + " as " + str(solver_info[i]))
-                self.solver.parameters[i] = solver_info[i]
+                if isinstance(solver_info[i], dict):
+                    for j in solver_info[i]:
+                        self.logger.debug("Setting [" + str(i) + "][" + str(j) + "] as " + str(solver_info[i][j]))
+                        self.solver.parameters[i][j] = solver_info[i][j]
+                else:
+                    self.logger.debug("Setting [" + str(i) + "] as " + str(solver_info[i]))
+                    self.solver.parameters[i] = solver_info[i]
 
     def _set_material_constant(self, phys_constant):
         """
@@ -246,6 +309,16 @@ class Fenics(object):
         if 'submesh' in self.data['postprocess']:
             self._project_on_submeshes()
 
+    def _plot_submesh(self, subdomain):
+        try:
+            if 'mesh' in self.plot:
+                if self.plot['mesh'] is True:
+                        tmp = d.XDMFFile(self.mesh.mesh.mpi_comm(), self.mesh_dir + self.mesh.meshname + '_plot_' + str(subdomain) + '.xdmf')
+                        tmp.write(self.sub_mesh)
+                        tmp.close()
+        except TypeError:
+            pass
+
     def __del__(self):
         """
         destructor closes XDMF file.
@@ -310,3 +383,48 @@ class Fenics(object):
             else:
                 filestring = self.result_dir + 'solution_' + self.study + '_' + self.array_iter + '.dat'
             self.datafileTXT = open(filestring, 'w')
+
+
+"""
+from dolfin import *
+import ufl
+import scipy.sparse as sp
+import matplotlib.pyplot as plt
+
+
+def spy_form_matrix(A, l=None, bcs=None, marker_size=2.0, show=True, pattern_only=True, **kwargs):
+    assert isinstance(A, ufl.form.Form)
+    if l: assert isinstance(l, ufl.form.Form)
+    eigen_matrix = EigenMatrix()
+    if not l:
+        assemble(A, tensor=eigen_matrix)
+        if not bcs is None:
+            for bc in bcs: bc.apply(eigen_matrix)
+    else:
+        if not bcs is None:
+            SystemAssembler(A, l, bcs).assemble(eigen_matrix)
+        else:
+            SystemAssembler(A, l).assemble(eigen_matrix)
+    A = eigen_matrix
+
+    row, col, data = A.data()
+    if pattern_only:
+        data[:] = 1.0
+
+    sp_mat = sp.csr_matrix((data, col, row), dtype='float')
+    plt.spy(sp_mat, markersize=marker_size, precision=0, **kwargs)
+    print(sp_mat)
+    print(sp.tril(sp_mat))
+    print("\n")
+    print(sp.triu(sp_mat))
+    if show: plt.show()
+
+
+mesh = UnitSquareMesh(4, 4)
+V = FunctionSpace(mesh, 'CG', 1)
+u, v = TrialFunction(V), TestFunction(V)
+
+a = dot(grad(u), grad(v))*dx
+L = Constant(1.0)*v*dx
+spy_form_matrix(a, L)
+"""

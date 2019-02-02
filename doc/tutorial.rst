@@ -14,6 +14,12 @@ Nevertheless, support for (g)msh files could be easily implemented.
 EMStimTools
 ===========
 
+YAML-File
+^^^^^^^^^
+
+.. warning::
+	As pointed out on `github <https://github.com/yaml/pyyaml/pull/174/commits/1e0453f29583ebc96fc22ded1a78d828a4ef87c7>`_, pyyaml is not capable of understand floats in scientific notation without the dot, i.e. it cannot recognize 1e-3 but 1.0e-3!!!
+
 
 ParaView
 ========

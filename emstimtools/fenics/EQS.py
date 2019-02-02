@@ -190,14 +190,15 @@ class EQS(Fenics):
         self.logger.debug("test functions for real and imaginary part")
         v_r, v_i = d.TestFunction(self.V)
         dx = d.dx
-        a = (d.inner(self.conductivity * d.grad(u_r), d.grad(v_r)) * dx
-             - d.inner(self.conductivity * d.grad(u_i), d.grad(v_i)) * dx
-             - d.inner(self.permittivity_f * d.grad(u_i), d.grad(v_r)) * dx
-             - d.inner(self.permittivity_f * d.grad(u_r), d.grad(v_i)) * dx
-             + d.inner(self.conductivity * d.grad(u_r), d.grad(v_i)) * dx
-             + d.inner(self.conductivity * d.grad(u_i), d.grad(v_r)) * dx
-             + d.inner(self.permittivity_f * d.grad(u_r), d.grad(v_r)) * dx
-             - d.inner(self.permittivity_f * d.grad(u_i), d.grad(v_i)) * dx)
+
+        a = (d.inner(d.grad(self.conductivity * u_r), d.grad(v_r)) * dx
+             - d.inner(d.grad(self.permittivity_f * u_i), d.grad(v_r)) * dx
+             - d.inner(d.grad(self.permittivity_f * u_r), d.grad(v_i)) * dx
+             - d.inner(d.grad(self.conductivity * u_i), d.grad(v_i)) * dx
+             + d.inner(d.grad(self.conductivity * u_r), d.grad(v_i)) * dx
+             - d.inner(d.grad(self.permittivity_f * u_i), d.grad(v_i)) * dx
+             + d.inner(d.grad(self.permittivity_f * u_r), d.grad(v_r)) * dx
+             + d.inner(d.grad(self.conductivity * u_i), d.grad(v_r)) * dx)
         L = -(self.source_term * v_r + self.source_term * v_i) * dx
         self.logger.debug("vector for solution")
         self.u = d.Function(self.V)
@@ -210,10 +211,13 @@ class EQS(Fenics):
             # use eps = frequency * eps_r * eps0
             self.permittivity_f.vector()[:] = self.permittivity.vector()[:] * self.eps0 * frequency * 2. * np.pi
             self.solver.solve()
+            # self.u_r, self.u_i = self.u.split(deepcopy=True)
             try:
                 if self.data['output']['HDF5'] is True:
                     self.datafileHDF5.write(self.u.sub(0), "/real part {}".format(frequency))
+                    # self.datafileHDF5.write(self.u_r, "/real part {}".format(frequency))
                     self.datafileHDF5.write(self.u.sub(1), "/imaginary part {}".format(frequency))
+                    # self.datafileHDF5.write(self.u_i, "/imaginary part {}".format(frequency))
             except KeyError:
                 pass
             try:
@@ -227,6 +231,7 @@ class EQS(Fenics):
             append = True
 
     def _write_derived_quantities(self, frequency, append):
+        self.logger.debug("Computing derived quantities")
         if 'properties' in self.data:
             try:
                 if self.data['properties']['E-Field'] is True:
@@ -271,11 +276,9 @@ class EQS(Fenics):
         tried to solve it by means of projection => inaccurate
 
         .. todo:: decide whether field should be of same order as solution
+        .. todo:: decide whether solver in `d.project` call should always be `mumps`
         """
-        if self.data['degree'] > 1:
-            self.Vnorm = d.FunctionSpace(self.mesh.mesh, self.data['element'], self.data['degree'] - 1)
-        else:
-            raise Exception("Use for this computation a 2nd or higher order element")
+        self.Vnorm = d.FunctionSpace(self.mesh.mesh, self.data['properties']['project_element'], self.data['properties']['project_degree'])
         self.normEr = d.Function(self.Vnorm)
         if not hasattr(self, 'Efield_real'):
             self.get_field()
@@ -296,15 +299,16 @@ class EQS(Fenics):
         .. todo:: find better representation for real and imaginary part
         .. todo:: decide whether field should be of same order as solution
         """
+        self.logger.debug("Entering Field computation")
         if self.data['degree'] > 1:
-            self.Vector = d.VectorFunctionSpace(self.mesh.mesh, self.data['element'], self.data['degree'] - 1)
+            self.Vector = d.VectorFunctionSpace(self.mesh.mesh, self.data['properties']['project_element'], self.data['properties']['project_degree'])
         else:
             raise Exception("Use for this computation a 2nd or higher order element")
-        self.Efield_real = d.Function(self.Vector)
-        self.Efield_imag = d.Function(self.Vector)
-        # here fix needed
+
         self.Efield_real = d.project(-d.grad(self.u.sub(0)), self.Vector, solver_type='mumps')
         self.Efield_imag = d.project(-d.grad(self.u.sub(1)), self.Vector, solver_type='mumps')
+        self.Efield_real.rename('E-field real', 'E-field real')
+        self.Efield_imag.rename('E-field imag', 'E-field imag')
         self.logger.debug("Computed E-Field")
 
     def _prepare_output(self):
@@ -450,9 +454,13 @@ class EQS(Fenics):
         self.sub_mesh = d.SubMesh(self.mesh.mesh, self.mesh.cells, self.mesh.subdomaininfo[i])
         V_sub = d.FunctionSpace(self.sub_mesh, self.element)
         # real part, mumps to avoid memory overflow
+        # u_sub = d.project(self.u_r, V_sub, solver_type='mumps')
         u_sub = d.project(self.u.sub(0), V_sub, solver_type='mumps')
+        u_sub.rename('potential real part', 'potential real part sub')
         self.datafileXDMFreal.write(u_sub)
         # imag part
+        u_sub.rename('potential imag part', 'potential imag part sub')
+        # u_sub = d.project(self.u_i, V_sub, solver_type='mumps')
         u_sub = d.project(self.u.sub(1), V_sub, solver_type='mumps')
         self.datafileXDMFimag.write(u_sub)
 
@@ -460,10 +468,12 @@ class EQS(Fenics):
         """
         take domain :param str i: and project e-field there
         """
-        Vector_sub = d.VectorFunctionSpace(self.sub_mesh, self.data['element'], self.data['degree'] - 1)
+        Vector_sub = d.VectorFunctionSpace(self.sub_mesh, self.data['properties']['project_element'], self.data['properties']['project_degree'])
         efield_sub = d.project(self.Efield_real, Vector_sub, solver_type='mumps')
+        efield_sub.rename('E-Field real part', 'E-Field real part sub')
         self.dataXDMFEreal.write(efield_sub)
         efield_sub = d.project(self.Efield_imag, Vector_sub, solver_type='mumps')
+        efield_sub.rename('E-Field imag part', 'E-Field imag part sub')
         self.dataXDMFEimag.write(efield_sub)
         self.logger.debug("Wrote e-field for domain " + i)
 
@@ -471,8 +481,9 @@ class EQS(Fenics):
         """
         take domain :param str i: and project e-field norm there
         """
-        Vnorm_sub = d.FunctionSpace(self.sub_mesh, self.data['element'], self.data['degree'] - 1)
+        Vnorm_sub = d.FunctionSpace(self.sub_mesh, self.data['properties']['project_element'], self.data['properties']['project_degree'])
         efieldnorm_sub = d.project(self.normEr, Vnorm_sub, solver_type='mumps')
+        efieldnorm_sub.rename('E-Field norm', 'E-Field norm sub')
         self.dataXDMFEnorm.write(efieldnorm_sub)
         self.logger.debug("Wrote e-field norm for domain " + i)
 
@@ -488,6 +499,7 @@ class EQS(Fenics):
             self._open_xdmf_output_solution(add='_' + i)
             self._write_projected_solution(i)
             self._close_solution_xdmf()
+            self._plot_submesh(i)
             if 'properties' in self.data:
                 try:
                     if self.data['properties']['E-Field'] is True:
@@ -509,10 +521,10 @@ class EQS(Fenics):
             self.datafileTXT.write("%f" % frequency)
             for i in self.evaluate_points_solution:
                 if(self.mesh.dimension == 2):
-                    Phi_real = self.u.sub(0)(d.Point(self.evaluate_points_solution[i][0], self.evaluate_points_solution[i][1]))
-                    Phi_imag = self.u.sub(1)(d.Point(self.evaluate_points_solution[i][0], self.evaluate_points_solution[i][1]))
+                    Phi_real = self.u_r(d.Point(self.evaluate_points_solution[i][0], self.evaluate_points_solution[i][1]))
+                    Phi_imag = self.u_i(d.Point(self.evaluate_points_solution[i][0], self.evaluate_points_solution[i][1]))
                 else:
-                    Phi_real = self.u.sub(0)(self.evaluate_points_solution[i][0], self.evaluate_points_solution[i][1], self.evaluate_points_solution[i][2])
-                    Phi_imag = self.u.sub(1)(self.evaluate_points_solution[i][0], self.evaluate_points_solution[i][1], self.evaluate_points_solution[i][2])
+                    Phi_real = self.u_r(self.evaluate_points_solution[i][0], self.evaluate_points_solution[i][1], self.evaluate_points_solution[i][2])
+                    Phi_imag = self.u_i(self.evaluate_points_solution[i][0], self.evaluate_points_solution[i][1], self.evaluate_points_solution[i][2])
                 self.datafileTXT.write(" %f %f %f" % (Phi_real, Phi_imag, d.sqrt(Phi_real * Phi_real + Phi_imag * Phi_imag)))
             self.datafileTXT.write("\n")
