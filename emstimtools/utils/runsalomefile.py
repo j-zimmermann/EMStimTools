@@ -19,13 +19,19 @@
 import subprocess
 import os
 
+
 def callSalome(pythonfile):
     """
     calls salome for pythonfile and kills afterwards the opened session
 
     .. todo:: find solution for killSalomeWithPort.py, i.e. add it to the path automatically or add it to the sources of this package
 
-    .. warning:: If the error "Can't find a free port to launch omniNames.    Try to kill the running servers and then launch SALOME again." pops up, use the trick described on http://academic.bancey.com/successfully-clearing-ports-in-salome-code-aster/
+    .. warning:: If the error "Can't find a free port to launch omniNames.    Try to kill the running servers and then launch SALOME again." pops up, use the trick described on http://academic.bancey.com/successfully-clearing-ports-in-salome-code-aster/ . Briefly this means to run:
+
+        .. code-block:: bash
+
+                rm /tmp/.salome_PortManager.*
+                rm /tmp/.omniORB_*
 
     """
     subprocess.call('salome -t --ns-port-log=$PWD/portlog.txt ' + pythonfile, shell=True)
