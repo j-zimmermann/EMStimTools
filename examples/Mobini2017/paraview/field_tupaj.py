@@ -12,8 +12,8 @@ V = 1.0
 a = 0.0005
 # spacing between electrodes
 d = 0.022
-xmin = -0.01
-xmax = 0.01
+xmin = -0.01025
+xmax = 0.01025
 
 xvalues = np.linspace(xmin, xmax, 50)
 result = np.empty(len(xvalues))
@@ -30,4 +30,4 @@ xvalues = xvalues - shift
 # plot and output
 plt.plot(xvalues, result)
 plt.show()
-np.savetxt('field_tupaj.txt', np.transpose([xvalues, result]), delimiter=',', header='position, field')
+np.savetxt('field_tupaj.txt', np.transpose([xvalues, result]), delimiter='\t', header='position\tAnalytical')
