@@ -25,6 +25,7 @@ from .utils.convertmesh import (convertMEDfile, convertmshfile, createh5file)
 from .fenics.EQS import EQS
 from .fenics.JouleHeating import JouleHeating
 from .fenics.ES import ES
+from .dataanalysis.data import SensitivityAnalysis
 
 
 class Simulation(object):
@@ -115,6 +116,7 @@ class Simulation(object):
         self._prepare_geometry()
         self._create_meshfile()
         self._run_study()
+        self._data_analysis()
         self.logger.info("Run successful.")
 
     def _get_information(self):
@@ -124,6 +126,18 @@ class Simulation(object):
         self.data = load_yaml_file(self.yamlfile)
         self.study = return_study(self.data)
         self.dimension = return_dimension(self.data)
+        if 'dataanalysis' in self.data:
+            self._prepare_dataoutput()
+
+    def _prepare_dataoutput(self):
+        if 'sensitivityanalysis' in self.data['dataanalysis']:
+            if 'solution' in self.data['dataanalysis']['sensitivityanalysis']:
+                if 'evaluate_solution' not in self.data:
+                    self.data['evaluate_solution'] = {}
+                self.data['evaluate_solution']['sensitivity_point'] = self.data['dataanalysis']['sensitivityanalysis']['solution']
+            else:
+                self.logger.warning('Not implemented')
+        return
 
     def _add_logger(self):
         self.logger = logging.getLogger('EMStimTools_' + str(self.study))
@@ -208,6 +222,17 @@ class Simulation(object):
         else:
             raise Exception("Specify a study that exists!!!")
         self.logger.info("FEniCS run successful")
+
+    def _data_analysis(self):
+        """
+        currently only sensitivity analysis for EQS available!
+        .. todo:: implement more interfaces such as UQ
+        """
+        if self.data['physics'] != 'EQS':
+            return
+        if 'dataanalysis' in self.data:
+            if 'sensitivityanalysis' in self.data['dataanalysis']:
+                SensitivityAnalysis(self.data)
 
     def set_log_level(self, level, stream=False, filelog=False):
         """
