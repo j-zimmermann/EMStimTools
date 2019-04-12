@@ -72,4 +72,5 @@ postprocess:
 
 dataanalysis:
        sensitivityanalysis:
-              solution : [0.05, 0.017, 0.011] # check sensitivity of e-field just above the cell bottom
+              solution : [0.05, 0.017, 0.011] # check sensitivity of solution just above the cell bottom
+
