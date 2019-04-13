@@ -17,14 +17,18 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import dolfin as d
-import random
+
 
 class Boundary(object):
     """
     Define Boundary conditions.
     This class takes the :attr:`boundary_dict`, where
     all information about the boundaries is stored.
-    Also the :attr:`facets` and their indices stored in :attr:`facet_dict` have to be known.
+    The data is structured as:
+    - :attr:`facets` : MeshFunction containing the indices corresponding to the facets
+    - :attr:`facet_dict` : Mapping from name of facet to index
+    - :attr:`subdomains` : MeshFunction containing the indices of the subdomains
+    - :attr:`subdomain_dict` : Mapping from name of subdomain to index
     """
 
     def __init__(self, boundary_dict, facets, facet_dict, subdomains, subdomain_dict):
@@ -81,6 +85,45 @@ class Boundary(object):
     def set_NeumannBC(self, logger):
         """
         Function to set Neumann Boundaries.
+
         .. todo:: need to implement Neumann Boundaries. Idea at: https://fenicsproject.org/pub/tutorial/sphinx1/._ftut1005.html
+
         """
         return
+
+    def set_RobinBCPoisson(self, a, L, u, v, ds, p_name, q_name, logger):
+        r"""
+        Function to set Robin BC for Poisson like equation.
+        Find more information in the FEnics tutorial chapter 1.5.3
+        A Robin BC for means that we have an expression like:
+
+        .. math::
+
+            - k \frac{\partial u}{\partial n} = p (u - q) \enspace ,
+
+        where q is a constant value, u is the unknown and p is a constant factor as well. k might be material property.
+        Essentially, it enters the weak formulation by changing the LHS like
+
+        .. math::
+
+            a = a + \int_\Gamma p u v \mathrm{d}s
+
+        and the RHS like:
+
+        .. math::
+
+            L = L + \int_\Gamma p q v \mathrm{d}s
+
+        """
+        if 'Robin' in self.boundary_dict:
+            self.boundary_info = self.boundary_dict['Robin']
+            for boundary_key in self.boundary_info:
+                index = self.facet_dict[boundary_key]
+                try:
+                    p = self.boundary_info[boundary_key][p_name]
+                    q = self.boundary_info[boundary_key][q_name]
+                except KeyError:
+                    raise("You have not specified all parameters needed for the Robin BC!")
+                a += p * u * v * ds(index)
+                L += p * q * v * ds(index)
+        return a, L

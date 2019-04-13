@@ -24,6 +24,16 @@ import dolfin as d
 from .fenics import Fenics
 
 
+def ESLHS(conductivity, u, v, dx):
+    a = d.inner(conductivity * d.grad(u), d.grad(v)) * dx
+    return a
+
+
+def ESRHS(source_term, v, dx):
+    L = -source_term * v * dx
+    return L
+
+
 class ES(Fenics):
     r"""
     Define a class, where an entire ES run will be done.
@@ -76,11 +86,13 @@ class ES(Fenics):
         u = d.TrialFunction(self.V)
         # test function
         v = d.TestFunction(self.V)
-        dx = d.dx
-        a = d.inner(self.conductivity * d.grad(u), d.grad(v)) * dx
-        L = -self.source_term * v * dx
+        # a = d.inner(self.conductivity * d.grad(u), d.grad(v)) * dx
+        a = ESLHS(self.conductivity, u, v, self.dx)
+        # L = -self.source_term * v * dx
+        L = ESRHS(self.source_term, v, self.dx)
         # vector for solution
         self.u = d.Function(self.V)
+        self.u.rename('potential', 'potential')
         self.problem = d.LinearVariationalProblem(a, L, self.u, self.boundaries.bc)
 
     def _solve_problem(self):
@@ -108,9 +120,9 @@ class ES(Fenics):
         """
         compute field
         """
-        self.Vector = d.VectorFunctionSpace(self.mesh.mesh, self.data['element'], self.data['degree'] - 1)
-        self.Efield = d.FunctionSpace(self.Vector)
+        self.Vector = d.VectorFunctionSpace(self.mesh.mesh, self.data['properties']['project_element'], self.data['properties']['project_degree'])
         self.Efield = d.project(-d.grad(self.u), self.Vector, solver_type='mumps')
+        self.Efield.rename('E-Field', 'E-Field')
 
     def _prepare_output(self):
         if 'output' in self.data:
@@ -131,12 +143,14 @@ class ES(Fenics):
 
     def _open_xdmf_output_solution(self, add=''):
         self.logger.info("Will store solution to xdmf format")
-        self.logger.info("Will store solution to file {}".format(self.result_dir + "solution" + self.study + add + '.xdmf'))
-        self.datafileXDMF = d.XDMFFile(self.mesh.mesh.mpi_comm(), self.result_dir + "solution" + self.study + add + '.xdmf')
+        filename = self.result_dir + "solution" + self.study + add + '.xdmf'
+        self.logger.info("Will store solution to file {}".format(filename))
+        self.datafileXDMF = d.XDMFFile(self.mesh.mesh.mpi_comm(), filename)
 
     def _open_output_efield(self, add=''):
-        self.logger.info("Will store e-field to file {}".format(self.result_dir + "field" + self.study + add + '.xdmf'))
-        self.datafileXDMFE = d.XDMFFile(self.mesh.mesh.mpi_comm(), self.result_dir + "field" + self.study + add + '.xdmf')
+        filename = self.result_dir + "field" + self.study + add + '.xdmf'
+        self.logger.info("Will store e-field to file {}".format(filename))
+        self.datafileXDMFE = d.XDMFFile(self.mesh.mesh.mpi_comm(), filename)
 
     def _close_solution_xdmf(self):
         self.logger.debug("Closed XDMF file for solution")
@@ -170,14 +184,16 @@ class ES(Fenics):
         V_sub = d.FunctionSpace(self.sub_mesh, self.element)
         # real part, mumps to avoid memory overflow
         u_sub = d.project(self.u, V_sub, solver_type='mumps')
+        u_sub.rename('potential', 'potential')
         self.datafileXDMF.write(u_sub)
 
     def _write_projected_efield(self, i):
         """
         take domain :param str i: and project e-field there
         """
-        Vector_sub = d.VectorFunctionSpace(self.sub_mesh, self.data['element'], self.data['degree'] - 1)
+        Vector_sub = d.VectorFunctionSpace(self.sub_mesh, self.data['properties']['project_element'], self.data['properties']['project_degree'])
         efield_sub = d.project(self.Efield, Vector_sub, solver_type='mumps')
+        efield_sub.rename('E-Field', 'E-Field')
         self.datafileXDMFE.write(efield_sub)
         self.logger.debug("Wrote e-field for domain " + i)
 

@@ -16,6 +16,15 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+"""
+This file is meant to contain the different tools for data analysis.
+One day, the goal is to have an input file, that allows one to perform for instance UQ or other methods
+in automated manner.
+
+.. todo:: develop a proper integration into the entire workflow, i.e., proper communication of data etc.
+
+"""
+
 
 def SensitivityAnalysis(data):
     """

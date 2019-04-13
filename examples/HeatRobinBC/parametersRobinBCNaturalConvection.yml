@@ -1,0 +1,53 @@
+study:
+        HeatRobinBC 
+
+physics: 
+        Heat
+
+SALOMEfile:
+        rectangle.py
+
+dimension:
+        2
+
+element:
+        CG
+
+degree:
+        2
+
+geometry:
+        [w, h]
+
+geometryvalues:
+        w : .6
+        h : 1.
+
+materials:
+        [Plate]
+
+temperature:
+
+boundaries:
+        Dirichlet:
+          bottom: 373.15         
+        Robin:
+          upper:
+             h : 750
+             T_ref : 273.15 
+          right:  
+             h : 750
+             T_ref : 273.15 
+
+thermal_conductivity:
+        Plate : 52.
+
+#solver:
+#        linear_solver : mumps
+refinement:
+        max_iter : 4
+        regions : ["Plate"]
+
+
+output:
+        XDMF: yes

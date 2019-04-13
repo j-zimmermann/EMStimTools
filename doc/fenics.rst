@@ -34,6 +34,12 @@ EQS module
 .. automodule:: emstimtools.fenics.EQS
         :members:
 
+Heat equation module
+--------------------
+
+.. automodule:: emstimtools.fenics.HeatEquation
+	:members:
+
 Joule Heating
 -------------
 
