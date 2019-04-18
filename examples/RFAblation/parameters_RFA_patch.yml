@@ -1,0 +1,80 @@
+study:
+       RFAblationImpedancePatch 
+
+physics: 
+        JouleHeating 
+
+SALOMEfile:
+       geometry_rfa.py
+
+dimension:
+        3 
+
+element:
+        CG
+
+degree:
+        2
+
+geometry:
+        [r_tissue, r_electrode, l_el, h_tissue, r_patch]
+
+geometryvalues:
+       r_tissue : 0.1
+       r_electrode : 0.00115
+       l_el : 0.03
+       h_tissue : 0.1
+       r_patch : 0.01
+
+materials:
+        [Tissue]
+
+temperature:
+        initial : 310.15
+
+frequencies: 500.0e3
+
+boundaries:
+        electric:
+          Dirichlet:
+            Electrode : 80.0         
+          Robin:
+            Patch:
+             Y_real : 3.354  # in S/m^2
+             Y_imag : 22.68  # in S/m^2  
+             V_0r : 0.0
+             V_0i : 0.0
+        thermal:
+          Robin:
+           OuterBoundary:
+              h : 2.56 # taken from https://www.sciencedirect.com/science/article/pii/S0360132307002624 for 10°C temperature difference between skin and air 
+              T_ref : 293.15 
+
+
+conductivity: 
+        Tissue : .61
+
+permittivity:
+        Tissue : 3.26e+3 #taken from https://itis.swiss/virtual-population/tissue-properties/database/dielectric-properties/
+
+heat_capacity:
+        Tissue : 3200.
+
+density:
+        Tissue : 1200.
+
+thermal_conductivity:
+        Tissue : .7
+
+timesteps :
+        t_max : 20.  # time in s
+        dt : 1.  # time step
+
+
+solver:
+        linear_solver : mumps
+
+plot:
+        mesh: yes 
+output:
+        XDMF: yes
