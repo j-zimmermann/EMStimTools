@@ -24,12 +24,24 @@ import numpy as np
 import dolfin as d
 from .fenics import Fenics
 from itertools import product
+from emstimtools.utils.general import dict_product
 
 
-def dict_product(d):
-    keys = d.keys()
-    for element in product(*d.values()):
-        yield dict(zip(keys, element))
+def EQSLHS(conductivity, permittivity_f, u_r, u_i, v_r, v_i, dx):
+    a = (d.inner(d.grad(conductivity * u_r), d.grad(v_r)) * dx
+         - d.inner(d.grad(permittivity_f * u_i), d.grad(v_r)) * dx
+         - d.inner(d.grad(permittivity_f * u_r), d.grad(v_i)) * dx
+         - d.inner(d.grad(conductivity * u_i), d.grad(v_i)) * dx
+         + d.inner(d.grad(conductivity * u_r), d.grad(v_i)) * dx
+         - d.inner(d.grad(permittivity_f * u_i), d.grad(v_i)) * dx
+         + d.inner(d.grad(permittivity_f * u_r), d.grad(v_r)) * dx
+         + d.inner(d.grad(conductivity * u_i), d.grad(v_r)) * dx)
+    return a
+
+
+def EQSRHS(source_term, v_r, v_i, dx):
+    L = -(source_term * v_r + source_term * v_i) * dx
+    return L
 
 
 class EQS(Fenics):
@@ -72,11 +84,12 @@ class EQS(Fenics):
     .. todo:: add source term in case of charge sources, i.e. Poisson-like equations
     .. todo:: add support for storing the field, see e.g. :meth:`get_fieldnorm`
     .. todo:: enable frequency-dependent parameters
+    .. todo:: write results of array job in different folders?
 
     """
     def __init__(self, data, logger):
         # use __init__ from Fenics class
-        super(EQS, self).__init__(data, logger)
+        super().__init__(data, logger)
         self.logger.info("Starting EQS simulation.")
         ###
         # Physics part
@@ -193,26 +206,24 @@ class EQS(Fenics):
         self.logger.info("Number of DOFs : {}".format(self.V.dim()))
 
     def _set_problem(self):
-        # for now hard-coded
+        """
+        for now hard-coded
+        .. todo:: reimplement when Neumann works
+        .. todo:: make Robin BC frequency-dependent
+        """
         self.logger.debug("Set problem")
         self.source_term = d.Constant(0.0)
         self.logger.debug("trial functions for real and imaginary part")
         u_r, u_i = d.TrialFunction(self.V)
         self.logger.debug("test functions for real and imaginary part")
         v_r, v_i = d.TestFunction(self.V)
-        dx = d.dx
 
-        a = (d.inner(d.grad(self.conductivity * u_r), d.grad(v_r)) * dx
-             - d.inner(d.grad(self.permittivity_f * u_i), d.grad(v_r)) * dx
-             - d.inner(d.grad(self.permittivity_f * u_r), d.grad(v_i)) * dx
-             - d.inner(d.grad(self.conductivity * u_i), d.grad(v_i)) * dx
-             + d.inner(d.grad(self.conductivity * u_r), d.grad(v_i)) * dx
-             - d.inner(d.grad(self.permittivity_f * u_i), d.grad(v_i)) * dx
-             + d.inner(d.grad(self.permittivity_f * u_r), d.grad(v_r)) * dx
-             + d.inner(d.grad(self.conductivity * u_i), d.grad(v_r)) * dx)
-        L = -(self.source_term * v_r + self.source_term * v_i) * dx
+        a = EQSLHS(self.conductivity, self.permittivity_f, u_r, u_i, v_r, v_i, self.dx)
+        L = EQSRHS(self.source_term, v_r, v_i, self.dx)
+        # a, L = self.boundaries.set_RobinBCPoissonComplex(a, L, u_r, u_i, v_r, v_i, self.ds, 'Y_real', 'Y_imag', 'V_0r', 'V_0i', self.logger)
         self.logger.debug("vector for solution")
         self.u = d.Function(self.V)
+        self.logger.debug("problem definition")
         self.problem = d.LinearVariationalProblem(a, L, self.u, self.boundaries.bc)
 
     def _solve_problem(self):

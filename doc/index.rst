@@ -17,6 +17,7 @@ Contents:
    fenics
    utilities
    addmultiphysics 
+   dataanalysis
    todo
 
 

@@ -148,6 +148,8 @@ class Fenics(object):
         if 'refinement' in self.data:
             refinement = self.data['refinement']
         self.mesh = Mesh(self.data['study'], self.logger, subdomains, facets, refinement)
+        self.dx = d.Measure('dx', domain=self.mesh.mesh)
+        self.ds = d.Measure('ds', domain=self.mesh.mesh, subdomain_data=self.mesh.facets)
         # try to plot mesh
         try:
             if 'mesh' in self.plot:
@@ -199,31 +201,17 @@ class Fenics(object):
                     if exc.errno != errno.EEXIST:
                         raise
 
-    def _prepare_output(self):
-        """
-        .. todo:: migrate this to respective folder
-        """
-        if 'output' in self.data:
-            if 'HDF5' in self.data['output']:
-                if self.data['output']['HDF5'] is True:
-                    self.logger.info("Will store solution to hdf5 format")
-                    if self.data['physics'] == 'JouleHeating':
-                        self.datafileHDF5EM = d.HDF5File(self.mesh.mesh.mpi_comm(), self.result_dir + "EMsolution" + self.study + ".h5", "w")
-                        self.datafileHDF5T = d.HDF5File(self.mesh.mesh.mpi_comm(), self.result_dir + "Tsolution" + self.study + ".h5", "w")
-            if 'XDMF' in self.data['output']:
-                if self.data['output']['XDMF'] is True:
-                    self.logger.info("Will store solution to xdmf format")
-                    if self.data['physics'] == 'JouleHeating':
-                        self.datafileXDMFEM = d.XDMFFile(self.mesh.mesh.mpi_comm(), self.result_dir + "EMsolution" + self.study + '.xdmf')
-                        self.datafileXDMFT = d.XDMFFile(self.mesh.mesh.mpi_comm(), self.result_dir + "Tsolution" + self.study + '.xdmf')
-
     def _prepare_fem(self):
         self.element = d.FiniteElement(self.data['element'], self.mesh.mesh.ufl_cell(), self.data['degree'])
         if 'properties' in self.data:
             if 'project_element' not in self.data['properties']:
-                self.data['properties']['project_element'] = self.element
+                self.data['properties']['project_element'] = self.data['element']
             if 'project_degree' not in self.data['properties']:
-                self.data['properties']['project_degree'] = self.data['element']
+                if self.data['degree'] > 1:
+                    deg = self.data['degree'] - 1
+                else:
+                    deg = self.data['degree']
+                self.data['properties']['project_degree'] = deg
         # to set constants element-wise, we choose a discontinuous basis of degree 0 (piecewise constant)
         self.ConstantsSpace = d.FunctionSpace(self.mesh.mesh, 'DG', 0)
         self.cells_array = np.asarray(self.mesh.cells.array(), dtype=np.int32)
@@ -244,6 +232,7 @@ class Fenics(object):
     def _set_material_constant(self, phys_constant):
         """
         set material constant. pass the name of the constant as a string.
+
         .. note:: if you want to add your own constant, pay attention that you set the vector for the parameter properly!
 
         .. todo:: fix ordering in salome or enable computation when SALOME subdomains are not strictly ordereded. Right now it seems that it works if facets are set before subdomains in SALOME.
@@ -261,7 +250,8 @@ class Fenics(object):
             self.data['conductivity'] = {}
             for i in self.mesh.subdomaininfo:
                 self.data['conductivity'][i] = 1. / self.data[phys_constant][i]
-            phys_constant = 'conductivity'
+            setattr(self, 'conductivity', d.Function(self.ConstantsSpace))
+            # phys_constant = 'conductivity'
 
         # make temparray to extract everything
         tmparray = np.empty(len(self.mesh.subdomaininfo))
@@ -318,26 +308,6 @@ class Fenics(object):
                         tmp.close()
         except TypeError:
             pass
-
-    def __del__(self):
-        """
-        destructor closes XDMF file.
-        """
-        self.logger.debug('cleaning up')
-        if 'output' in self.data:
-            self.logger.debug("going to close output")
-            if 'HDF5' in self.data['output']:
-                if self.data['output']['HDF5'] is True:
-                    if self.data['physics'] == 'JouleHeating':
-                        self.datafileHDF5EM.close()
-                        self.datafileHDF5T.close()
-                        self.logger.debug("Closed HDF5 file(s)")
-            if 'XDMF' in self.data['output']:
-                if self.data['output']['XDMF'] is True:
-                    if self.data['physics'] == 'JouleHeating':
-                        self.datafileXDMFEM.close()
-                        self.datafileXDMFT.close()
-                        self.logger.debug("Closed XDMF file")
 
     def _set_function_space(self):
         self.V = d.FunctionSpace(self.mesh.mesh, self.element)

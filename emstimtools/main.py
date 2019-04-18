@@ -25,6 +25,7 @@ from .utils.convertmesh import (convertMEDfile, convertmshfile, createh5file)
 from .fenics.EQS import EQS
 from .fenics.JouleHeating import JouleHeating
 from .fenics.ES import ES
+from .fenics.HeatEquation import Heat
 from .dataanalysis.data import SensitivityAnalysis
 
 
@@ -126,18 +127,6 @@ class Simulation(object):
         self.data = load_yaml_file(self.yamlfile)
         self.study = return_study(self.data)
         self.dimension = return_dimension(self.data)
-        if 'dataanalysis' in self.data:
-            self._prepare_dataoutput()
-
-    def _prepare_dataoutput(self):
-        if 'sensitivityanalysis' in self.data['dataanalysis']:
-            if 'solution' in self.data['dataanalysis']['sensitivityanalysis']:
-                if 'evaluate_solution' not in self.data:
-                    self.data['evaluate_solution'] = {}
-                self.data['evaluate_solution']['sensitivity_point'] = self.data['dataanalysis']['sensitivityanalysis']['solution']
-            else:
-                self.logger.warning('Not implemented')
-        return
 
     def _add_logger(self):
         self.logger = logging.getLogger('EMStimTools_' + str(self.study))
@@ -219,20 +208,12 @@ class Simulation(object):
             self.fenics_study = JouleHeating(self.data, self.logger)
         elif self.data['physics'] == 'ES':
             self.fenics_study = ES(self.data, self.logger)
+        elif self.data['physics'] == 'Heat':
+            self.fenics_study = Heat(self.data, self.logger)
+
         else:
             raise Exception("Specify a study that exists!!!")
         self.logger.info("FEniCS run successful")
-
-    def _data_analysis(self):
-        """
-        currently only sensitivity analysis for EQS available!
-        .. todo:: implement more interfaces such as UQ
-        """
-        if self.data['physics'] != 'EQS':
-            return
-        if 'dataanalysis' in self.data:
-            if 'sensitivityanalysis' in self.data['dataanalysis']:
-                SensitivityAnalysis(self.data)
 
     def set_log_level(self, level, stream=False, filelog=False):
         """
@@ -261,3 +242,31 @@ class Simulation(object):
             print("Valid values can be found here: https://docs.python.org/2/library/logging.html#levels")
             print("Continuing with previous value")
             pass
+
+    def _data_analysis(self):
+        """
+        currently only sensitivity analysis for EQS available!
+
+        .. todo:: implement more interfaces such as UQ
+
+        """
+        if self.data['physics'] != 'EQS':
+            return
+        if 'dataanalysis' in self.data:
+            if 'sensitivityanalysis' in self.data['dataanalysis']:
+                SensitivityAnalysis(self.data)
+
+    def _prepare_dataoutput(self):
+        """
+
+        .. todo:: this is very preliminary
+
+        """
+        if 'sensitivityanalysis' in self.data['dataanalysis']:
+            if 'solution' in self.data['dataanalysis']['sensitivityanalysis']:
+                if 'evaluate_solution' not in self.data:
+                    self.data['evaluate_solution'] = {}
+                self.data['evaluate_solution']['sensitivity_point'] = self.data['dataanalysis']['sensitivityanalysis']['solution']
+            else:
+                self.logger.warning('Not implemented')
+        return

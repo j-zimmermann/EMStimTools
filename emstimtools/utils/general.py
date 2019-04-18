@@ -17,17 +17,16 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 """
-This file is meant to contain the different tools for data analysis.
-One day, the goal is to have an input file, that allows one to perform for instance UQ or other methods
-in automated manner.
-
-.. todo:: develop a proper integration into the entire workflow, i.e., proper communication of data etc.
+General tools or functions that are regularly used.
 
 """
+from itertools import product
 
 
-def SensitivityAnalysis(data):
+def dict_product(d):
     """
-    .. todo:: implement correct formulation for sensitivities
+    take input dict :param:`d` and compute all possible combinations of key-value pairs.
     """
-    return
+    keys = d.keys()
+    for element in product(*d.values()):
+        yield dict(zip(keys, element))
