@@ -27,18 +27,18 @@ python3 get-pip.py
 pip3 install --no-cache-dir setuptools
 
 # Install SALOME
-RUN wget -O SALOME-8.3.0-UB16.04.tgz 'https://www.salome-platform.org/downloads/previous-versions/salome-v8.3.0/DownloadDistr?platform=UB16.04&version=8.3.0' 2> /dev/null
+wget -O SALOME-8.3.0-UB16.04.tgz 'https://www.salome-platform.org/downloads/previous-versions/salome-v8.3.0/DownloadDistr?platform=UB16.04&version=8.3.0' 2> /dev/null
 tar -xzf SALOME-8.3.0-UB16.04.tgz -C /opt
 
 # Update path
-ENV PATH="${PATH}:/opt/SALOME-8.3.0-UB16.04"
+export PATH="${PATH}:/opt/SALOME-8.3.0-UB16.04"
 
 # Install GMSH
-RUN wget http://gmsh.info/bin/Linux/gmsh-4.0.2-Linux64-sdk.tgz 2> /dev/null
+wget http://gmsh.info/bin/Linux/gmsh-4.0.2-Linux64-sdk.tgz 2> /dev/null
 tar -xzf gmsh-4.0.2-Linux64-sdk.tgz -C /opt
 
 # Update PYTHONPATH
-ENV PYTHONPATH="/opt/gmsh-4.0.2-Linux64-sdk/lib"
+export PYTHONPATH="/opt/gmsh-4.0.2-Linux64-sdk/lib"
 
 # Clone and install EMSTimTools
 git clone https://github.com/j-zimmermann/EMStimTools.git

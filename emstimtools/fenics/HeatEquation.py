@@ -90,7 +90,6 @@ class Heat(Fenics):
 
 
     """
-
     def __init__(self, data, logger):
         # use __init__ from Fenics class
         super().__init__(data, logger)
@@ -121,23 +120,6 @@ class Heat(Fenics):
         self._setup_solver()
         self._solve_problem()
         self.datafileXDMFT.close()
-
-    def _prepare_output(self):
-        """
-        write to HDF5 or XDMF file if specified
-        if solution at points is evaluated, also write to txt files
-        """
-        if 'output' in self.data:
-            if 'HDF5' in self.data['output']:
-                if self.data['output']['HDF5'] is True:
-                    self.logger.info("Will store solution to hdf5 format")
-                    filestring = self.result_dir + "solution" + self.study + ".h5"
-                    self.datafileHDF5 = d.HDF5File(self.mesh.mesh.mpi_comm(), filestring, "w")
-            if 'XDMF' in self.data['output']:
-                if self.data['output']['XDMF'] is True:
-                    self.logger.info("Will store solution to xdmf format")
-                    filestring = self.result_dir + "solution" + self.study + ".xdmf"
-                    self.datafileXDMFT = d.XDMFFile(self.mesh.mesh.mpi_comm(), filestring)
 
     def _set_stationary_problem(self):
         T = d.TrialFunction(self.V)
