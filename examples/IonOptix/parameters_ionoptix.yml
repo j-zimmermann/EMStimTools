@@ -1,0 +1,53 @@
+study:
+        study_ionoptix
+
+physics: 
+        ES
+
+SALOMEfile:
+        salomeIonOptix.py  
+
+dimension:
+        2 
+
+element:
+        CG
+
+degree:
+        2
+
+geometry:
+        [r, d, h, l]
+
+geometryvalues:
+        r : 0.011 # radius of dish 
+        h : .003 # thickness of electrode
+        l : .014 # length of electrode
+        d : 0.011 # distance between electrodes
+
+materials:
+        [Medium]
+
+conductivity:
+        Medium : 1.0 
+
+boundaries:
+        Dirichlet:
+                Electrode1: 1.0         
+                Electrode2: 0.0        
+
+#solver:
+#        linear_solver : mumps 
+
+output:
+        XDMF: yes
+
+properties:
+        E-Field : yes
+
+plot:
+        mesh : yes
+
+refinement:
+       max_iter : 2 
+       regions : [Medium]
