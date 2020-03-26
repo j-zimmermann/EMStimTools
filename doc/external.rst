@@ -17,7 +17,6 @@ The package works with:
 
 - GMSH 4.0.0 SDK (to be downloaded `here <http://gmsh.info/bin/Linux/>`_) 
 
-  This requires on Ubuntu 18.04. the manual installation of libgfortran3, e.g. with :code:`sudo apt-get install libgfortran3`
-  To use the SDK, set a `GMSH_DIRECTORY`, i.e. the directory where the downloaded SDK archive is located. Then add `$GMSH_DIRECTORY/bin` to your `PATH` variable and `$GMSH_DIRECTORY\lib` to your `PYTHONPATH` variable.
+  This requires on Ubuntu 18.04. the manual installation of libgfortran3, e.g. with :code:`sudo apt-get install libgfortran3`, and libglu1-mesa-dev, e.g. with :code:`sudo apt-get install libglu1-mesa-dev`.  To use the SDK, set a `GMSH_DIRECTORY`, i.e. the directory where the downloaded SDK archive is located. Then add `$GMSH_DIRECTORY/bin` to your `PATH` variable and `$GMSH_DIRECTORY\lib` to your `PYTHONPATH` variable.
 - matplotlib, e.g. with :code:`sudo apt-get install python3-matplotlib`
 - Sphinx (:code:`sudo apt-get install python-sphinx`)
