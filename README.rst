@@ -53,7 +53,7 @@ The package works with:
 
 .. _gmsh: http://gmsh.info/bin/Linux/gmsh-4.0.2-Linux64-sdk.tgz
 
-- FEniCS 2018.1.0 (from official Ubuntu PPA, see details on FEniCS site_)
+- FEniCS 2019.1.0 (from official Ubuntu PPA, see details on FEniCS site_)
 
 .. _site: https://fenics.readthedocs.io/en/latest/installation.html#debian-ubuntu-packages
 
@@ -81,15 +81,28 @@ For a good user experience, install sphinx on your machine by (example for Ubunt
         sudo apt-get install python3-sphinx
         sudo apt-get install latexmk
 
-and run
-
+and run 
 
 .. code::
 
 	make latexpdf
 
 in the `doc` directory. It will give you a good overview of the capabilities of this tool.
-Also, certain bugs ('features') are explained in case an error occurs during execution.
+Also, certain bugs are explained in case an error occurs during execution.
+
+If you do not run Ubuntu 16 or 18, you can use Docker to generate the LaTex file locally.
+The procedure here is:
+
+1. Set up Docker on your machine
+2. Run `docker build . -t=emstimtools:0.1.3.dev0` (or use a different name and tag with `-t=name:tag` format) 
+3. Run `docker run -ti -v $(pwd):/home/ -p 8080:8080 emstimtools:0.1.3.dev0 bash` in EMStimTools directory.
+4. A bash shell will open. Execute `cd /home/doc` and then execute `make latexpdf`. The documentation will be generated. 
+
+When executing a study, use the same docker image, but proceed as follows:
+
+1. Run `docker run -ti -v $(pwd):/home/ -p 8080:8080 emstimtools:0.1.3.dev0 bash` in the directory, where the Python script for your study is located.
+2. A bash shell will open. Execute `cd /home` and then execute the Python file of your study by running `python3 study.py`. 
+
 
 Examples
 --------
