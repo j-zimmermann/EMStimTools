@@ -21,7 +21,7 @@ import yaml
 
 def load_yaml_file(filename):
     stream = open(filename, "r")
-    data = yaml.load(stream)
+    data = yaml.safe_load(stream)
     return data
 
 

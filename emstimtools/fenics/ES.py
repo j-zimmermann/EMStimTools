@@ -20,6 +20,7 @@
 compute EM fields in stimulation tools by solving the ES (Laplace or Poisson) equation.
 
 """
+import numpy as np
 import dolfin as d
 from .fenics import Fenics
 
@@ -86,9 +87,7 @@ class ES(Fenics):
         u = d.TrialFunction(self.V)
         # test function
         v = d.TestFunction(self.V)
-        # a = d.inner(self.conductivity * d.grad(u), d.grad(v)) * dx
         a = ESLHS(self.conductivity, u, v, self.dx)
-        # L = -self.source_term * v * dx
         L = ESRHS(self.source_term, v, self.dx)
         a, L = self.boundaries.set_RobinBCPoisson(a, L, u, v, self.ds, 'R', 'V_ref', self.logger)
         # vector for solution
@@ -114,6 +113,10 @@ class ES(Fenics):
                 if self.data['properties']['E-Field'] is True:
                     self.get_field()
                     self.datafileXDMFE.write(self.Efield)
+                if 'Current' in self.data['properties']:
+                    self.get_current()
+                if 'Impedance' in self.data['properties']:
+                    self.get_impedance()
             except KeyError:
                 pass
 
@@ -122,7 +125,7 @@ class ES(Fenics):
         compute field
         """
         self.Vector = d.VectorFunctionSpace(self.mesh.mesh, self.data['properties']['project_element'], self.data['properties']['project_degree'])
-        self.Efield = d.project(-d.grad(self.u), self.Vector, solver_type='mumps')
+        self.Efield = d.project(-d.grad(self.u), self.Vector, solver_type=self.data['properties']['project_solver'], preconditioner_type=self.data['properties']['project_preconditioner'])
         self.Efield.rename('E-Field', 'E-Field')
 
     def _prepare_output(self):
@@ -184,7 +187,7 @@ class ES(Fenics):
         self.sub_mesh = d.SubMesh(self.mesh.mesh, self.mesh.cells, self.mesh.subdomaininfo[i])
         V_sub = d.FunctionSpace(self.sub_mesh, self.element)
         # real part, mumps to avoid memory overflow
-        u_sub = d.project(self.u, V_sub, solver_type='mumps')
+        u_sub = d.project(self.u, V_sub, solver_type=self.data['properties']['project_solver'], preconditioner_type=self.data['properties']['project_preconditioner'])
         u_sub.rename('potential', 'potential')
         self.datafileXDMF.write(u_sub)
 
@@ -193,7 +196,7 @@ class ES(Fenics):
         take domain :param str i: and project e-field there
         """
         Vector_sub = d.VectorFunctionSpace(self.sub_mesh, self.data['properties']['project_element'], self.data['properties']['project_degree'])
-        efield_sub = d.project(self.Efield, Vector_sub, solver_type='mumps')
+        efield_sub = d.project(self.Efield, Vector_sub, solver_type=self.data['properties']['project_solver'], preconditioner_type=self.data['properties']['project_preconditioner'])
         efield_sub.rename('E-Field', 'E-Field')
         self.datafileXDMFE.write(efield_sub)
         self.logger.debug("Wrote e-field for domain " + i)
@@ -218,3 +221,47 @@ class ES(Fenics):
                         self._close_efield_xdmf()
                 except KeyError:
                     pass
+
+    def get_current(self):
+        self.currents = {}
+        self.logger.debug('Computing the electric currents through certain surfaces.')
+        self.normal = d.FacetNormal(self.mesh.mesh)
+        if not isinstance(self.data['properties']['Current'], list):
+            self.data['properties']['Current'] = [self.data['properties']['Current']]
+        for facet in self.data['properties']['Current']:
+            current = self.compute_current(facet)
+            self.currents[facet] = current
+        self.logger.info('The currents are:')
+        self.logger.info(self.currents)
+
+    def compute_current(self, facet):
+        if facet not in self.mesh.facetinfo:
+            raise Exception('The facet {} is not in this geometry. Choose one of the following facets {}'.format(facet, self.mesh.facetinfo.keys))
+        index = self.boundaries.facet_dict[facet]
+        current = d.dot(-self.conductivity * d.grad(self.u), self.normal) * self.ds(index)
+        return np.abs(d.assemble(current))
+
+    def get_impedance(self):
+        """
+        .. todo:: implement proper impedance on surface
+        """
+        self.logger.debug('Computing the impedance on a surface.')
+        if not isinstance(self.data['properties']['Impedance'], list):
+            self.data['properties']['Impedance'] = [self.data['properties']['Impedance']]
+        self.impedances = {}
+        for facet in self.data['properties']['Impedance']:
+            if facet not in self.mesh.facetinfo:
+                raise Exception('The facet {} is not in this geometry. Choose one of the following facets {}'.format(facet, self.mesh.facetinfo.keys))
+            # get voltage:
+            try:
+                voltage = self.data['boundaries']['Dirichlet'][facet]
+            except KeyError:
+                self.logger.error("Currently, there is no possibility to compute the impedance on boundaries that do not have a fixed voltage.")
+            if hasattr(self, 'currents'):
+                if facet in self.currents:
+                    self.impedances[facet] = voltage / self.currents[facet]
+                    continue
+            else:
+                self.impedances[facet] = voltage / self.compute_current(facet)
+        self.logger.info('The impedances are:')
+        self.logger.info(self.impedances)

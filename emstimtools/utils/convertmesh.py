@@ -48,6 +48,10 @@ def convertMEDfile(med_file):
     # need dirty hack to write in correct format
     gmsh.write(filename + ".msh2")
     gmsh.finalize()
+    with open(filename + ".msh2", 'r') as mesh_file:
+        mesh = mesh_file.read()
+    with open(filename + ".msh2", 'w') as mesh_file:
+        mesh_file.write(mesh.replace(',', '.'))
     return
 
 

@@ -74,7 +74,15 @@ Documentation
 -------------
 
 This code is documented by the help of Sphinx.
-For a good user experience, install sphinx on your machine and run 
+For a good user experience, install sphinx on your machine by (example for Ubuntu 18.04)
+
+.. code::
+
+        sudo apt-get install python3-sphinx
+        sudo apt-get install latexmk
+
+and run
+
 
 .. code::
 

@@ -118,7 +118,7 @@ class Boundary(object):
         if 'Robin' in self.boundary_dict:
             self.boundary_info = self.boundary_dict['Robin']
             for boundary_key in self.boundary_info:
-                self.logger.debug('Set Robin BC for ' + boundary_key + ' with info ' + self.boundary_info[boundary_key])
+                logger.debug('Set Robin BC for ' + boundary_key + ' with info ' + str(self.boundary_info[boundary_key]))
                 index = self.facet_dict[boundary_key]
                 try:
                     p = self.boundary_info[boundary_key][p_name]
@@ -138,7 +138,7 @@ class Boundary(object):
         if 'Robin' in self.boundary_dict:
             self.boundary_info = self.boundary_dict['Robin']
             for boundary_key in self.boundary_info:
-                self.logger.debug('Set Robin BC for ' + boundary_key + ' with info ' + self.boundary_info[boundary_key])
+                logger.debug('Set Robin BC for ' + boundary_key + ' with info ' + str(self.boundary_info[boundary_key]))
                 index = self.facet_dict[boundary_key]
                 try:
                     p_r = self.boundary_info[boundary_key][p_r_name]

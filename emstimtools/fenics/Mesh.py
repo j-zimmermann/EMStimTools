@@ -59,17 +59,32 @@ class Mesh(object):
 
     def refine(self):
         for n in range(self.refinement_info['max_iter']):
-            cell_markers = d.MeshFunction('bool', self.mesh, self.dimension)
+            self.logger.debug("Entering refinement step {}".format(n))
+            if 'regions' in self.refinement_info:
+                cell_markers = d.MeshFunction('bool', self.mesh, self.dimension)
+            elif 'facets' in self.refinement_info:
+                cell_markers = d.MeshFunction('bool', self.mesh, self.dimension - 1)
+            else:
+                raise Exception("You must provide facets or regions where the mesh should be refined.")
             cell_markers.set_all(False)
-            hlp = np.asarray(self.cells.array(), dtype=np.int32)
-            for i in range(hlp.size):
-                if any(hlp[i] == self.subdomaininfo[a] for a in self.refinement_info['regions']):
-                    cell_markers[i] = True
+            if 'regions' in self.refinement_info:
+                hlp = np.asarray(self.cells.array(), dtype=np.int32)
+                for i in range(hlp.size):
+                    if any(hlp[i] == self.subdomaininfo[a] for a in self.refinement_info['regions']):
+                        cell_markers[i] = True
+            elif 'facets' in self.refinement_info:
+                hlp = np.asarray(self.facets.array(), dtype=np.int32)
+                for i in range(hlp.size):
+                    if any(hlp[i] == self.facetinfo[a] for a in self.refinement_info['facets']):
+                        cell_markers[i] = True
 
             self.mesh = d.refine(self.mesh, cell_markers)
             self.facets = d.adapt(self.facets, self.mesh)
             self.cells = d.adapt(self.cells, self.mesh)
-        self.logger.info("refined mesh {} times at {}".format(self.refinement_info['max_iter'], self.refinement_info['regions']))
+        if 'regions' in self.refinement_info:
+            self.logger.info("refined mesh {} times at {}".format(self.refinement_info['max_iter'], self.refinement_info['regions']))
+        else:
+            self.logger.info("refined mesh {} times at {}".format(self.refinement_info['max_iter'], self.refinement_info['facets']))
         try:
             meshsave = self.refinement_info['save_mesh']
             self.logger.info('Will save mesh.')

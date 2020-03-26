@@ -28,25 +28,29 @@ from emstimtools.fenics.HeatEquation import HeatLHStime, HeatLHSstat, HeatRHStim
 
 
 class JouleHeating(Fenics):
-    """
+    r"""
     Solve a Joule heating problem.
 
     The time-dependent or stationary heat equation (think of :math:`\frac{\partial T}{\partial t} \to 0`)  is solved:
+
     .. math::
 
         \rho C_p \frac{\partial T}{\partial t} =  \nabla \cdot (k_{\mathrm{iso}} \nabla T) + Q_{\mathrm{e}}
 
     The heat :math:`Q_{\mathrm{e}}` due to the current is either:
+
     .. math::
 
         Q_\mathrm{e} = \sigma |\nabla V|^2
 
     or in the frequency-dependent case (:math:`V=V_r + i V_i` is a phasor)
+
     .. math::
 
         Q_\mathrm{e} =  \frac{1}{2} \mathrm{Re}\left[(\sigma + i \omega \epsilon) (\nabla V)^\ast \nabla V \right] = \frac{1}{2} \sigma (|\nabla V_r|^2 i+ |\nabla V_i|^2)
 
     One can use a temperature-dependent resistivity as in COMSOL.
+
     .. note ::
 
         Technically, this is not completely solved correctly. A better formulation for a truly implicit scheme is needed. Here, the temperature of the previous time-step is used, but it should be the one of the current time-step. Then, one had to solve a non-linear problem.
@@ -202,6 +206,21 @@ class JouleHeating(Fenics):
                         self.datafileXDMFEM_imag = d.XDMFFile(self.mesh.mesh.mpi_comm(), self.result_dir + "EMsolution_imag" + self.study + '.xdmf')
                     else:
                         self.datafileXDMFEM = d.XDMFFile(self.mesh.mesh.mpi_comm(), self.result_dir + "EMsolution" + self.study + '.xdmf')
+            if 'properties' in self.data:
+                try:
+                    if self.data['properties']['E-Field'] is True:
+                        self._open_output_efield()
+                except KeyError:
+                    pass
+
+    def _open_output_efield(self, add=''):
+        filename = self.result_dir + "field" + self.study + add + '.xdmf'
+        self.logger.info("Will store e-field to file {}".format(filename))
+        self.datafileXDMFE = d.XDMFFile(self.mesh.mesh.mpi_comm(), filename)
+
+    def _close_efield_xdmf(self):
+        self.logger.debug("Closed XDMF file for e-field")
+        self.datafileXDMFE.close()
 
     def _close_output(self):
         if 'output' in self.data:
@@ -217,6 +236,12 @@ class JouleHeating(Fenics):
                     else:
                         self.datafileXDMFEM.close()
                     self.datafileXDMFT.close()
+        if 'properties' in self.data:
+            try:
+                if self.data['properties']['E-Field'] is True:
+                    self._close_efield_xdmf()
+            except KeyError:
+                pass
 
     def _write_EM_output(self, n, append=False):
         if 'XDMF' in self.data['output']:
@@ -229,6 +254,23 @@ class JouleHeating(Fenics):
         if 'HDF5' in self.data['output']:
             if self.data['output']['HDF5'] is True:
                 self.datafileHDF5EM.write(self.psi, "/V_{}".format(n))
+        if 'properties' in self.data:
+            try:
+                if self.data['properties']['E-Field'] is True:
+                    self.get_field()
+                    self.datafileXDMFE.write(self.Efield)
+                if 'Current' in self.data['properties']:
+                    self.get_current()
+            except KeyError:
+                pass
+
+    def get_field(self):
+        """
+        compute field
+        """
+        self.Vector = d.VectorFunctionSpace(self.mesh.mesh, self.data['properties']['project_element'], self.data['properties']['project_degree'])
+        self.Efield = d.project(-d.grad(self.psi), self.Vector, solver_type='mumps')
+        self.Efield.rename('E-Field', 'E-Field')
 
     def _write_T_output(self, T, n, append=False):
         if 'XDMF' in self.data['output']:
@@ -255,11 +297,10 @@ class JouleHeating(Fenics):
 
             # Compute solution
             self.Tsolver.solve()
-            self.logger.debug("Solved thermal problem at n=" + str(n))
             # if stationary: leave here
             if self.N == 1:
                 break
-
+            self.logger.debug("Solved thermal problem at n=" + str(n))
             # write previous solution to file
             self._write_T_output(self.T_n, n, append=append)
             # Update previous solution
@@ -322,3 +363,22 @@ class JouleHeating(Fenics):
 
     def compute_flux(self):
         self.hflux = d.project(-self.thermal_conductivity * d.grad(self.T_n), d.VectorFunctionSpace(self.mesh.mesh, 'Lagrange', 1))
+
+    def get_current(self):
+        self.currents = {}
+        self.logger.debug('Computing the electric currents through certain surfaces.')
+        self.normal = d.FacetNormal(self.mesh.mesh)
+        if not isinstance(self.data['properties']['Current'], list):
+            self.data['properties']['Current'] = [self.data['properties']['Current']]
+        for facet in self.data['properties']['Current']:
+            current = self.compute_current(facet)
+            self.currents[facet] = current
+        self.logger.info('The currents are:')
+        self.logger.info(self.currents)
+
+    def compute_current(self, facet):
+        if facet not in self.mesh.facetinfo:
+            raise Exception('The facet {} is not in this geometry. Choose one of the following facets {}'.format(facet, self.mesh.facetinfo.keys))
+        index = self.boundariesEM.facet_dict[facet]
+        current = d.dot(-self.conductivity * d.grad(self.psi), self.normal) * self.ds(index)
+        return np.abs(d.assemble(current))
