@@ -212,6 +212,12 @@ class Fenics(object):
                 else:
                     deg = self.data['degree']
                 self.data['properties']['project_degree'] = deg
+            if 'project_solver' not in self.data['properties']:
+                self.data['properties']['project_solver'] = 'mumps'
+            if 'project_preconditioner' not in self.data['properties']:
+                self.data['properties']['project_preconditioner'] = 'none'
+
+                
         # to set constants element-wise, we choose a discontinuous basis of degree 0 (piecewise constant)
         self.ConstantsSpace = d.FunctionSpace(self.mesh.mesh, 'DG', 0)
         self.cells_array = np.asarray(self.mesh.cells.array(), dtype=np.int32)
