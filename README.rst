@@ -94,14 +94,14 @@ If you do not run Ubuntu 16 or 18, you can use Docker to generate the LaTex file
 The procedure here is:
 
 1. Set up Docker on your machine
-2. Run `docker build . -t=emstimtools:0.1.3.dev0` (or use a different name and tag with `-t=name:tag` format) 
-3. Run `docker run -ti -v $(pwd):/home/ -p 8080:8080 emstimtools:0.1.3.dev0 bash` in EMStimTools directory.
-4. A bash shell will open. Execute `cd /home/doc` and then execute `make latexpdf`. The documentation will be generated. 
+2. Run :code:`docker build . -t=emstimtools:0.1.3.dev0` (or use a different name and tag with `-t=name:tag` format) 
+3. Run :code:`docker run -ti -v $(pwd):/home/ -p 8080:8080 emstimtools:0.1.3.dev0 bash` in EMStimTools directory.
+4. A bash shell will open. Execute :code:`cd /home/doc` and then execute :code:`make latexpdf`. The documentation will be generated. 
 
 When executing a study, use the same docker image, but proceed as follows:
 
-1. Run `docker run -ti -v $(pwd):/home/ -p 8080:8080 emstimtools:0.1.3.dev0 bash` in the directory, where the Python script for your study is located.
-2. A bash shell will open. Execute `cd /home` and then execute the Python file of your study by running `python3 study.py`. 
+1. Run :code:`docker run -ti -v $(pwd):/home/ -p 8080:8080 emstimtools:0.1.3.dev0 bash` in the directory, where the Python script for your study is located.
+2. A bash shell will open. Execute `cd /home` and then execute the Python file of your study by running :code:`python3 study.py`. 
 
 
 Examples
