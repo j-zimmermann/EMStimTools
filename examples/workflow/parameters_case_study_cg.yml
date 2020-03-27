@@ -1,0 +1,66 @@
+study:
+        case_study_workflow
+
+physics: 
+        ES
+
+SALOMEfile:
+        Mesh_chamber.py  
+
+dimension:
+        3 
+
+element:
+        CG
+
+degree:
+        2
+
+geometry:
+        [r_el, r_well, h_well, h_el, dist_el, level, l_el, ratio]
+
+# based on https://www.tpp.ch/page/produkte/09_zellkultur_testplatte.php
+# assumption: 80% filled
+geometryvalues:
+        r_well : 0.01689 
+        h_well : .01733
+        h_el : .001
+        r_el : 0.0005
+        dist_el : 0.022
+        level : 0.8
+        l_el : 0.05 # length of electrode
+        ratio : 0.44 # ratio of two parts of electrode => 0.44 means 22mm for the bottom and the rest for the upper part 
+
+materials:
+        [Air, Medium]
+
+conductivity:
+        Air : 1e-14
+        Medium : 1.0 
+
+boundaries:
+        Dirichlet:
+                Contact1: 1.0         
+                Contact2: 0.0        
+
+solver:
+        linear_solver : cg 
+        krylov_solver:
+                monitor_convergence: True
+        preconditioner : petsc_amg #hypre_amg
+
+
+output:
+        XDMF: yes
+
+properties:
+        E-Field : yes
+        project_solver: cg
+        project_preconditioner: petsc_amg
+
+
+plot:
+        mesh : yes
+
+postprocess:
+       submesh: [Medium]
