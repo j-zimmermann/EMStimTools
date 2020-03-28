@@ -75,7 +75,7 @@ def changeSALOMEfile(SALOME_PY_FILE, geometry, geometryvalues, meshname=None, sa
                     # find this key and print out the line, then continue
                     for key in keys:
                         if key in line.strip():
-                            out.write("{} = {}".format(key, salome_parameters[key]))
+                            out.write("{} = {}\n".format(key, salome_parameters[key]))
                             del(salome_parameters[key])
                             print("salome_parameters", salome_parameters)
                             break
