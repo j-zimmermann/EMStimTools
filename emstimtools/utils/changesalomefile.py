@@ -34,7 +34,7 @@ def _substitute_variables(f, out, items, values):
             return
 
 
-def changeSALOMEfile(SALOME_PY_FILE, geometry, geometryvalues, meshname=None):
+def changeSALOMEfile(SALOME_PY_FILE, geometry, geometryvalues, meshname=None, salome_parameters=None):
         """
         Take a SALOME file, which contains an absolute path and make it more general.
         Substitute numbers by variables and make file thus flexible.
@@ -43,6 +43,7 @@ def changeSALOMEfile(SALOME_PY_FILE, geometry, geometryvalues, meshname=None):
         :param list geometry: list with name of geometrical entities
         :param dict geometryvalues: dictionary with geometrical values
         :param str meshname: usually name of study and '_mesh'
+        :param dict salome_parameters: parse a dict of keys (parameters) and their values, e.g. for convergence study
 
         .. note:: whenever something does not work, check the following points:
 
@@ -66,6 +67,19 @@ def changeSALOMEfile(SALOME_PY_FILE, geometry, geometryvalues, meshname=None):
             if not line:
                 # EOF
                 break
+
+            if salome_parameters is not None:
+                # check if any key is in the line
+                keys = list(salome_parameters.keys())
+                if any(key in line.strip() for key in keys):
+                    # find this key and print out the line, then continue
+                    for key in keys:
+                        if key in line.strip():
+                            out.write("{} = {}".format(key, salome_parameters[key]))
+                            del(salome_parameters[key])
+                            print("salome_parameters", salome_parameters)
+                            break
+                    continue
 
             # import os
             if line.strip() == "import sys":

@@ -20,7 +20,6 @@
 compute EM fields in stimulation tools by solving the ES (Laplace or Poisson) equation.
 
 """
-import numpy as np
 import dolfin as d
 from .fenics import Fenics
 
@@ -235,11 +234,13 @@ class ES(Fenics):
         self.logger.info(self.currents)
 
     def compute_current(self, facet):
+        if not hasattr(self, "normal"):
+            self.normal = d.FacetNormal(self.mesh.mesh)
         if facet not in self.mesh.facetinfo:
             raise Exception('The facet {} is not in this geometry. Choose one of the following facets {}'.format(facet, self.mesh.facetinfo.keys))
         index = self.boundaries.facet_dict[facet]
         current = d.dot(-self.conductivity * d.grad(self.u), self.normal) * self.ds(index)
-        return np.abs(d.assemble(current))
+        return d.assemble(current)
 
     def get_impedance(self):
         """

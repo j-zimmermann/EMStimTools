@@ -127,6 +127,8 @@ class Simulation(object):
         self.data = load_yaml_file(self.yamlfile)
         self.study = return_study(self.data)
         self.dimension = return_dimension(self.data)
+        if 'salome_parameters' not in self.data:
+            self.data['salome_parameters'] = None
 
     def _add_logger(self):
         self.logger = logging.getLogger('EMStimTools_' + str(self.study))
@@ -143,7 +145,7 @@ class Simulation(object):
         self.geometryparameter, self.geometryvalues = return_geometry(self.data)
 
         self.logger.debug("Read in SALOMEfile " + str(self.SALOMEfile))
-        changeSALOMEfile(self.SALOMEfile, self.geometryparameter, self.geometryvalues, meshname=str(self.study) + '_mesh')
+        changeSALOMEfile(self.SALOMEfile, self.geometryparameter, self.geometryvalues, meshname=str(self.study) + '_mesh', salome_parameters=self.data['salome_parameters'])
         self.logger.info("SALOME file " + str(self.SALOMEfile) + " prepared")
 
     def _prepare_geometry(self):
