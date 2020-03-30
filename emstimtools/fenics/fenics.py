@@ -126,7 +126,8 @@ class Fenics(object):
         if 'plot' in self.data:
             self.plot = self.data['plot']
         self.load_mesh()
-        self._prepare_result_dir()
+        if 'output' in self.data:
+            self._prepare_result_dir()
         self._initalize_point_evaluation()
         self._prepare_fem()
 
@@ -192,14 +193,13 @@ class Fenics(object):
             self.logger.debug("Mesh was written out.")
 
     def _prepare_result_dir(self):
-        if 'output' in self.data:
-            self.result_dir = "results/"
-            if not os.path.exists(self.result_dir):
-                try:
-                    os.makedirs(self.result_dir)
-                except OSError as exc:  # Guard against race condition
-                    if exc.errno != errno.EEXIST:
-                        raise
+        self.result_dir = "results/"
+        if not os.path.exists(self.result_dir):
+            try:
+                os.makedirs(self.result_dir)
+            except OSError as exc:  # Guard against race condition
+                if exc.errno != errno.EEXIST:
+                    raise
 
     def _prepare_fem(self):
         self.element = d.FiniteElement(self.data['element'], self.mesh.mesh.ufl_cell(), self.data['degree'])

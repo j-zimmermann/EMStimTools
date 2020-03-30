@@ -150,6 +150,11 @@ class ES(Fenics):
         self.logger.info("Will store solution to file {}".format(filename))
         self.datafileXDMF = d.XDMFFile(self.mesh.mesh.mpi_comm(), filename)
 
+    def _open_xdmf_output_difference(self, add=''):
+        filename = self.result_dir + "solution_difference" + self.study + add + '.xdmf'
+        self.logger.info("Will store solution difference to file {}".format(filename))
+        self.datafileXDMFdiff = d.XDMFFile(self.mesh.mesh.mpi_comm(), filename)
+
     def _open_output_efield(self, add=''):
         filename = self.result_dir + "field" + self.study + add + '.xdmf'
         self.logger.info("Will store e-field to file {}".format(filename))
@@ -158,6 +163,10 @@ class ES(Fenics):
     def _close_solution_xdmf(self):
         self.logger.debug("Closed XDMF file for solution")
         self.datafileXDMF.close()
+
+    def _close_solution_difference_xdmf(self):
+        self.logger.debug("Closed XDMF file for solution difference")
+        self.datafileXDMFdiff.close()
 
     def _close_efield_xdmf(self):
         self.logger.debug("Closed XDMF file for e-field")
@@ -266,3 +275,40 @@ class ES(Fenics):
                 self.impedances[facet] = voltage / self.compute_current(facet)
         self.logger.info('The impedances are:')
         self.logger.info(self.impedances)
+
+    def _interpolate_external_solution(self, ext_solution):
+        """
+        Takes an externally generated solution (e.g. on a coarser mesh) and interpolates it onto the finer mesh.
+        Requires :param:`ext_solution` to be a DOLFIN Expression or a DOLFIN function from a Lagrange space.
+        """
+
+        self.u_ext = d.Function(self.V)
+        # needed since otherwise errors are introduced on the boundary
+        self.u_ext.set_allow_extrapolation(True)
+        ext_solution.set_allow_extrapolation(True)
+        print("status of allow_extrapolation:", self.u_ext.get_allow_extrapolation(), ext_solution.get_allow_extrapolation())
+
+        d.LagrangeInterpolator.interpolate(self.u_ext, ext_solution)
+
+    def compare_solution(self, ext_solution, save_difference=False):
+        """
+        compare solution to other FE-generated solution
+        """
+        self._interpolate_external_solution(ext_solution)
+        self.solution_difference = d.Function(self.V)
+        self.solution_difference.rename('solution_difference', 'solution_difference')
+        self.solution_difference.vector()[:] = self.u.vector()[:]
+        self.solution_difference.vector()[:] -= self.u_ext.vector()[:]
+        if save_difference:
+            if not hasattr(self, "result_dir"):
+                self._prepare_result_dir()
+            self._open_xdmf_output_difference()
+            self.datafileXDMFdiff.write(self.solution_difference)
+            self._close_solution_difference_xdmf()
+
+    def get_solution_error(self, ext_solution, save_difference=False, norm_type="l2"):
+        """
+        get the error in a certain norm. possible are l1, l2 and linf norms.
+        """
+        self.compare_solution(ext_solution, save_difference)
+        return self.solution_difference.vector().norm(norm_type)
