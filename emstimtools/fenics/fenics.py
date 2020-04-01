@@ -146,9 +146,9 @@ class Fenics(object):
             subdomains = self.data['subdomains']
         if 'facets' in self.data:
             facets = self.data['facets']
-        if 'refinement' in self.data:
-            refinement = self.data['refinement']
-        self.mesh = Mesh(self.data['study'], self.logger, subdomains, facets, refinement)
+        if 'mesh' in self.data:
+            change = self.data['mesh']
+        self.mesh = Mesh(self.data['study'], self.logger, subdomains, facets, change)
         self.dx = d.Measure('dx', domain=self.mesh.mesh)
         self.ds = d.Measure('ds', domain=self.mesh.mesh, subdomain_data=self.mesh.facets)
         # try to plot mesh

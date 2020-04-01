@@ -36,7 +36,7 @@ class Mesh(object):
 
     - :meth:`refine`: uniform refinement of marked regions.
     '''
-    def __init__(self, title, logger, subdomaininfo, facetinfo, refinement_info):
+    def __init__(self, title, logger, subdomaininfo, facetinfo, change_info):
         self.mesh_dir = "mesh/"
         self.meshname = str(title) + '_mesh'
         self.mesh_file = self.mesh_dir + self.meshname + '.h5'
@@ -52,10 +52,14 @@ class Mesh(object):
         self.dimension = self.mesh.topology().dim()
         self.subdomaininfo = subdomaininfo
         self.facetinfo = facetinfo
-        self.refinement_info = refinement_info
         self.logger.info("Loaded mesh")
-        if self.refinement_info is not None:
-            self.refine()
+        if change_info is not None:
+            if 'refinement' in change_info:
+                self.refinement_info = change_info['refinement']
+                self.refine()
+            if 'transformation' in change_info:
+                self.transformation_info = change_info['transformation']
+                self.transformation()
 
     def refine(self):
         for n in range(self.refinement_info['max_iter']):
@@ -97,3 +101,9 @@ class Mesh(object):
                 self.logger.info("Mesh won't be saved")
         except KeyError:
             self.logger.info("Mesh won't be saved")
+
+    def transformation(self):
+        if 'scale' in self.transformation_info:
+            self.mesh.scale(self.transformation_info['scale'])
+        if 'translate' in self.transformation_info:
+            self.mesh.scale(self.transformation_info['translate'])

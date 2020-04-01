@@ -21,6 +21,7 @@ compute EM fields in stimulation tools by solving the ES (Laplace or Poisson) eq
 
 """
 import dolfin as d
+import numpy as np
 from .fenics import Fenics
 
 
@@ -286,7 +287,6 @@ class ES(Fenics):
         # needed since otherwise errors are introduced on the boundary
         self.u_ext.set_allow_extrapolation(True)
         ext_solution.set_allow_extrapolation(True)
-        print("status of allow_extrapolation:", self.u_ext.get_allow_extrapolation(), ext_solution.get_allow_extrapolation())
 
         d.LagrangeInterpolator.interpolate(self.u_ext, ext_solution)
 
@@ -309,6 +309,12 @@ class ES(Fenics):
     def get_solution_error(self, ext_solution, save_difference=False, norm_type="l2"):
         """
         get the error in a certain norm. possible are l1, l2 and linf norms.
+        Note that here only the norm of the difference vector is taken!
         """
         self.compare_solution(ext_solution, save_difference)
         return self.solution_difference.vector().norm(norm_type)
+
+    def get_solution_l2error(self, ext_solution, save_difference=False):
+        self.compare_solution(ext_solution, save_difference)
+        return np.sqrt(d.assemble(d.inner(self.u - self.u_ext, self.u - self.u_ext) * self.dx))
+
