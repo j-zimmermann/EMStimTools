@@ -1,0 +1,568 @@
+nohup: ignoring input
+runSalome running on ringeltaube
+Searching for a free port for naming service: 2817 - OK
+Searching Naming Service + found in 0.1 seconds 
+Searching /Registry in Naming Service + found in 0.5 seconds 
+Searching /Kernel/ModulCatalog in Naming Service +th. 140117159570304 - Trace /volatile/salome/SALOME-8.3.0-UB16.04/SOURCES/KERNEL/src/ModuleCatalog/SALOME_ModuleCatalog_Server.cxx [101] : Module Catalog Server: Naming Service was found
+Warning: this type (Study,objref) already exists, it will be ignored.
+Warning: this type (SALOME_MED/MEDCouplingFieldDoubleCorbaInterface,objref) already exists, it will be ignored.
+ found in 0.5 seconds 
+RunStudy
+Searching /myStudyManager in Naming Service + found in 0.5 seconds 
+Searching /Containers/ringeltaube/FactoryServer in Naming Service +Warning, no type found for resource "localhost", using default value "single_machine"
+createNewStudy
+extStudy 1
+Current path is /data/julius/github/EMStimTools/examples/workflow
+ found in 0.5 seconds 
+Start SALOME, elapsed time :   2.1 seconds
+Info    : Reading 'case_study_workflow_convergence_mesh.med'...
+Info    : Reading MED file V3.2.1 using MED library V3.3.1
+Info    : Reading 3-D unstructured mesh <<Mesh_1>>
+Info    : Done reading 'case_study_workflow_convergence_mesh.med'
+Info    : Writing 'case_study_workflow_convergence_mesh.msh2'...
+Info    : Done writing 'case_study_workflow_convergence_mesh.msh2'
+Solving linear variational problem.
+  0 KSP preconditioned resid norm 4.369024273796e+01 true resid norm 2.338803112705e+01 ||r(i)||/||b|| 1.000000000000e+00
+  1 KSP preconditioned resid norm 1.010614888578e+01 true resid norm 2.643480340711e+00 ||r(i)||/||b|| 1.130270575727e-01
+  2 KSP preconditioned resid norm 3.024492619528e+00 true resid norm 1.421768982074e+00 ||r(i)||/||b|| 6.079045193459e-02
+  3 KSP preconditioned resid norm 1.371296104037e+00 true resid norm 1.660979399876e-01 ||r(i)||/||b|| 7.101835083307e-03
+  4 KSP preconditioned resid norm 5.755882770673e-01 true resid norm 5.316442295474e-02 ||r(i)||/||b|| 2.273146579373e-03
+  5 KSP preconditioned resid norm 2.913268934184e-01 true resid norm 1.069345160923e-02 ||r(i)||/||b|| 4.572189745748e-04
+  6 KSP preconditioned resid norm 1.611401644791e-01 true resid norm 1.557203547355e-03 ||r(i)||/||b|| 6.658121578919e-05
+  7 KSP preconditioned resid norm 9.019542419809e-02 true resid norm 3.030744357405e-04 ||r(i)||/||b|| 1.295852712415e-05
+  8 KSP preconditioned resid norm 5.121351869888e-02 true resid norm 6.987039714387e-05 ||r(i)||/||b|| 2.987442455686e-06
+  9 KSP preconditioned resid norm 2.648419422929e-02 true resid norm 1.671283843966e-05 ||r(i)||/||b|| 7.145893704720e-07
+ 10 KSP preconditioned resid norm 1.251672503407e-02 true resid norm 4.769521428708e-06 ||r(i)||/||b|| 2.039300103031e-07
+ 11 KSP preconditioned resid norm 6.053518819634e-03 true resid norm 1.389609414655e-06 ||r(i)||/||b|| 5.941540812503e-08
+ 12 KSP preconditioned resid norm 2.591273252245e-03 true resid norm 4.439674870007e-07 ||r(i)||/||b|| 1.898267898606e-08
+ 13 KSP preconditioned resid norm 1.284115660520e-03 true resid norm 1.115034800056e-07 ||r(i)||/||b|| 4.767544535914e-09
+ 14 KSP preconditioned resid norm 7.425258365917e-04 true resid norm 2.053121117362e-08 ||r(i)||/||b|| 8.778511992773e-10
+ 15 KSP preconditioned resid norm 4.289595567313e-04 true resid norm 5.560903487880e-09 ||r(i)||/||b|| 2.377670637460e-10
+ 16 KSP preconditioned resid norm 2.341919731069e-04 true resid norm 1.468775214219e-09 ||r(i)||/||b|| 6.280029328846e-11
+ 17 KSP preconditioned resid norm 1.132031016638e-04 true resid norm 5.817872377273e-10 ||r(i)||/||b|| 2.487542600601e-11
+ 18 KSP preconditioned resid norm 4.920624264242e-05 true resid norm 1.896626315427e-10 ||r(i)||/||b|| 8.109388537769e-12
+ 19 KSP preconditioned resid norm 2.526607088214e-05 true resid norm 4.725020767587e-11 ||r(i)||/||b|| 2.020272994302e-12
+ 20 KSP preconditioned resid norm 1.413414075645e-05 true resid norm 1.344923224670e-11 ||r(i)||/||b|| 5.750476461075e-13
+ 21 KSP preconditioned resid norm 8.073720476962e-06 true resid norm 3.811383642158e-12 ||r(i)||/||b|| 1.629629968189e-13
+ 22 KSP preconditioned resid norm 4.578157391175e-06 true resid norm 1.077142352397e-12 ||r(i)||/||b|| 4.605528129093e-14
+ 23 KSP preconditioned resid norm 2.522049570362e-06 true resid norm 3.457165187428e-13 ||r(i)||/||b|| 1.478177093509e-14
+ 24 KSP preconditioned resid norm 1.142563871145e-06 true resid norm 1.709016593698e-13 ||r(i)||/||b|| 7.307227292517e-15
+ 25 KSP preconditioned resid norm 3.280771690952e-07 true resid norm 1.051437779192e-13 ||r(i)||/||b|| 4.495623310400e-15
+salome_parameters {'min_size': 0.001}
+salome_parameters {}
+Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format
+Expecting 1533 vertices
+Found all vertices
+Expecting 7006 cells
+Found all cells
+Conversion done
+Converted mesh to .h5 format
+removed previous binary and text meshfiles that are not needed any longer
+##############
+Current state:
+##############
+[10845] [0.024] [0.001] [-7.249135556530399] [-7.249135556530399] [array([ 1.40638964e-05,  3.22568829e-02, -1.40824838e-04])] [nan]
+##############
+##############
+runSalome running on ringeltaube
+Searching for a free port for naming service: 2818 - OK
+Searching Naming Service + found in 0.1 seconds 
+Searching /Registry in Naming Service + found in 0.5 seconds 
+Searching /Kernel/ModulCatalog in Naming Service +th. 22923473767296 - Trace /volatile/salome/SALOME-8.3.0-UB16.04/SOURCES/KERNEL/src/ModuleCatalog/SALOME_ModuleCatalog_Server.cxx [101] : Module Catalog Server: Naming Service was found
+Warning: this type (Study,objref) already exists, it will be ignored.
+Warning: this type (SALOME_MED/MEDCouplingFieldDoubleCorbaInterface,objref) already exists, it will be ignored.
+ found in 0.5 seconds 
+RunStudy
+Searching /myStudyManager in Naming Service + found in 0.5 seconds 
+Searching /Containers/ringeltaube/FactoryServer in Naming Service +Warning, no type found for resource "localhost", using default value "single_machine"
+createNewStudy
+extStudy 1
+Current path is /data/julius/github/EMStimTools/examples/workflow
+ found in 0.5 seconds 
+Start SALOME, elapsed time :   2.1 seconds
+Info    : No current model available: creating one
+Info    : Reading 'case_study_workflow_convergence_mesh.med'...
+Info    : Reading MED file V3.2.1 using MED library V3.3.1
+Info    : Reading 3-D unstructured mesh <<Mesh_1>>
+Info    : Done reading 'case_study_workflow_convergence_mesh.med'
+Info    : Writing 'case_study_workflow_convergence_mesh.msh2'...
+Info    : Done writing 'case_study_workflow_convergence_mesh.msh2'
+Solving linear variational problem.
+  0 KSP preconditioned resid norm 8.390556873008e+01 true resid norm 4.756048780238e+01 ||r(i)||/||b|| 1.000000000000e+00
+  1 KSP preconditioned resid norm 1.828898180193e+01 true resid norm 2.292218714640e+00 ||r(i)||/||b|| 4.819586216535e-02
+  2 KSP preconditioned resid norm 5.931367254539e+00 true resid norm 1.628361292229e+00 ||r(i)||/||b|| 3.423769114807e-02
+  3 KSP preconditioned resid norm 2.546635193487e+00 true resid norm 3.937448129442e-01 ||r(i)||/||b|| 8.278822004103e-03
+  4 KSP preconditioned resid norm 1.202564306863e+00 true resid norm 1.352746223556e-01 ||r(i)||/||b|| 2.844264821625e-03
+  5 KSP preconditioned resid norm 4.882522764522e-01 true resid norm 4.321849294820e-02 ||r(i)||/||b|| 9.087058385057e-04
+  6 KSP preconditioned resid norm 2.561436163609e-01 true resid norm 8.434247084563e-03 ||r(i)||/||b|| 1.773372703747e-04
+  7 KSP preconditioned resid norm 1.367946131170e-01 true resid norm 1.705216920146e-03 ||r(i)||/||b|| 3.585364656543e-05
+  8 KSP preconditioned resid norm 8.009631043579e-02 true resid norm 4.086683789863e-04 ||r(i)||/||b|| 8.592602764808e-06
+  9 KSP preconditioned resid norm 4.209964643611e-02 true resid norm 1.236955101773e-04 ||r(i)||/||b|| 2.600804068522e-06
+ 10 KSP preconditioned resid norm 1.337141546372e-02 true resid norm 5.537848702731e-05 ||r(i)||/||b|| 1.164380131201e-06
+ 11 KSP preconditioned resid norm 3.176777612051e-03 true resid norm 1.778346149242e-05 ||r(i)||/||b|| 3.739125125527e-07
+ 12 KSP preconditioned resid norm 1.281638183553e-03 true resid norm 3.116446531224e-06 ||r(i)||/||b|| 6.552595810568e-08
+ 13 KSP preconditioned resid norm 6.388840122459e-04 true resid norm 1.127694073845e-06 ||r(i)||/||b|| 2.371073397167e-08
+ 14 KSP preconditioned resid norm 3.108594210621e-04 true resid norm 2.567152832914e-07 ||r(i)||/||b|| 5.397658753168e-09
+ 15 KSP preconditioned resid norm 1.735068780344e-04 true resid norm 5.538906971983e-08 ||r(i)||/||b|| 1.164602641377e-09
+ 16 KSP preconditioned resid norm 8.836778320464e-05 true resid norm 2.125184259062e-08 ||r(i)||/||b|| 4.468381964231e-10
+ 17 KSP preconditioned resid norm 2.234639404324e-05 true resid norm 9.764775803822e-09 ||r(i)||/||b|| 2.053127765299e-10
+ 18 KSP preconditioned resid norm 5.496948207577e-06 true resid norm 2.190580020561e-09 ||r(i)||/||b|| 4.605882155086e-11
+ 19 KSP preconditioned resid norm 2.816190285177e-06 true resid norm 4.109048544723e-10 ||r(i)||/||b|| 8.639626577836e-12
+ 20 KSP preconditioned resid norm 1.553161906643e-06 true resid norm 1.157480709166e-10 ||r(i)||/||b|| 2.433702349681e-12
+ 21 KSP preconditioned resid norm 7.820742780436e-07 true resid norm 3.357501795117e-11 ||r(i)||/||b|| 7.059435153543e-13
+Building point search tree to accelerate distance queries.
+Computed bounding box tree with 14011 nodes for 7006 points.
+salome_parameters {'min_size': 0.0005}
+salome_parameters {}
+Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format
+Expecting 5257 vertices
+Found all vertices
+Expecting 25447 cells
+Found all cells
+Conversion done
+Converted mesh to .h5 format
+removed previous binary and text meshfiles that are not needed any longer
+Current error:  3.0365642120585683
+##############
+Current state:
+##############
+[10845, 38027] [0.024, 0.012] [0.001, 0.0005] [-7.249135556530399, -10.285699768588968] [-7.249135556530399, -10.285699768588968] [array([ 1.40638964e-05,  3.22568829e-02, -1.40824838e-04]), array([3.58654541e-05, 3.32119444e-02, 1.71986016e-05])] [nan, (1.6352517938125766, 0.5554247915574236)]
+##############
+##############
+runSalome running on ringeltaube
+Searching for a free port for naming service: 2819 - OK
+Searching Naming Service + found in 0.1 seconds 
+Searching /Registry in Naming Service + found in 0.5 seconds 
+Searching /Kernel/ModulCatalog in Naming Service +th. 22399725808512 - Trace /volatile/salome/SALOME-8.3.0-UB16.04/SOURCES/KERNEL/src/ModuleCatalog/SALOME_ModuleCatalog_Server.cxx [101] : Module Catalog Server: Naming Service was found
+Warning: this type (Study,objref) already exists, it will be ignored.
+Warning: this type (SALOME_MED/MEDCouplingFieldDoubleCorbaInterface,objref) already exists, it will be ignored.
+ found in 0.5 seconds 
+RunStudy
+Searching /myStudyManager in Naming Service + found in 0.5 seconds 
+Searching /Containers/ringeltaube/FactoryServer in Naming Service +Warning, no type found for resource "localhost", using default value "single_machine"
+createNewStudy
+extStudy 1
+Current path is /data/julius/github/EMStimTools/examples/workflow
+ found in 0.5 seconds 
+Start SALOME, elapsed time :   2.2 seconds
+Info    : No current model available: creating one
+Info    : Reading 'case_study_workflow_convergence_mesh.med'...
+Info    : Reading MED file V3.2.1 using MED library V3.3.1
+Info    : Reading 3-D unstructured mesh <<Mesh_1>>
+Info    : Done reading 'case_study_workflow_convergence_mesh.med'
+Info    : Writing 'case_study_workflow_convergence_mesh.msh2'...
+Info    : Done writing 'case_study_workflow_convergence_mesh.msh2'
+Solving linear variational problem.
+  0 KSP preconditioned resid norm 1.586589469315e+02 true resid norm 9.532051195834e+01 ||r(i)||/||b|| 1.000000000000e+00
+  1 KSP preconditioned resid norm 3.357007568817e+01 true resid norm 2.210046778273e+00 ||r(i)||/||b|| 2.318542706987e-02
+  2 KSP preconditioned resid norm 1.106027721370e+01 true resid norm 1.682427728114e+00 ||r(i)||/||b|| 1.765021707866e-02
+  3 KSP preconditioned resid norm 4.447728754153e+00 true resid norm 6.114719912446e-01 ||r(i)||/||b|| 6.414904606386e-03
+  4 KSP preconditioned resid norm 1.961406706378e+00 true resid norm 1.997125730492e-01 ||r(i)||/||b|| 2.095168909043e-03
+  5 KSP preconditioned resid norm 9.621975537926e-01 true resid norm 1.045912824914e-01 ||r(i)||/||b|| 1.097258925101e-03
+  6 KSP preconditioned resid norm 3.831609096417e-01 true resid norm 3.054408247726e-02 ||r(i)||/||b|| 3.204355689005e-04
+  7 KSP preconditioned resid norm 1.703506313626e-01 true resid norm 7.050373171340e-03 ||r(i)||/||b|| 7.396491087272e-05
+  8 KSP preconditioned resid norm 8.042330701771e-02 true resid norm 1.628332174491e-03 ||r(i)||/||b|| 1.708270487681e-05
+  9 KSP preconditioned resid norm 4.551993491257e-02 true resid norm 4.739857922422e-04 ||r(i)||/||b|| 4.972547697282e-06
+ 10 KSP preconditioned resid norm 2.529432839522e-02 true resid norm 1.209334979654e-04 ||r(i)||/||b|| 1.268703823352e-06
+ 11 KSP preconditioned resid norm 1.327978888526e-02 true resid norm 3.885505339858e-05 ||r(i)||/||b|| 4.076253117017e-07
+ 12 KSP preconditioned resid norm 5.446134573983e-03 true resid norm 1.722004125450e-05 ||r(i)||/||b|| 1.806540995292e-07
+ 13 KSP preconditioned resid norm 1.521123705978e-03 true resid norm 7.852053527333e-06 ||r(i)||/||b|| 8.237527648577e-08
+ 14 KSP preconditioned resid norm 8.297299954122e-05 true resid norm 2.412543774084e-06 ||r(i)||/||b|| 2.530980713929e-08
+ 15 KSP preconditioned resid norm 1.107772707341e-04 true resid norm 8.626871340972e-07 ||r(i)||/||b|| 9.050382927803e-09
+ 16 KSP preconditioned resid norm 8.426312071889e-05 true resid norm 2.783715876214e-07 ||r(i)||/||b|| 2.920374449343e-09
+ 17 KSP preconditioned resid norm 5.284005474601e-05 true resid norm 5.503599225382e-08 ||r(i)||/||b|| 5.773782696202e-10
+ 18 KSP preconditioned resid norm 3.206281617250e-05 true resid norm 1.363500019229e-08 ||r(i)||/||b|| 1.430437154833e-10
+ 19 KSP preconditioned resid norm 1.761055753301e-05 true resid norm 4.273708483235e-09 ||r(i)||/||b|| 4.483513983961e-11
+ 20 KSP preconditioned resid norm 9.105748693069e-06 true resid norm 1.370682333815e-09 ||r(i)||/||b|| 1.437972064622e-11
+ 21 KSP preconditioned resid norm 3.921017174821e-06 true resid norm 4.782549203240e-10 ||r(i)||/||b|| 5.017334784490e-12
+ 22 KSP preconditioned resid norm 1.380830087523e-06 true resid norm 1.957988808863e-10 ||r(i)||/||b|| 2.054110672128e-12
+Building point search tree to accelerate distance queries.
+Computed bounding box tree with 50893 nodes for 25447 points.
+salome_parameters {'min_size': 0.00025}
+salome_parameters {}
+Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format
+Expecting 18228 vertices
+Found all vertices
+Expecting 89780 cells
+Found all cells
+Conversion done
+Converted mesh to .h5 format
+removed previous binary and text meshfiles that are not needed any longer
+Current error:  1.3567182371688613
+##############
+Current state:
+##############
+[10845, 38027, 132482] [0.024, 0.012, 0.006] [0.001, 0.0005, 0.00025] [-7.249135556530399, -10.285699768588968, -11.642418005757829] [-7.249135556530399, -10.285699768588968, -11.642418005757829] [array([ 1.40638964e-05,  3.22568829e-02, -1.40824838e-04]), array([3.58654541e-05, 3.32119444e-02, 1.71986016e-05]), array([ 6.56293087e-06,  3.30352692e-02, -2.64033628e-06])] [nan, (1.6352517938125766, 0.5554247915574236), (1.0936455395460682, 0.1738828809554651)]
+##############
+##############
+runSalome running on ringeltaube
+Searching for a free port for naming service: 2820 - OK
+Searching Naming Service + found in 0.1 seconds 
+Searching /Registry in Naming Service + found in 0.5 seconds 
+Searching /Kernel/ModulCatalog in Naming Service +th. 22444093741952 - Trace /volatile/salome/SALOME-8.3.0-UB16.04/SOURCES/KERNEL/src/ModuleCatalog/SALOME_ModuleCatalog_Server.cxx [101] : Module Catalog Server: Naming Service was found
+Warning: this type (Study,objref) already exists, it will be ignored.
+Warning: this type (SALOME_MED/MEDCouplingFieldDoubleCorbaInterface,objref) already exists, it will be ignored.
+ found in 0.5 seconds 
+RunStudy
+Searching /myStudyManager in Naming Service + found in 0.5 seconds 
+Searching /Containers/ringeltaube/FactoryServer in Naming Service +Warning, no type found for resource "localhost", using default value "single_machine"
+createNewStudy
+extStudy 1
+Current path is /data/julius/github/EMStimTools/examples/workflow
+ found in 0.5 seconds 
+Start SALOME, elapsed time :   2.1 seconds
+Info    : No current model available: creating one
+Info    : Reading 'case_study_workflow_convergence_mesh.med'...
+Info    : Reading MED file V3.2.1 using MED library V3.3.1
+Info    : Reading 3-D unstructured mesh <<Mesh_1>>
+Info    : Done reading 'case_study_workflow_convergence_mesh.med'
+Info    : Writing 'case_study_workflow_convergence_mesh.msh2'...
+Info    : Done writing 'case_study_workflow_convergence_mesh.msh2'
+Solving linear variational problem.
+  0 KSP preconditioned resid norm 1.593464393753e+02 true resid norm 9.652978814853e+01 ||r(i)||/||b|| 1.000000000000e+00
+  1 KSP preconditioned resid norm 3.367157416715e+01 true resid norm 2.153930366739e+00 ||r(i)||/||b|| 2.231363404036e-02
+  2 KSP preconditioned resid norm 1.163616137476e+01 true resid norm 1.656759530741e+00 ||r(i)||/||b|| 1.716319451765e-02
+  3 KSP preconditioned resid norm 5.383049845430e+00 true resid norm 6.125684055719e-01 ||r(i)||/||b|| 6.345900237856e-03
+  4 KSP preconditioned resid norm 2.793528560827e+00 true resid norm 2.585911946385e-01 ||r(i)||/||b|| 2.678874569171e-03
+  5 KSP preconditioned resid norm 1.496081712030e+00 true resid norm 1.293975995567e-01 ||r(i)||/||b|| 1.340493976405e-03
+  6 KSP preconditioned resid norm 7.935744806780e-01 true resid norm 4.734016205936e-02 ||r(i)||/||b|| 4.904202419519e-04
+  7 KSP preconditioned resid norm 4.831661827812e-01 true resid norm 9.485300701983e-03 ||r(i)||/||b|| 9.826293918089e-05
+  8 KSP preconditioned resid norm 3.066659199219e-01 true resid norm 2.761509771398e-03 ||r(i)||/||b|| 2.860785074084e-05
+  9 KSP preconditioned resid norm 2.083281866236e-01 true resid norm 6.861917455544e-04 ||r(i)||/||b|| 7.108600968838e-06
+ 10 KSP preconditioned resid norm 1.441058348146e-01 true resid norm 1.814659773247e-04 ||r(i)||/||b|| 1.879896152320e-06
+ 11 KSP preconditioned resid norm 9.456430287690e-02 true resid norm 4.673701389676e-05 ||r(i)||/||b|| 4.841719306878e-07
+ 12 KSP preconditioned resid norm 5.511331689183e-02 true resid norm 2.508671949744e-05 ||r(i)||/||b|| 2.598857821882e-07
+ 13 KSP preconditioned resid norm 1.714771483684e-02 true resid norm 1.319340704729e-05 ||r(i)||/||b|| 1.366770537918e-07
+ 14 KSP preconditioned resid norm 6.223597558747e-03 true resid norm 3.323527368200e-06 ||r(i)||/||b|| 3.443007005346e-08
+ 15 KSP preconditioned resid norm 3.465997009047e-03 true resid norm 9.923864730931e-07 ||r(i)||/||b|| 1.028062416926e-08
+ 16 KSP preconditioned resid norm 2.052017979362e-03 true resid norm 3.809894594284e-07 ||r(i)||/||b|| 3.946858961735e-09
+ 17 KSP preconditioned resid norm 1.201307093440e-03 true resid norm 1.258152581723e-07 ||r(i)||/||b|| 1.303382723463e-09
+ 18 KSP preconditioned resid norm 8.000031714479e-04 true resid norm 2.397910994658e-08 ||r(i)||/||b|| 2.484115049511e-10
+ 19 KSP preconditioned resid norm 5.479876614781e-04 true resid norm 7.301645769559e-09 ||r(i)||/||b|| 7.564137360712e-11
+ 20 KSP preconditioned resid norm 3.797235201139e-04 true resid norm 1.534702593789e-09 ||r(i)||/||b|| 1.589874610962e-11
+ 21 KSP preconditioned resid norm 2.558102411912e-04 true resid norm 4.913063826289e-10 ||r(i)||/||b|| 5.089686738698e-12
+ 22 KSP preconditioned resid norm 1.311773564526e-04 true resid norm 2.502943968987e-10 ||r(i)||/||b|| 2.592923922236e-12
+ 23 KSP preconditioned resid norm 4.871206866227e-05 true resid norm 1.149185693195e-10 ||r(i)||/||b|| 1.190498513709e-12
+ 24 KSP preconditioned resid norm 1.732686670319e-05 true resid norm 4.198066560812e-11 ||r(i)||/||b|| 4.348985573606e-13
+ 25 KSP preconditioned resid norm 8.816393934382e-06 true resid norm 1.265427035166e-11 ||r(i)||/||b|| 1.310918690942e-13
+ 26 KSP preconditioned resid norm 5.118021192583e-06 true resid norm 3.658216041363e-12 ||r(i)||/||b|| 3.789727618312e-14
+ 27 KSP preconditioned resid norm 3.216533815664e-06 true resid norm 1.333042052430e-12 ||r(i)||/||b|| 1.380964444239e-14
+ 28 KSP preconditioned resid norm 1.999434866456e-06 true resid norm 3.874295270308e-13 ||r(i)||/||b|| 4.013574819357e-15
+ 29 KSP preconditioned resid norm 1.281351251358e-06 true resid norm 1.546646598916e-13 ||r(i)||/||b|| 1.602247998862e-15
+Building point search tree to accelerate distance queries.
+Computed bounding box tree with 179559 nodes for 89780 points.
+salome_parameters {'min_size': 0.000125}
+salome_parameters {}
+Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format
+Expecting 19452 vertices
+Found all vertices
+Expecting 95462 cells
+Found all cells
+Conversion done
+Converted mesh to .h5 format
+removed previous binary and text meshfiles that are not needed any longer
+Current error:  0.0190816976708863
+##############
+Current state:
+##############
+[10845, 38027, 132482, 141123] [0.024, 0.012, 0.006, 0.003] [0.001, 0.0005, 0.00025, 0.000125] [-7.249135556530399, -10.285699768588968, -11.642418005757829, -11.661499703428715] [-7.249135556530399, -10.285699768588968, -11.642418005757829, -11.661499703428715] [array([ 1.40638964e-05,  3.22568829e-02, -1.40824838e-04]), array([3.58654541e-05, 3.32119444e-02, 1.71986016e-05]), array([ 6.56293087e-06,  3.30352692e-02, -2.64033628e-06]), array([-3.35717911e-06,  3.30305701e-02,  9.55175351e-05])] [nan, (1.6352517938125766, 0.5554247915574236), (1.0936455395460682, 0.1738828809554651), (0.10524639054394395, 0.04462514356457091)]
+##############
+##############
+runSalome running on ringeltaube
+Searching for a free port for naming service: 2821 - OK
+Searching Naming Service + found in 0.1 seconds 
+Searching /Registry in Naming Service + found in 0.5 seconds 
+Searching /Kernel/ModulCatalog in Naming Service +th. 22849932819328 - Trace /volatile/salome/SALOME-8.3.0-UB16.04/SOURCES/KERNEL/src/ModuleCatalog/SALOME_ModuleCatalog_Server.cxx [101] : Module Catalog Server: Naming Service was found
+Warning: this type (Study,objref) already exists, it will be ignored.
+Warning: this type (SALOME_MED/MEDCouplingFieldDoubleCorbaInterface,objref) already exists, it will be ignored.
+ found in 0.5 seconds 
+RunStudy
+Searching /myStudyManager in Naming Service + found in 0.5 seconds 
+Searching /Containers/ringeltaube/FactoryServer in Naming Service +Warning, no type found for resource "localhost", using default value "single_machine"
+createNewStudy
+extStudy 1
+Current path is /data/julius/github/EMStimTools/examples/workflow
+ found in 0.5 seconds 
+Start SALOME, elapsed time :   2.1 seconds
+Info    : No current model available: creating one
+Info    : Reading 'case_study_workflow_convergence_mesh.med'...
+Info    : Reading MED file V3.2.1 using MED library V3.3.1
+Info    : Reading 3-D unstructured mesh <<Mesh_1>>
+Info    : Done reading 'case_study_workflow_convergence_mesh.med'
+Info    : Writing 'case_study_workflow_convergence_mesh.msh2'...
+Info    : Done writing 'case_study_workflow_convergence_mesh.msh2'
+Solving linear variational problem.
+  0 KSP preconditioned resid norm 1.593622267991e+02 true resid norm 9.652978814853e+01 ||r(i)||/||b|| 1.000000000000e+00
+  1 KSP preconditioned resid norm 3.389586642443e+01 true resid norm 2.142879734428e+00 ||r(i)||/||b|| 2.219915505388e-02
+  2 KSP preconditioned resid norm 1.417673085016e+01 true resid norm 1.617949412010e+00 ||r(i)||/||b|| 1.676114122949e-02
+  3 KSP preconditioned resid norm 9.504000171507e+00 true resid norm 6.641383864201e-01 ||r(i)||/||b|| 6.880139272638e-03
+  4 KSP preconditioned resid norm 6.129743159268e+00 true resid norm 4.000754217534e-01 ||r(i)||/||b|| 4.144579921152e-03
+  5 KSP preconditioned resid norm 4.034350198556e+00 true resid norm 2.403215668060e-01 ||r(i)||/||b|| 2.489610424051e-03
+  6 KSP preconditioned resid norm 2.828145658644e+00 true resid norm 1.369670791900e-01 ||r(i)||/||b|| 1.418909973978e-03
+  7 KSP preconditioned resid norm 1.935677951316e+00 true resid norm 4.724466743286e-02 ||r(i)||/||b|| 4.894309657053e-04
+  8 KSP preconditioned resid norm 1.469277978281e+00 true resid norm 1.549355470121e-02 ||r(i)||/||b|| 1.605054253032e-04
+  9 KSP preconditioned resid norm 1.133095739335e+00 true resid norm 5.760129214944e-03 ||r(i)||/||b|| 5.967203829434e-05
+ 10 KSP preconditioned resid norm 8.995765592971e-01 true resid norm 2.325114727200e-03 ||r(i)||/||b|| 2.408701781902e-05
+ 11 KSP preconditioned resid norm 6.963101781960e-01 true resid norm 8.037400126111e-04 ||r(i)||/||b|| 8.326341826985e-06
+ 12 KSP preconditioned resid norm 5.299999582247e-01 true resid norm 3.275166356442e-04 ||r(i)||/||b|| 3.392907432266e-06
+ 13 KSP preconditioned resid norm 3.924414244842e-01 true resid norm 1.605064968144e-04 ||r(i)||/||b|| 1.662766487868e-06
+ 14 KSP preconditioned resid norm 3.088605408259e-01 true resid norm 4.832486169149e-05 ||r(i)||/||b|| 5.006212343192e-07
+ 15 KSP preconditioned resid norm 2.454353660052e-01 true resid norm 1.439537670736e-05 ||r(i)||/||b|| 1.491288542476e-07
+ 16 KSP preconditioned resid norm 1.848809082410e-01 true resid norm 8.413970221240e-06 ||r(i)||/||b|| 8.716449484271e-08
+ 17 KSP preconditioned resid norm 1.165528393958e-01 true resid norm 5.640803978711e-06 ||r(i)||/||b|| 5.843588893028e-08
+ 18 KSP preconditioned resid norm 5.980245080690e-02 true resid norm 3.194075019973e-06 ||r(i)||/||b|| 3.308900890840e-08
+ 19 KSP preconditioned resid norm 3.575441732263e-02 true resid norm 1.050706579282e-06 ||r(i)||/||b|| 1.088479110371e-08
+ 20 KSP preconditioned resid norm 2.800282709428e-02 true resid norm 2.934106838871e-07 ||r(i)||/||b|| 3.039586945282e-09
+ 21 KSP preconditioned resid norm 2.300901907931e-02 true resid norm 8.660049743185e-08 ||r(i)||/||b|| 8.971375478272e-10
+ 22 KSP preconditioned resid norm 1.890641498680e-02 true resid norm 2.444841871391e-08 ||r(i)||/||b|| 2.532733074716e-10
+ 23 KSP preconditioned resid norm 1.571620908919e-02 true resid norm 5.611962515580e-09 ||r(i)||/||b|| 5.813710589466e-11
+ 24 KSP preconditioned resid norm 1.310717801208e-02 true resid norm 1.733416511670e-09 ||r(i)||/||b|| 1.795732224133e-11
+ 25 KSP preconditioned resid norm 1.020716310857e-02 true resid norm 8.390836193493e-10 ||r(i)||/||b|| 8.692483796382e-12
+ 26 KSP preconditioned resid norm 7.239213830155e-03 true resid norm 4.077718075250e-10 ||r(i)||/||b|| 4.224310602418e-12
+ 27 KSP preconditioned resid norm 5.040305023303e-03 true resid norm 1.827942493202e-10 ||r(i)||/||b|| 1.893656381374e-12
+ 28 KSP preconditioned resid norm 3.261964095569e-03 true resid norm 1.245259962398e-10 ||r(i)||/||b|| 1.290026619018e-12
+ 29 KSP preconditioned resid norm 1.597133454832e-03 true resid norm 7.817402586031e-11 ||r(i)||/||b|| 8.098435452901e-13
+ 30 KSP preconditioned resid norm 9.008017222017e-04 true resid norm 2.213349868506e-11 ||r(i)||/||b|| 2.292919015942e-13
+ 31 KSP preconditioned resid norm 6.898343862303e-04 true resid norm 9.193481708195e-12 ||r(i)||/||b|| 9.523984134358e-14
+ 32 KSP preconditioned resid norm 3.942888175995e-04 true resid norm 8.327198633437e-12 ||r(i)||/||b|| 8.626558488478e-14
+ 33 KSP preconditioned resid norm 1.274913822845e-04 true resid norm 4.669887146380e-12 ||r(i)||/||b|| 4.837767942880e-14
+ 34 KSP preconditioned resid norm 4.046453053354e-05 true resid norm 2.033388098748e-12 ||r(i)||/||b|| 2.106487684008e-14
+ 35 KSP preconditioned resid norm 1.085694175432e-05 true resid norm 1.108969930735e-12 ||r(i)||/||b|| 1.148837008767e-14
+ 36 KSP preconditioned resid norm 2.231224096631e-06 true resid norm 4.895415639238e-13 ||r(i)||/||b|| 5.071404105544e-15
+ 37 KSP preconditioned resid norm 2.495047803896e-07 true resid norm 2.277865637132e-13 ||r(i)||/||b|| 2.359754103704e-15
+Building point search tree to accelerate distance queries.
+Computed bounding box tree with 190923 nodes for 95462 points.
+salome_parameters {'min_size': 6.25e-05}
+salome_parameters {}
+Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format
+Expecting 29062 vertices
+Found all vertices
+Expecting 146042 cells
+Found all cells
+Conversion done
+Converted mesh to .h5 format
+removed previous binary and text meshfiles that are not needed any longer
+Current error:  0.00640691000589122
+##############
+Current state:
+##############
+[10845, 38027, 132482, 141123, 212993] [0.024, 0.012, 0.006, 0.003, 0.0015] [0.001, 0.0005, 0.00025, 0.000125, 6.25e-05] [-7.249135556530399, -10.285699768588968, -11.642418005757829, -11.661499703428715, -11.655092793422824] [-7.249135556530399, -10.285699768588968, -11.642418005757829, -11.661499703428715, -11.655092793422824] [array([ 1.40638964e-05,  3.22568829e-02, -1.40824838e-04]), array([3.58654541e-05, 3.32119444e-02, 1.71986016e-05]), array([ 6.56293087e-06,  3.30352692e-02, -2.64033628e-06]), array([-3.35717911e-06,  3.30305701e-02,  9.55175351e-05]), array([-2.64203286e-06,  3.28287092e-02,  4.64169762e-05])] [nan, (1.6352517938125766, 0.5554247915574236), (1.0936455395460682, 0.1738828809554651), (0.10524639054394395, 0.04462514356457091), (0.07226088787267955, 0.02156715354139777)]
+##############
+##############
+runSalome running on ringeltaube
+Searching for a free port for naming service: 2823 - OK
+Searching Naming Service + found in 0.1 seconds 
+Searching /Registry in Naming Service + found in 0.5 seconds 
+Searching /Kernel/ModulCatalog in Naming Service +th. 22994894420864 - Trace /volatile/salome/SALOME-8.3.0-UB16.04/SOURCES/KERNEL/src/ModuleCatalog/SALOME_ModuleCatalog_Server.cxx [101] : Module Catalog Server: Naming Service was found
+Warning: this type (Study,objref) already exists, it will be ignored.
+Warning: this type (SALOME_MED/MEDCouplingFieldDoubleCorbaInterface,objref) already exists, it will be ignored.
+ found in 0.5 seconds 
+RunStudy
+Searching /myStudyManager in Naming Service + found in 0.5 seconds 
+Searching /Containers/ringeltaube/FactoryServer in Naming Service +Warning, no type found for resource "localhost", using default value "single_machine"
+createNewStudy
+extStudy 1
+Current path is /data/julius/github/EMStimTools/examples/workflow
+ found in 0.5 seconds 
+Start SALOME, elapsed time :   2.2 seconds
+Info    : No current model available: creating one
+Info    : Reading 'case_study_workflow_convergence_mesh.med'...
+Info    : Reading MED file V3.2.1 using MED library V3.3.1
+Info    : Reading 3-D unstructured mesh <<Mesh_1>>
+Info    : Done reading 'case_study_workflow_convergence_mesh.med'
+Info    : Writing 'case_study_workflow_convergence_mesh.msh2'...
+Info    : Done writing 'case_study_workflow_convergence_mesh.msh2'
+Solving linear variational problem.
+  0 KSP preconditioned resid norm 1.597935384797e+02 true resid norm 9.652978814853e+01 ||r(i)||/||b|| 1.000000000000e+00
+  1 KSP preconditioned resid norm 3.682358961919e+01 true resid norm 2.016921735613e+00 ||r(i)||/||b|| 2.089429360924e-02
+  2 KSP preconditioned resid norm 2.121850031497e+01 true resid norm 1.505144037378e+00 ||r(i)||/||b|| 1.559253434870e-02
+  3 KSP preconditioned resid norm 1.626330173770e+01 true resid norm 7.781921297516e-01 ||r(i)||/||b|| 8.061678624573e-03
+  4 KSP preconditioned resid norm 1.209627712317e+01 true resid norm 4.848175755827e-01 ||r(i)||/||b|| 5.022465964979e-03
+  5 KSP preconditioned resid norm 9.018094856322e+00 true resid norm 4.442223788966e-01 ||r(i)||/||b|| 4.601920168032e-03
+  6 KSP preconditioned resid norm 6.808842446306e+00 true resid norm 3.224873306118e-01 ||r(i)||/||b|| 3.340806364514e-03
+  7 KSP preconditioned resid norm 5.404198497279e+00 true resid norm 1.592319139411e-01 ||r(i)||/||b|| 1.649562451086e-03
+  8 KSP preconditioned resid norm 4.191093366500e+00 true resid norm 9.905774568024e-02 ||r(i)||/||b|| 1.026188367137e-03
+  9 KSP preconditioned resid norm 3.173957305887e+00 true resid norm 6.175001844604e-02 ||r(i)||/||b|| 6.396990983864e-04
+ 10 KSP preconditioned resid norm 2.608325013448e+00 true resid norm 3.178764808201e-02 ||r(i)||/||b|| 3.293040282353e-04
+ 11 KSP preconditioned resid norm 2.184514188843e+00 true resid norm 1.595431182601e-02 ||r(i)||/||b|| 1.652786371132e-04
+ 12 KSP preconditioned resid norm 1.861710882450e+00 true resid norm 6.696363343559e-03 ||r(i)||/||b|| 6.937095244895e-05
+ 13 KSP preconditioned resid norm 1.612451777229e+00 true resid norm 3.608667399408e-03 ||r(i)||/||b|| 3.738397720147e-05
+ 14 KSP preconditioned resid norm 1.369635167992e+00 true resid norm 2.130423932447e-03 ||r(i)||/||b|| 2.207011921718e-05
+ 15 KSP preconditioned resid norm 1.139413113160e+00 true resid norm 1.165214994694e-03 ||r(i)||/||b|| 1.207104062946e-05
+ 16 KSP preconditioned resid norm 9.429120172095e-01 true resid norm 5.856767192557e-04 ||r(i)||/||b|| 6.067315908272e-06
+ 17 KSP preconditioned resid norm 7.933182819311e-01 true resid norm 3.043267501948e-04 ||r(i)||/||b|| 3.152671895711e-06
+ 18 KSP preconditioned resid norm 6.869331625787e-01 true resid norm 1.555887541929e-04 ||r(i)||/||b|| 1.611821150519e-06
+ 19 KSP preconditioned resid norm 5.896951533746e-01 true resid norm 7.560720172223e-05 ||r(i)||/||b|| 7.832525396813e-07
+ 20 KSP preconditioned resid norm 5.111192225640e-01 true resid norm 3.328373752839e-05 ||r(i)||/||b|| 3.448027615805e-07
+ 21 KSP preconditioned resid norm 4.432659653960e-01 true resid norm 1.746524748370e-05 ||r(i)||/||b|| 1.809311697320e-07
+ 22 KSP preconditioned resid norm 3.824843452727e-01 true resid norm 8.866230007466e-06 ||r(i)||/||b|| 9.184967850363e-08
+ 23 KSP preconditioned resid norm 3.244784234680e-01 true resid norm 5.240845147362e-06 ||r(i)||/||b|| 5.429251682701e-08
+ 24 KSP preconditioned resid norm 2.527430370222e-01 true resid norm 4.010922753725e-06 ||r(i)||/||b|| 4.155114012634e-08
+ 25 KSP preconditioned resid norm 1.711438526236e-01 true resid norm 3.084450980266e-06 ||r(i)||/||b|| 3.195335905555e-08
+ 26 KSP preconditioned resid norm 1.118864271593e-01 true resid norm 2.037412809931e-06 ||r(i)||/||b|| 2.110657082139e-08
+ 27 KSP preconditioned resid norm 7.851854167420e-02 true resid norm 1.114600575922e-06 ||r(i)||/||b|| 1.154670073663e-08
+ 28 KSP preconditioned resid norm 6.518047261918e-02 true resid norm 3.809714993828e-07 ||r(i)||/||b|| 3.946672904706e-09
+ 29 KSP preconditioned resid norm 5.811414170867e-02 true resid norm 1.411607494949e-07 ||r(i)||/||b|| 1.462354286717e-09
+ 30 KSP preconditioned resid norm 5.208977390382e-02 true resid norm 6.094918089469e-08 ||r(i)||/||b|| 6.314028245965e-10
+ 31 KSP preconditioned resid norm 4.639722806320e-02 true resid norm 2.544355722296e-08 ||r(i)||/||b|| 2.635824413477e-10
+ 32 KSP preconditioned resid norm 4.132085093312e-02 true resid norm 9.696734270926e-09 ||r(i)||/||b|| 1.004532844929e-10
+ 33 KSP preconditioned resid norm 3.704168298941e-02 true resid norm 4.026505025813e-09 ||r(i)||/||b|| 4.171256461909e-11
+ 34 KSP preconditioned resid norm 3.276947584578e-02 true resid norm 1.988145193799e-09 ||r(i)||/||b|| 2.059618312577e-11
+ 35 KSP preconditioned resid norm 2.779395746468e-02 true resid norm 1.256225449055e-09 ||r(i)||/||b|| 1.301386311054e-11
+ 36 KSP preconditioned resid norm 2.215152619086e-02 true resid norm 7.995659774807e-10 ||r(i)||/||b|| 8.283100924768e-12
+ 37 KSP preconditioned resid norm 1.816035094704e-02 true resid norm 4.013973339277e-10 ||r(i)||/||b|| 4.158274265661e-12
+ 38 KSP preconditioned resid norm 1.524671557389e-02 true resid norm 2.191395880500e-10 ||r(i)||/||b|| 2.270175789808e-12
+ 39 KSP preconditioned resid norm 1.263877590355e-02 true resid norm 1.408761798483e-10 ||r(i)||/||b|| 1.459406288467e-12
+ 40 KSP preconditioned resid norm 8.895297917095e-03 true resid norm 1.293449855117e-10 ||r(i)||/||b|| 1.339948921391e-12
+ 41 KSP preconditioned resid norm 4.935076404811e-03 true resid norm 9.913833905023e-11 ||r(i)||/||b|| 1.027023273870e-12
+ 42 KSP preconditioned resid norm 2.964710033214e-03 true resid norm 5.086540615567e-11 ||r(i)||/||b|| 5.269399957389e-13
+ 43 KSP preconditioned resid norm 2.094146665804e-03 true resid norm 2.850183713205e-11 ||r(i)||/||b|| 2.952646812836e-13
+ 44 KSP preconditioned resid norm 1.383912723961e-03 true resid norm 2.397383693531e-11 ||r(i)||/||b|| 2.483568792094e-13
+ 45 KSP preconditioned resid norm 8.556927002817e-04 true resid norm 1.444045036389e-11 ||r(i)||/||b|| 1.495957946336e-13
+ 46 KSP preconditioned resid norm 5.512707525703e-04 true resid norm 9.467099484340e-12 ||r(i)||/||b|| 9.807438373089e-14
+ 47 KSP preconditioned resid norm 3.250974920325e-04 true resid norm 7.656839079471e-12 ||r(i)||/||b|| 7.932099744888e-14
+ 48 KSP preconditioned resid norm 1.686437061452e-04 true resid norm 4.666863698331e-12 ||r(i)||/||b|| 4.834635802940e-14
+ 49 KSP preconditioned resid norm 7.174060150659e-05 true resid norm 3.650941704935e-12 ||r(i)||/||b|| 3.782191772055e-14
+ 50 KSP preconditioned resid norm 1.984722651676e-05 true resid norm 2.054841128581e-12 ||r(i)||/||b|| 2.128711942700e-14
+ 51 KSP preconditioned resid norm 4.163216306310e-06 true resid norm 1.002350662919e-12 ||r(i)||/||b|| 1.038384815863e-14
+ 52 KSP preconditioned resid norm 6.813580408060e-07 true resid norm 4.436227260803e-13 ||r(i)||/||b|| 4.595708066796e-15
+Building point search tree to accelerate distance queries.
+Computed bounding box tree with 292083 nodes for 146042 points.
+salome_parameters {'min_size': 3.125e-05}
+salome_parameters {}
+Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format
+Expecting 100014 vertices
+Found all vertices
+Expecting 538948 cells
+Found all cells
+Conversion done
+Converted mesh to .h5 format
+removed previous binary and text meshfiles that are not needed any longer
+Current error:  0.015064989012074648
+##############
+Current state:
+##############
+[10845, 38027, 132482, 141123, 212993, 756790] [0.024, 0.012, 0.006, 0.003, 0.0015, 0.00075] [0.001, 0.0005, 0.00025, 0.000125, 6.25e-05, 3.125e-05] [-7.249135556530399, -10.285699768588968, -11.642418005757829, -11.661499703428715, -11.655092793422824, -11.64002780441075] [-7.249135556530399, -10.285699768588968, -11.642418005757829, -11.661499703428715, -11.655092793422824, -11.64002780441075] [array([ 1.40638964e-05,  3.22568829e-02, -1.40824838e-04]), array([3.58654541e-05, 3.32119444e-02, 1.71986016e-05]), array([ 6.56293087e-06,  3.30352692e-02, -2.64033628e-06]), array([-3.35717911e-06,  3.30305701e-02,  9.55175351e-05]), array([-2.64203286e-06,  3.28287092e-02,  4.64169762e-05]), array([5.73693438e-07, 3.28292303e-02, 9.91321045e-06])] [nan, (1.6352517938125766, 0.5554247915574236), (1.0936455395460682, 0.1738828809554651), (0.10524639054394395, 0.04462514356457091), (0.07226088787267955, 0.02156715354139777), (0.09137641329711556, 0.012712789533963504)]
+##############
+##############
+runSalome running on ringeltaube
+Searching for a free port for naming service: 2824 - OK
+Searching Naming Service + found in 0.1 seconds 
+Searching /Registry in Naming Service + found in 0.5 seconds 
+Searching /Kernel/ModulCatalog in Naming Service +th. 22388187208576 - Trace /volatile/salome/SALOME-8.3.0-UB16.04/SOURCES/KERNEL/src/ModuleCatalog/SALOME_ModuleCatalog_Server.cxx [101] : Module Catalog Server: Naming Service was found
+Warning: this type (Study,objref) already exists, it will be ignored.
+Warning: this type (SALOME_MED/MEDCouplingFieldDoubleCorbaInterface,objref) already exists, it will be ignored.
+ found in 0.5 seconds 
+RunStudy
+Searching /myStudyManager in Naming Service + found in 0.5 seconds 
+Searching /Containers/ringeltaube/FactoryServer in Naming Service +Warning, no type found for resource "localhost", using default value "single_machine"
+createNewStudy
+extStudy 1
+Current path is /data/julius/github/EMStimTools/examples/workflow
+ found in 0.5 seconds 
+Start SALOME, elapsed time :   2.2 seconds
+Info    : No current model available: creating one
+Info    : Reading 'case_study_workflow_convergence_mesh.med'...
+Info    : Reading MED file V3.2.1 using MED library V3.3.1
+Info    : Reading 3-D unstructured mesh <<Mesh_1>>
+Info    : Done reading 'case_study_workflow_convergence_mesh.med'
+Info    : Writing 'case_study_workflow_convergence_mesh.msh2'...
+Info    : Done writing 'case_study_workflow_convergence_mesh.msh2'
+Solving linear variational problem.
+  0 KSP preconditioned resid norm 1.700330312235e+02 true resid norm 9.642613753542e+01 ||r(i)||/||b|| 1.000000000000e+00
+  1 KSP preconditioned resid norm 5.186341512655e+01 true resid norm 1.828981114884e+00 ||r(i)||/||b|| 1.896769031334e-02
+  2 KSP preconditioned resid norm 3.602806435038e+01 true resid norm 1.513146092016e+00 ||r(i)||/||b|| 1.569228147773e-02
+  3 KSP preconditioned resid norm 2.893592286019e+01 true resid norm 8.565336530709e-01 ||r(i)||/||b|| 8.882795422105e-03
+  4 KSP preconditioned resid norm 2.252470930698e+01 true resid norm 5.470131479969e-01 ||r(i)||/||b|| 5.672872127600e-03
+  5 KSP preconditioned resid norm 1.829355766354e+01 true resid norm 5.245086012593e-01 ||r(i)||/||b|| 5.439485752156e-03
+  6 KSP preconditioned resid norm 1.483555322693e+01 true resid norm 5.165961191356e-01 ||r(i)||/||b|| 5.357428310823e-03
+  7 KSP preconditioned resid norm 1.214616644195e+01 true resid norm 3.381054901085e-01 ||r(i)||/||b|| 3.506367658710e-03
+  8 KSP preconditioned resid norm 9.859502998395e+00 true resid norm 2.045599954738e-01 ||r(i)||/||b|| 2.121416461368e-03
+  9 KSP preconditioned resid norm 8.151392688332e+00 true resid norm 1.455477525924e-01 ||r(i)||/||b|| 1.509422199338e-03
+ 10 KSP preconditioned resid norm 6.958038955104e+00 true resid norm 1.208679284047e-01 ||r(i)||/||b|| 1.253476821679e-03
+ 11 KSP preconditioned resid norm 5.962044279592e+00 true resid norm 9.604298410045e-02 ||r(i)||/||b|| 9.960264566769e-04
+ 12 KSP preconditioned resid norm 5.021415433408e+00 true resid norm 6.420559675489e-02 ||r(i)||/||b|| 6.658526245677e-04
+ 13 KSP preconditioned resid norm 4.267790352678e+00 true resid norm 4.048102088436e-02 ||r(i)||/||b|| 4.198137757979e-04
+ 14 KSP preconditioned resid norm 3.747050523520e+00 true resid norm 2.825291406000e-02 ||r(i)||/||b|| 2.930005782884e-04
+ 15 KSP preconditioned resid norm 3.322858011821e+00 true resid norm 1.914143089066e-02 ||r(i)||/||b|| 1.985087381897e-04
+ 16 KSP preconditioned resid norm 2.954509731690e+00 true resid norm 1.082629650314e-02 ||r(i)||/||b|| 1.122755383535e-04
+ 17 KSP preconditioned resid norm 2.662406586289e+00 true resid norm 6.298698598774e-03 ||r(i)||/||b|| 6.532148605932e-05
+ 18 KSP preconditioned resid norm 2.427910273437e+00 true resid norm 4.047267300632e-03 ||r(i)||/||b|| 4.197272030258e-05
+ 19 KSP preconditioned resid norm 2.201156485693e+00 true resid norm 2.950009346994e-03 ||r(i)||/||b|| 3.059346171478e-05
+ 20 KSP preconditioned resid norm 1.973857293762e+00 true resid norm 1.891135265664e-03 ||r(i)||/||b|| 1.961226814638e-05
+ 21 KSP preconditioned resid norm 1.764445654082e+00 true resid norm 1.198309626483e-03 ||r(i)||/||b|| 1.242722831289e-05
+ 22 KSP preconditioned resid norm 1.567665261015e+00 true resid norm 8.788520953913e-04 ||r(i)||/||b|| 9.114251777102e-06
+ 23 KSP preconditioned resid norm 1.394789436834e+00 true resid norm 6.058286334502e-04 ||r(i)||/||b|| 6.282825890725e-06
+ 24 KSP preconditioned resid norm 1.258894962151e+00 true resid norm 3.429124470706e-04 ||r(i)||/||b|| 3.556218841023e-06
+ 25 KSP preconditioned resid norm 1.143301001157e+00 true resid norm 2.053602083899e-04 ||r(i)||/||b|| 2.129715175146e-06
+ 26 KSP preconditioned resid norm 1.035316699454e+00 true resid norm 1.346736392153e-04 ||r(i)||/||b|| 1.396650769775e-06
+ 27 KSP preconditioned resid norm 9.398650664148e-01 true resid norm 8.711877607527e-05 ||r(i)||/||b|| 9.034767782052e-07
+ 28 KSP preconditioned resid norm 8.607272081031e-01 true resid norm 5.052328992449e-05 ||r(i)||/||b|| 5.239584537536e-07
+ 29 KSP preconditioned resid norm 7.894755769517e-01 true resid norm 2.983585266322e-05 ||r(i)||/||b|| 3.094166522252e-07
+ 30 KSP preconditioned resid norm 7.220533496535e-01 true resid norm 1.840762282032e-05 ||r(i)||/||b|| 1.908986846389e-07
+ 31 KSP preconditioned resid norm 6.627061821651e-01 true resid norm 1.136117971170e-05 ||r(i)||/||b|| 1.178226153415e-07
+ 32 KSP preconditioned resid norm 6.090564609110e-01 true resid norm 6.805586032708e-06 ||r(i)||/||b|| 7.057822916746e-08
+ 33 KSP preconditioned resid norm 5.602897351766e-01 true resid norm 3.794498818434e-06 ||r(i)||/||b|| 3.935135135989e-08
+ 34 KSP preconditioned resid norm 5.136448245242e-01 true resid norm 2.425295634451e-06 ||r(i)||/||b|| 2.515184882895e-08
+ 35 KSP preconditioned resid norm 4.631070707044e-01 true resid norm 1.786114269627e-06 ||r(i)||/||b|| 1.852313403066e-08
+ 36 KSP preconditioned resid norm 4.109752581525e-01 true resid norm 1.333386438438e-06 ||r(i)||/||b|| 1.382806023884e-08
+ 37 KSP preconditioned resid norm 3.528738400655e-01 true resid norm 1.109610118424e-06 ||r(i)||/||b|| 1.150735834479e-08
+ 38 KSP preconditioned resid norm 2.820989233016e-01 true resid norm 9.831566540407e-07 ||r(i)||/||b|| 1.019595598423e-08
+ 39 KSP preconditioned resid norm 2.134660750918e-01 true resid norm 7.958082637038e-07 ||r(i)||/||b|| 8.253034748088e-09
+ 40 KSP preconditioned resid norm 1.668478205435e-01 true resid norm 5.187055373117e-07 ||r(i)||/||b|| 5.379304310734e-09
+ 41 KSP preconditioned resid norm 1.427232626035e-01 true resid norm 2.755010754022e-07 ||r(i)||/||b|| 2.857120304140e-09
+ 42 KSP preconditioned resid norm 1.291719585721e-01 true resid norm 1.432265457395e-07 ||r(i)||/||b|| 1.485349816971e-09
+ 43 KSP preconditioned resid norm 1.190615170260e-01 true resid norm 8.400005057970e-08 ||r(i)||/||b|| 8.711336233793e-10
+ 44 KSP preconditioned resid norm 1.098008605411e-01 true resid norm 5.132958535964e-08 ||r(i)||/||b|| 5.323202470988e-10
+ 45 KSP preconditioned resid norm 1.019652326723e-01 true resid norm 2.553810103118e-08 ||r(i)||/||b|| 2.648462510676e-10
+ 46 KSP preconditioned resid norm 9.523337734398e-02 true resid norm 1.389939882265e-08 ||r(i)||/||b|| 1.441455520040e-10
+ 47 KSP preconditioned resid norm 8.908314334268e-02 true resid norm 7.095076869415e-09 ||r(i)||/||b|| 7.358043213967e-11
+ 48 KSP preconditioned resid norm 8.368698657556e-02 true resid norm 3.573065432655e-09 ||r(i)||/||b|| 3.705494717490e-11
+ 49 KSP preconditioned resid norm 7.875586745689e-02 true resid norm 1.781481630294e-09 ||r(i)||/||b|| 1.847509063235e-11
+ 50 KSP preconditioned resid norm 7.363934897416e-02 true resid norm 1.023527186888e-09 ||r(i)||/||b|| 1.061462392924e-11
+ 51 KSP preconditioned resid norm 6.810135328880e-02 true resid norm 6.336968340993e-10 ||r(i)||/||b|| 6.571836747754e-12
+ 52 KSP preconditioned resid norm 6.244386510185e-02 true resid norm 4.275849636191e-10 ||r(i)||/||b|| 4.434326361585e-12
+ 53 KSP preconditioned resid norm 5.532665664989e-02 true resid norm 3.601639201825e-10 ||r(i)||/||b|| 3.735127522350e-12
+ 54 KSP preconditioned resid norm 4.641369281099e-02 true resid norm 2.962825609183e-10 ||r(i)||/||b|| 3.072637445521e-12
+ 55 KSP preconditioned resid norm 3.806147627243e-02 true resid norm 2.290816784071e-10 ||r(i)||/||b|| 2.375721814253e-12
+ 56 KSP preconditioned resid norm 3.065747545731e-02 true resid norm 1.840157929840e-10 ||r(i)||/||b|| 1.908360094963e-12
+ 57 KSP preconditioned resid norm 2.400012883628e-02 true resid norm 1.511458420526e-10 ||r(i)||/||b|| 1.567477925755e-12
+ 58 KSP preconditioned resid norm 1.675624727463e-02 true resid norm 1.473320658651e-10 ||r(i)||/||b|| 1.527926655893e-12
+ 59 KSP preconditioned resid norm 9.331962977973e-03 true resid norm 1.265280651070e-10 ||r(i)||/||b|| 1.312176017218e-12
+ 60 KSP preconditioned resid norm 4.247465264740e-03 true resid norm 9.218595339874e-11 ||r(i)||/||b|| 9.560266101592e-13
+ 61 KSP preconditioned resid norm 1.735459351547e-03 true resid norm 5.648360893656e-11 ||r(i)||/||b|| 5.857707295992e-13
+ 62 KSP preconditioned resid norm 7.863381273470e-04 true resid norm 3.166160508218e-11 ||r(i)||/||b|| 3.283508589209e-13
+ 63 KSP preconditioned resid norm 4.177911735186e-04 true resid norm 1.988610344267e-11 ||r(i)||/||b|| 2.062314632831e-13
+ 64 KSP preconditioned resid norm 2.568085925079e-04 true resid norm 1.202105247600e-11 ||r(i)||/||b|| 1.246659130320e-13
+ 65 KSP preconditioned resid norm 1.794649881565e-04 true resid norm 8.315309967617e-12 ||r(i)||/||b|| 8.623502071274e-14
+ 66 KSP preconditioned resid norm 1.313866372517e-04 true resid norm 5.764419812824e-12 ||r(i)||/||b|| 5.978067731590e-14
+ 67 KSP preconditioned resid norm 9.544656356526e-05 true resid norm 4.854490156839e-12 ||r(i)||/||b|| 5.034413159042e-14
+ 68 KSP preconditioned resid norm 6.231234326419e-05 true resid norm 4.293340386453e-12 ||r(i)||/||b|| 4.452465375247e-14
+ 69 KSP preconditioned resid norm 3.376767177120e-05 true resid norm 3.549689702470e-12 ||r(i)||/||b|| 3.681252607641e-14
+ 70 KSP preconditioned resid norm 1.558400169617e-05 true resid norm 2.442381441992e-12 ||r(i)||/||b|| 2.532903945359e-14
+ 71 KSP preconditioned resid norm 6.622033005908e-06 true resid norm 1.646430647426e-12 ||r(i)||/||b|| 1.707452657037e-14
+ 72 KSP preconditioned resid norm 2.544635882483e-06 true resid norm 1.052226745141e-12 ||r(i)||/||b|| 1.091225649015e-14
+ 73 KSP preconditioned resid norm 1.136628225970e-06 true resid norm 6.438923152448e-13 ||r(i)||/||b|| 6.677570332092e-15
+Building point search tree to accelerate distance queries.
+Computed bounding box tree with 1077895 nodes for 538948 points.
+salome_parameters {'min_size': 1.5625e-05}
+salome_parameters {}
+Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format
+Expecting 662137 vertices
+Found all vertices
+Expecting 3745828 cells
+Found all cells
+Conversion done
+Converted mesh to .h5 format
+removed previous binary and text meshfiles that are not needed any longer
+Current error:  0.03067665695387589
+##############
+Current state:
+##############
+[10845, 38027, 132482, 141123, 212993, 756790, 5125719] [0.024, 0.012, 0.006, 0.003, 0.0015, 0.00075, 0.000375] [0.001, 0.0005, 0.00025, 0.000125, 6.25e-05, 3.125e-05, 1.5625e-05] [-7.249135556530399, -10.285699768588968, -11.642418005757829, -11.661499703428715, -11.655092793422824, -11.64002780441075, -11.670704461364625] [-7.249135556530399, -10.285699768588968, -11.642418005757829, -11.661499703428715, -11.655092793422824, -11.64002780441075, -11.670704461364625] [array([ 1.40638964e-05,  3.22568829e-02, -1.40824838e-04]), array([3.58654541e-05, 3.32119444e-02, 1.71986016e-05]), array([ 6.56293087e-06,  3.30352692e-02, -2.64033628e-06]), array([-3.35717911e-06,  3.30305701e-02,  9.55175351e-05]), array([-2.64203286e-06,  3.28287092e-02,  4.64169762e-05]), array([5.73693438e-07, 3.28292303e-02, 9.91321045e-06]), array([ 1.31449348e-08,  3.28057970e-02, -1.63257845e-06])] [nan, (1.6352517938125766, 0.5554247915574236), (1.0936455395460682, 0.1738828809554651), (0.10524639054394395, 0.04462514356457091), (0.07226088787267955, 0.02156715354139777), (0.09137641329711556, 0.012712789533963504), (0.19327818729008178, 0.013982047525451142)]
+##############
+##############
+Traceback (most recent call last):
+  File "study_case_study_cg_convergence.py", line 74, in <module>
+    plt.plot(dof_list, 1e3 * field_norms)
+TypeError: can't multiply sequence by non-int of type 'float'
