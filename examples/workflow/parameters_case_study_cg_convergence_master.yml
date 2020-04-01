@@ -50,6 +50,9 @@ solver:
         linear_solver : cg 
         krylov_solver:
                 monitor_convergence: True
+                relative_tolerance: 1.0e-8
+                absolute_tolerance: 1.0e-12
+                maximum_iterations: 1000
         preconditioner : petsc_amg #hypre_amg
 
 
