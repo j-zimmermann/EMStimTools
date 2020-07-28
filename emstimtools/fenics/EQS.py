@@ -128,7 +128,7 @@ class EQS(Fenics):
 
     def _update_material_constant(self):
         """ also update output files"""
-        tmp = self.parameter_combinations.pop()
+        tmp = self.parameter_combinations_iter.pop()
         self.data['conductivity'] = tmp[0]
         self.data['permittivity'] = tmp[1]
         self._set_material_constant('conductivity')
@@ -197,8 +197,12 @@ class EQS(Fenics):
             permittivity_array_values.pop(0)
             d = dict(zip(permittivity_array, permittivity_array_values))
             self.permittivity_arrays = list(dict_product(d))
+
             # all possible combinations:
             self.parameter_combinations = list(product(self.conductivity_arrays, self.permittivity_arrays))
+            self.parameter_combinations_iter = list(product(self.conductivity_arrays, self.permittivity_arrays))
+            print("combinations")
+            print(self.parameter_combinations)
 
     def _set_function_space(self):
         Ec = self.element * self.element
@@ -258,14 +262,16 @@ class EQS(Fenics):
             try:
                 if self.data['properties']['E-Field'] is True:
                     self.get_field()
-                    self.dataXDMFEreal.write_checkpoint(self.Efield_real, 'E-Field real part', frequency, append=append)
-                    self.dataXDMFEimag.write_checkpoint(self.Efield_imag, 'E-Field imag part', frequency, append=append)
+                    if 'XDMF' in self.data['output']:
+                        self.dataXDMFEreal.write_checkpoint(self.Efield_real, 'E-Field real part', frequency, append=append)
+                        self.dataXDMFEimag.write_checkpoint(self.Efield_imag, 'E-Field imag part', frequency, append=append)
             except KeyError:
                 pass
             try:
                 if self.data['properties']['E-Field-norm'] is True:
                     self.get_fieldnorm()
-                    self.dataXDMFEnorm.write_checkpoint(self.normEr, 'E-Field norm', frequency, append=append)
+                    if 'XDMF' in self.data['output']:
+                        self.dataXDMFEnorm.write_checkpoint(self.normEr, 'E-Field norm', frequency, append=append)
             except KeyError:
                 pass
 
@@ -327,8 +333,8 @@ class EQS(Fenics):
         else:
             raise Exception("Use for this computation a 2nd or higher order element")
 
-        self.Efield_real = d.project(-d.grad(self.u.sub(0)), self.Vector, solver_type='mumps')
-        self.Efield_imag = d.project(-d.grad(self.u.sub(1)), self.Vector, solver_type='mumps')
+        self.Efield_real = d.project(-d.grad(self.u.sub(0)), self.Vector, solver_type=self.data['properties']['project_solver'], preconditioner_type=self.data['properties']['project_preconditioner'])
+        self.Efield_imag = d.project(-d.grad(self.u.sub(1)), self.Vector, solver_type=self.data['properties']['project_solver'], preconditioner_type=self.data['properties']['project_preconditioner'])
         self.Efield_real.rename('E-field real', 'E-field real')
         self.Efield_imag.rename('E-field imag', 'E-field imag')
         self.logger.debug("Computed E-Field")
@@ -456,18 +462,21 @@ class EQS(Fenics):
                     pass
 
     def _close_solution_xdmf(self):
-        self.datafileXDMFreal.close()
-        self.datafileXDMFimag.close()
-        self.logger.debug("Closed XDMF files")
+        if hasattr(self, "dataXDMFEreal"):
+            self.datafileXDMFreal.close()
+            self.datafileXDMFimag.close()
+            self.logger.debug("Closed XDMF files")
 
     def _close_efield_xdmf(self):
-        self.dataXDMFEreal.close()
-        self.dataXDMFEimag.close()
-        self.logger.debug('Closed E-Field files')
+        if hasattr(self, "dataXDMFEreal"):
+            self.dataXDMFEreal.close()
+            self.dataXDMFEimag.close()
+            self.logger.debug('Closed E-Field files')
 
     def _close_efieldnorm_xdmf(self):
-        self.dataXDMFEnorm.close()
-        self.logger.debug('Closed E-Field norm files')
+        if hasattr(self, "dataXDMFEnorm"):
+            self.dataXDMFEnorm.close()
+            self.logger.debug('Closed E-Field norm files')
 
     def _write_projected_solution(self, i):
         """
@@ -477,13 +486,13 @@ class EQS(Fenics):
         V_sub = d.FunctionSpace(self.sub_mesh, self.element)
         # real part, mumps to avoid memory overflow
         # u_sub = d.project(self.u_r, V_sub, solver_type='mumps')
-        u_sub = d.project(self.u.sub(0), V_sub, solver_type='mumps')
+        u_sub = d.project(self.u.sub(0), V_sub, solver_type=self.data['properties']['project_solver'], preconditioner_type=self.data['properties']['project_preconditioner'])
         u_sub.rename('potential real part', 'potential real part sub')
         self.datafileXDMFreal.write(u_sub)
         # imag part
         u_sub.rename('potential imag part', 'potential imag part sub')
         # u_sub = d.project(self.u_i, V_sub, solver_type='mumps')
-        u_sub = d.project(self.u.sub(1), V_sub, solver_type='mumps')
+        u_sub = d.project(self.u.sub(1), V_sub, solver_type=self.data['properties']['project_solver'], preconditioner_type=self.data['properties']['project_preconditioner'])
         self.datafileXDMFimag.write(u_sub)
 
     def _write_projected_efield(self, i):
@@ -491,10 +500,10 @@ class EQS(Fenics):
         take domain :param str i: and project e-field there
         """
         Vector_sub = d.VectorFunctionSpace(self.sub_mesh, self.data['properties']['project_element'], self.data['properties']['project_degree'])
-        efield_sub = d.project(self.Efield_real, Vector_sub, solver_type='mumps')
+        efield_sub = d.project(self.Efield_real, Vector_sub, solver_type=self.data['properties']['project_solver'], preconditioner_type=self.data['properties']['project_preconditioner'])
         efield_sub.rename('E-Field real part', 'E-Field real part sub')
         self.dataXDMFEreal.write(efield_sub)
-        efield_sub = d.project(self.Efield_imag, Vector_sub, solver_type='mumps')
+        efield_sub = d.project(self.Efield_imag, Vector_sub, solver_type=self.data['properties']['project_solver'], preconditioner_type=self.data['properties']['project_preconditioner'])
         efield_sub.rename('E-Field imag part', 'E-Field imag part sub')
         self.dataXDMFEimag.write(efield_sub)
         self.logger.debug("Wrote e-field for domain " + i)
@@ -504,7 +513,7 @@ class EQS(Fenics):
         take domain :param str i: and project e-field norm there
         """
         Vnorm_sub = d.FunctionSpace(self.sub_mesh, self.data['properties']['project_element'], self.data['properties']['project_degree'])
-        efieldnorm_sub = d.project(self.normEr, Vnorm_sub, solver_type='mumps')
+        efieldnorm_sub = d.project(self.normEr, Vnorm_sub, solver_type=self.data['properties']['project_solver'], preconditioner_type=self.data['properties']['project_preconditioner'])
         efieldnorm_sub.rename('E-Field norm', 'E-Field norm sub')
         self.dataXDMFEnorm.write(efieldnorm_sub)
         self.logger.debug("Wrote e-field norm for domain " + i)

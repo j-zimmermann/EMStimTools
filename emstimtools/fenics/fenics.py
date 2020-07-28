@@ -148,6 +148,8 @@ class Fenics(object):
             facets = self.data['facets']
         if 'mesh' in self.data:
             change = self.data['mesh']
+        else:
+            change = None
         self.mesh = Mesh(self.data['study'], self.logger, subdomains, facets, change)
         self.dx = d.Measure('dx', domain=self.mesh.mesh)
         self.ds = d.Measure('ds', domain=self.mesh.mesh, subdomain_data=self.mesh.facets)

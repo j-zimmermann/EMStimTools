@@ -11,8 +11,8 @@ import salome
 salome.salome_init()
 theStudy = salome.myStudy
 
-max_size = 0.000375
-min_size = 1.5625e-05
+max_size = 0.012
+min_size = 0.0005
 
 import salome_notebook
 pwd = os.getcwd()
