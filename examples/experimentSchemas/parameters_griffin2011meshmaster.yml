@@ -1,0 +1,50 @@
+study:
+        study_griffin2011mesh
+
+physics: 
+        EQS
+
+meshfile:
+        study_griffin2011_mesh.med 
+
+element:
+        CG
+
+degree:
+        2
+
+dimension:
+        3
+
+materials:
+        [dish, medium, air, airgap]
+
+frequencies:
+        60e3 
+        
+conductivity:
+        dish : 1e-14
+        medium : 1.0
+        air : 1e-14
+        airgap : 1e-14
+
+permittivity:
+        medium : 60.
+        dish : 2.5
+        air : 1.0
+        airgap : 1.0
+
+boundaries:
+        Dirichlet:
+                UpperElectrode: 0.16         
+                LowerElectrode: 0.0        
+
+solver:
+        linear_solver : mumps 
+        #preconditioner: petsc_amg
+
+
+properties:
+        E-Field-norm : yes
+        project_element : DG
+        project_degree : 1

@@ -1,0 +1,34 @@
+boundaries:
+  Dirichlet:
+    LowerElectrode: 0.0
+    UpperElectrode: 0.16
+conductivity:
+  air: 1e-14
+  airgap: 1e-14
+  dish: 1e-14
+  medium: 1.5
+degree: 2
+dimension: 3
+element: CG
+frequencies: 60e3
+materials:
+- dish
+- medium
+- air
+- airgap
+meshfile: study_griffin2011_mesh.med
+permittivity:
+  air: 1.0
+  airgap: 1.0
+  dish: 4.0
+  medium: 80.0
+physics: EQS
+properties:
+  E-Field-norm: true
+  project_degree: 1
+  project_element: DG
+  project_preconditioner: petsc_amg
+  project_solver: cg
+solver:
+  linear_solver: gmres
+study: study_griffin2011mesh

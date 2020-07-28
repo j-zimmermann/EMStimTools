@@ -1,0 +1,184 @@
+nohup: ignoring input
+In /home/julius/.local/lib/python3.6/site-packages/matplotlib/mpl-data/stylelib/_classic_test.mplstyle: 
+The text.latex.preview rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+In /home/julius/.local/lib/python3.6/site-packages/matplotlib/mpl-data/stylelib/_classic_test.mplstyle: 
+The mathtext.fallback_to_cm rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+In /home/julius/.local/lib/python3.6/site-packages/matplotlib/mpl-data/stylelib/_classic_test.mplstyle: Support for setting the 'mathtext.fallback_to_cm' rcParam is deprecated since 3.3 and will be removed two minor releases later; use 'mathtext.fallback : 'cm' instead.
+In /home/julius/.local/lib/python3.6/site-packages/matplotlib/mpl-data/stylelib/_classic_test.mplstyle: 
+The validate_bool_maybe_none function was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+In /home/julius/.local/lib/python3.6/site-packages/matplotlib/mpl-data/stylelib/_classic_test.mplstyle: 
+The savefig.jpeg_quality rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+In /home/julius/.local/lib/python3.6/site-packages/matplotlib/mpl-data/stylelib/_classic_test.mplstyle: 
+The keymap.all_axes rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+In /home/julius/.local/lib/python3.6/site-packages/matplotlib/mpl-data/stylelib/_classic_test.mplstyle: 
+The animation.avconv_path rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+In /home/julius/.local/lib/python3.6/site-packages/matplotlib/mpl-data/stylelib/_classic_test.mplstyle: 
+The animation.avconv_args rcparam was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+Unable to init server: Could not connect: Connection refused
+Unable to init server: Could not connect: Connection refused
+
+(SensitivityMumps.py:11849): Gdk-CRITICAL **: 11:09:01.425: gdk_cursor_new_for_display: assertion 'GDK_IS_DISPLAY (display)' failed
+Info    : Reading 'study_griffin2011mesh_mesh.med'...
+Info    : Reading MED file V3.2.1 using MED library V3.3.1
+Info    : Reading 3-D unstructured mesh <<Mesh_1>>
+Info    : Done reading 'study_griffin2011mesh_mesh.med'
+Info    : Writing 'study_griffin2011mesh_mesh.msh2'...
+Info    : Done writing 'study_griffin2011mesh_mesh.msh2'
+Solving linear variational problem.
+Info    : No current model available: creating one
+Info    : Reading 'study_griffin2011mesh_mesh.med'...
+Info    : Reading MED file V3.2.1 using MED library V3.3.1
+Info    : Reading 3-D unstructured mesh <<Mesh_1>>
+Info    : Done reading 'study_griffin2011mesh_mesh.med'
+Info    : Writing 'study_griffin2011mesh_mesh.msh2'...
+Info    : Done writing 'study_griffin2011mesh_mesh.msh2'
+Solving linear variational problem.
+Info    : No current model available: creating one
+Info    : Reading 'study_griffin2011mesh_mesh.med'...
+Info    : Reading MED file V3.2.1 using MED library V3.3.1
+Info    : Reading 3-D unstructured mesh <<Mesh_1>>
+Info    : Done reading 'study_griffin2011mesh_mesh.med'
+Info    : Writing 'study_griffin2011mesh_mesh.msh2'...
+Info    : Done writing 'study_griffin2011mesh_mesh.msh2'
+Solving linear variational problem.
+Info    : No current model available: creating one
+Info    : Reading 'study_griffin2011mesh_mesh.med'...
+Info    : Reading MED file V3.2.1 using MED library V3.3.1
+Info    : Reading 3-D unstructured mesh <<Mesh_1>>
+Info    : Done reading 'study_griffin2011mesh_mesh.med'
+Info    : Writing 'study_griffin2011mesh_mesh.msh2'...
+Info    : Done writing 'study_griffin2011mesh_mesh.msh2'
+Solving linear variational problem.
+Info    : No current model available: creating one
+Info    : Reading 'study_griffin2011mesh_mesh.med'...
+Info    : Reading MED file V3.2.1 using MED library V3.3.1
+Info    : Reading 3-D unstructured mesh <<Mesh_1>>
+Info    : Done reading 'study_griffin2011mesh_mesh.med'
+Info    : Writing 'study_griffin2011mesh_mesh.msh2'...
+Info    : Done writing 'study_griffin2011mesh_mesh.msh2'
+Solving linear variational problem.
+Info    : No current model available: creating one
+Info    : Reading 'study_griffin2011mesh_mesh.med'...
+Info    : Reading MED file V3.2.1 using MED library V3.3.1
+Info    : Reading 3-D unstructured mesh <<Mesh_1>>
+Info    : Done reading 'study_griffin2011mesh_mesh.med'
+Info    : Writing 'study_griffin2011mesh_mesh.msh2'...
+Info    : Done writing 'study_griffin2011mesh_mesh.msh2'
+Solving linear variational problem.
+Info    : No current model available: creating one
+Info    : Reading 'study_griffin2011mesh_mesh.med'...
+Info    : Reading MED file V3.2.1 using MED library V3.3.1
+Info    : Reading 3-D unstructured mesh <<Mesh_1>>
+Info    : Done reading 'study_griffin2011mesh_mesh.med'
+Info    : Writing 'study_griffin2011mesh_mesh.msh2'...
+Info    : Done writing 'study_griffin2011mesh_mesh.msh2'
+Solving linear variational problem.
+Info    : No current model available: creating one
+Info    : Reading 'study_griffin2011mesh_mesh.med'...
+Info    : Reading MED file V3.2.1 using MED library V3.3.1
+Info    : Reading 3-D unstructured mesh <<Mesh_1>>
+Info    : Done reading 'study_griffin2011mesh_mesh.med'
+Info    : Writing 'study_griffin2011mesh_mesh.msh2'...
+Info    : Done writing 'study_griffin2011mesh_mesh.msh2'
+Solving linear variational problem.
+SensitivityMumps.py:38: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  data = yaml.load(stream)
+                     baseCase  sensitivityCase
+factor                                        
+conductivity_medium       1.0              1.5
+permittivity_medium      60.0             80.0
+permittivity_dish         2.5              4.0
+   0  1  2
+0 -1 -1 -1
+1 -1 -1  1
+2 -1  1 -1
+3 -1  1  1
+4  1 -1 -1
+5  1 -1  1
+6  1  1 -1
+7  1  1  1
+     0     1    2
+0  1.0  60.0  2.5
+1  1.0  60.0  4.0
+2  1.0  80.0  2.5
+3  1.0  80.0  4.0
+4  1.5  60.0  2.5
+5  1.5  60.0  4.0
+6  1.5  80.0  2.5
+7  1.5  80.0  4.0
+Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format
+Expecting 74244 vertices
+Found all vertices
+Expecting 410730 cells
+Found all cells
+Conversion done
+Converted mesh to .h5 format
+removed previous binary and text meshfiles that are not needed any longer
+Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format
+Expecting 74244 vertices
+Found all vertices
+Expecting 410730 cells
+Found all cells
+Conversion done
+Converted mesh to .h5 format
+removed previous binary and text meshfiles that are not needed any longer
+Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format
+Expecting 74244 vertices
+Found all vertices
+Expecting 410730 cells
+Found all cells
+Conversion done
+Converted mesh to .h5 format
+removed previous binary and text meshfiles that are not needed any longer
+Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format
+Expecting 74244 vertices
+Found all vertices
+Expecting 410730 cells
+Found all cells
+Conversion done
+Converted mesh to .h5 format
+removed previous binary and text meshfiles that are not needed any longer
+Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format
+Expecting 74244 vertices
+Found all vertices
+Expecting 410730 cells
+Found all cells
+Conversion done
+Converted mesh to .h5 format
+removed previous binary and text meshfiles that are not needed any longer
+Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format
+Expecting 74244 vertices
+Found all vertices
+Expecting 410730 cells
+Found all cells
+Conversion done
+Converted mesh to .h5 format
+removed previous binary and text meshfiles that are not needed any longer
+Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format
+Expecting 74244 vertices
+Found all vertices
+Expecting 410730 cells
+Found all cells
+Conversion done
+Converted mesh to .h5 format
+removed previous binary and text meshfiles that are not needed any longer
+Converting from Gmsh format (.msh, .gmsh) to DOLFIN XML format
+Expecting 74244 vertices
+Found all vertices
+Expecting 410730 cells
+Found all cells
+Conversion done
+Converted mesh to .h5 format
+removed previous binary and text meshfiles that are not needed any longer
+          0
+0  0.000278
+1  0.000335
+2  0.000278
+3  0.000335
+4  0.000185
+5  0.000224
+6  0.000185
+7  0.000224
+Individual Effects  [-9.273246701481163e-05, -4.7300432884714305e-12, 5.720151344117233e-05]
+Total Effects  [-0.00029466118479930644, -9.01290913191425e-05, 5.20677152127241e-06]
+Interaction Effects  [-2.01928718e-04 -9.01290866e-05 -5.19947419e-05]
