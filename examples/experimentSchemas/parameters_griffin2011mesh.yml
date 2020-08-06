@@ -6,7 +6,7 @@ conductivity:
   air: 1e-14
   airgap: 1e-14
   dish: 1e-14
-  medium: 1.5
+  medium: 1.40625
 degree: 2
 dimension: 3
 element: CG
@@ -20,15 +20,13 @@ meshfile: study_griffin2011_mesh.med
 permittivity:
   air: 1.0
   airgap: 1.0
-  dish: 4.0
-  medium: 80.0
+  dish: 2.6643835616438354
+  medium: 74.07407407407408
 physics: EQS
 properties:
   E-Field-norm: true
   project_degree: 1
   project_element: DG
-  project_preconditioner: petsc_amg
-  project_solver: cg
 solver:
-  linear_solver: gmres
+  linear_solver: mumps
 study: study_griffin2011mesh
