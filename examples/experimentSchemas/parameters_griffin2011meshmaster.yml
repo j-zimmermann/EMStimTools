@@ -41,10 +41,11 @@ boundaries:
 
 solver:
         linear_solver : mumps 
-        #preconditioner: petsc_amg
-
 
 properties:
         E-Field-norm : yes
         project_element : DG
         project_degree : 1
+        project_solver : cg
+        project_preconditioner : petsc_amg
+

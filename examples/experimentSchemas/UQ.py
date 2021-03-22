@@ -19,9 +19,15 @@ def griffinmodel(conductivity_medium, permittivity_medium, permittivity_dish):
         yaml.dump(data, stream)
 
     model = Simulation('parameters_griffin2011mesh.yml')
+    model.set_log_level("DEBUG")
     model.run()
 
     field = model.fenics_study.normEr(0.05, 0.05, 0.01101)
+    print("Solved for conductivity of medium: ", data['conductivity']['medium'])
+    print("Solved for permittivity of medium: ", data['permittivity']['medium'])
+    print("Solved for conductivity of dish: ", data['conductivity']['dish'])
+    print("Got field: ", field)
+
     return 1, field
 
 
